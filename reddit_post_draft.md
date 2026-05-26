@@ -33,7 +33,7 @@ It focuses on:
 I did this because "free asset list" posts are useful, but I often still have to check whether a pack is actually safe for commercial use, whether attribution is required, and whether the license is stated on the creator page or only implied by a directory tag.
 
 Download/view:
-TODO: GitHub repo or release link
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet
 
 Feedback wanted:
 
