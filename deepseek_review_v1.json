@@ -1,0 +1,26 @@
+{
+  "status": "needs_revision",
+  "score_10": 7,
+  "critical_issues": [
+    "README.md claims 42 direct asset pages but CSV has 42 asset rows plus 8 non-asset rows, which is correct but the README should clarify the split to avoid overclaiming.",
+    "AUDIT_REPORT.md correctly identifies that 8 rows are not direct asset packs, but the public claim in README.md does not yet reflect this nuance.",
+    "CSV rows 1, 2, 21, 22, 41, 48, 49, 50 are not direct asset packs; they are reference or discovery pages. The public count should distinguish these."
+  ],
+  "required_fixes": [
+    "Update README.md to explicitly state: '42 direct asset pages plus 8 license/reference/discovery sources' instead of just '42 direct asset pages plus 8 license/reference/discovery pages' (already done in draft, but ensure consistency).",
+    "In reddit_post_draft.md, ensure the body clearly separates the 42 asset rows from the 8 non-asset rows to avoid misleading readers.",
+    "Add a note in the CSV or a separate column to clearly mark rows that are not direct asset packs (e.g., 'type: reference' or 'type: discovery')."
+  ],
+  "reddit_risk": "low",
+  "licensing_risk": "low",
+  "product_value": "high",
+  "final_public_claim": "I made a free audit sheet of commercial-use game asset sources. It includes 42 direct asset pages with license signals, attribution notes, signup friction, and risk flags, plus 8 license/reference/discovery sources. Not legal advice; verify before shipping.",
+  "recommended_subreddit": "gamedev",
+  "publish_notes": [
+    "The sheet is well-structured and useful for indie developers.",
+    "The audit report is honest and conservative, which reduces risk.",
+    "The reddit post draft is clear about limitations and not overclaiming.",
+    "Minor copy fixes needed to ensure the 42 vs 8 distinction is clear in all public-facing materials.",
+    "Consider adding a 'type' column to the CSV for clarity."
+  ]
+}

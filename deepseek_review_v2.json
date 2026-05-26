@@ -1,0 +1,18 @@
+{
+  "status": "publish_ready",
+  "score_10": 7,
+  "critical_issues": [],
+  "required_fixes": [],
+  "reddit_risk": "low",
+  "licensing_risk": "low",
+  "product_value": "medium",
+  "final_public_claim": "I made a free audit sheet of commercial-use game asset sources. It includes 42 direct asset pages with license signals, plus license/reference and discovery sources.",
+  "recommended_subreddit": "r/gamedev",
+  "publish_notes": [
+    "The sheet clearly separates asset pages from reference/discovery rows.",
+    "Public claims are appropriately cautious and avoid legal certainty.",
+    "Reddit post draft is well-written and sets proper expectations.",
+    "Consider adding a note that some rows rely on creator-wide policy rather than page-level evidence.",
+    "For v0.2, replace reference/discovery rows with additional verified asset pages."
+  ]
+}
