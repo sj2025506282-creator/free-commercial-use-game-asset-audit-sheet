@@ -4,9 +4,9 @@ Date: 2026-05-27
 
 ## Verdict
 
-Status: **needs_revision**
+Status: **superseded_by_pro_preview_build**
 
-The Gumroad copy and product spec are directionally correct, but the paid product should not be published yet.
+Initial review said the Gumroad copy and product spec were directionally correct, but the paid product should not be published before a real Pro deliverable exists.
 
 Reason:
 
@@ -73,6 +73,6 @@ Unsafe claims:
 
 ## Final Recommendation
 
-Do not publish Gumroad yet.
+The original "do not publish" verdict applied before the Pro Preview deliverable was built.
 
-Build the Pro deliverable first, then rerun strict review.
+Now rerun strict review against the built Pro Preview package before publishing.

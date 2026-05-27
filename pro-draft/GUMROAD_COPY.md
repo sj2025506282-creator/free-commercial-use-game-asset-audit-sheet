@@ -1,16 +1,16 @@
-# Game Asset License Tracker Pro
+# Game Asset License Tracker Pro Preview
 
 ## Short Description
 
-A Google Sheets-ready license tracker for indie game developers who use free game assets and need to separate CC0, attribution-required, font-embedding, and redistribution-risk cases quickly.
+A Google Sheets-ready Pro Preview for indie game developers who use free game assets and need to separate CC0, attribution-required, font-embedding, and redistribution-risk cases quickly.
 
 ## Launch Price
 
-USD $9
+USD $5-9
 
 Optional later tier:
 
-USD $19 for expanded updates.
+USD $19 for the future full Pro version.
 
 ## Product Promise
 
@@ -30,19 +30,26 @@ It is built for indie developers, game-jam teams, and solo devs who want to prot
 
 ## What's Included
 
-Launch Pro version target:
+Pro Preview v0.1 includes:
 
-- 150+ reviewed asset/font source rows
+- 75 total asset tracker rows
+- 25 Pro-only extra source rows beyond the free version
 - General asset license tracker
 - Dedicated font license tracker
-- CC0-only filter tab
-- Attribution-required tracker tab
-- Game-jam starter tab
+- CC0 Signals tab
+- Pro Extra Rows tab
 - Google Sheets-ready XLSX
-- CSV exports
+- Pro-only extra rows CSV
 - Changelog
 - Source/provenance notes
 - Risk flags and public-claim wording
+
+Future full Pro target:
+
+- 150+ reviewed asset/font rows
+- 30+ font rows
+- Attribution-required tracker tab
+- Game-jam starter tab
 
 ## Free vs Pro
 
@@ -55,11 +62,11 @@ Free version:
 
 Pro version:
 
-- More rows
-- More font-specific checks
-- More filtering tabs
-- More source/provenance notes
-- Designed to save review time before a game jam or prototype release
+- 25 additional source rows in the current Pro Preview
+- Pro Extra Rows tab
+- CC0 Signals tab
+- Buyer README and changelog
+- Designed to validate whether a larger paid tracker is worth building
 
 ## Who This Is For
 
@@ -92,11 +99,11 @@ It does not sell third-party assets.
 
 ## Suggested Gumroad Title
 
-Game Asset License Tracker Pro
+Game Asset License Tracker Pro Preview
 
 ## Suggested Gumroad Subtitle
 
-Filter free game asset sources by CC0, attribution, commercial-use, font embedding, and redistribution risk.
+Filter free game asset sources by CC0, attribution, commercial-use, font embedding, and redistribution risk. Includes 25 Pro-only extra rows beyond the free version.
 
 ## Suggested Tags
 
