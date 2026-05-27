@@ -36,6 +36,16 @@ Gumroad: https://3813941972097.gumroad.com/l/grjtiq
 
 The Pro Preview sells the audit structure, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
 
+## CC0-only Game Jam Starter
+
+There is also a narrower free companion package for game jams:
+
+- `cc0-game-jam-starter-v0.1/cc0_game_jam_starter_v0.1.xlsx`: workbook with Summary, CC0 Starter, Game Jam Checklist, and Source Notes tabs.
+- `cc0-game-jam-starter-v0.1/cc0_game_jam_starter_v0.1.csv`: Google Sheets-friendly CC0-only starter table.
+- `cc0-game-jam-starter-v0.1/preview_cc0_game_jam_starter_v0.1.png`: preview image for Reddit/social posts.
+
+This companion filters the v0.2 tracker down to rows with commercial-use, no-attribution, no-signup, and CC0/public-domain signals. It does not redistribute third-party asset files and is not legal advice.
+
 ## Google Sheets Import
 
 Recommended path:
@@ -71,4 +81,5 @@ Recommended path:
 - `preview_license_tracker_v0.2.png`: visual preview.
 - `reddit_post_draft.md`: a draft Reddit post for feedback/testing.
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
+- `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
 - `pro-draft/`: Gumroad Pro Preview package, cover media, buyer README, changelog, and strict review notes.
