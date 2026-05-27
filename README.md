@@ -2,6 +2,8 @@
 
 This is a starter license tracker for indie game developers who need free game assets with clearer commercial-use, attribution, redistribution, and font-embedding signals.
 
+![Preview](preview_license_tracker_v0.2.png)
+
 ## What This Is
 
 - 42 direct asset pages with commercial-use/CC0 license signals.
@@ -13,8 +15,20 @@ This is a starter license tracker for indie game developers who need free game a
 
 ## v0.2 Files
 
+- `free_game_asset_license_tracker_v0.2.xlsx`: Excel/Google Sheets-ready workbook with Summary, Asset License Tracker, Font License Tracker, and Field Guide tabs.
 - `game_asset_license_tracker_v0.2.csv`: Google Sheet-friendly general asset tracker with `license_family`, `evidence_level`, `last_checked`, and `public_claim`.
 - `font_license_tracker_v0.2.csv`: font-specific tracker with fields for embedding, modification, logo/brand use, editorial vs commercial use, and redistribution risk.
+- `preview_license_tracker_v0.2.png`: visual preview for Reddit/social posts.
+
+## Google Sheets Import
+
+Recommended path:
+
+1. Download `free_game_asset_license_tracker_v0.2.xlsx`.
+2. Open Google Sheets.
+3. Use `File > Import > Upload`.
+4. Import as a new spreadsheet.
+5. Keep filters enabled on the tracker tabs.
 
 ## Audit Status Meaning
 
@@ -35,7 +49,9 @@ This is a starter license tracker for indie game developers who need free game a
 ## Files
 
 - `commercial_use_game_asset_sources_audit_v0.1.csv`: the original v0.1 audit sheet.
+- `free_game_asset_license_tracker_v0.2.xlsx`: the v0.2 workbook.
 - `game_asset_license_tracker_v0.2.csv`: the v0.2 general tracker.
 - `font_license_tracker_v0.2.csv`: the v0.2 font licensing tracker.
+- `preview_license_tracker_v0.2.png`: visual preview.
 - `reddit_post_draft.md`: a draft Reddit post for feedback/testing.
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
