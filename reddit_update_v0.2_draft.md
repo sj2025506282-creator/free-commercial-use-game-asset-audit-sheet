@@ -25,3 +25,25 @@ This is still not legal advice, and it still links to original source pages rath
 Question for v0.3:
 
 Would a CC0-only game jam starter sheet be more useful, or should I keep expanding the font/license tracker?
+
+## Top-Level Comment Update
+
+Thanks for the feedback so far. I updated the repo with v0.2:
+
+- added a Google Sheets-ready XLSX workbook
+- added `game_asset_license_tracker_v0.2.csv`
+- added a separate `font_license_tracker_v0.2.csv`
+- split out fields for CC0/public-domain signals, attribution requirements, commercial-use notes, redistribution risk, and font embedding/modification questions
+
+Repo:
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet
+
+The comments about CC0 vs attribution-required assets and font licensing were especially useful, so those are the two areas I focused on first.
+
+For v0.3, I am trying to decide between:
+
+- a CC0-only game-jam starter sheet
+- expanding the font/license tracker
+- adding more SFX/foley and UI/HUD sources
+
+Still not legal advice, and still no redistributed third-party asset files.

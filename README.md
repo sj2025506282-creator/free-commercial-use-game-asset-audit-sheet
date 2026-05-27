@@ -20,6 +20,22 @@ This is a starter license tracker for indie game developers who need free game a
 - `font_license_tracker_v0.2.csv`: font-specific tracker with fields for embedding, modification, logo/brand use, editorial vs commercial use, and redistribution risk.
 - `preview_license_tracker_v0.2.png`: visual preview for Reddit/social posts.
 
+## Optional Pro Preview
+
+The free tracker is the main public version.
+
+There is also a small paid Pro Preview for people who want the expanded workbook:
+
+- 75 total asset tracker rows.
+- 25 Pro-only extra rows beyond the free tracker.
+- CC0 Signals tab.
+- Pro Extra Rows tab.
+- Buyer README and changelog.
+
+Gumroad: https://3813941972097.gumroad.com/l/grjtiq
+
+The Pro Preview sells the audit structure, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
+
 ## Google Sheets Import
 
 Recommended path:
@@ -55,3 +71,4 @@ Recommended path:
 - `preview_license_tracker_v0.2.png`: visual preview.
 - `reddit_post_draft.md`: a draft Reddit post for feedback/testing.
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
+- `pro-draft/`: Gumroad Pro Preview package, cover media, buyer README, changelog, and strict review notes.
