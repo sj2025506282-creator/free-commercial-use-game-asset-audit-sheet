@@ -22,4 +22,4 @@ It does not redistribute any third-party asset files. It only links to original 
 I made this because the feedback on the first sheet was basically: CC0-only is useful, attribution tracking is annoying, and people want less friction during jams.
 
 Link:
-TODO_GITHUB_RELEASE_OR_REPO_LINK
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/tree/main/cc0-game-jam-starter-v0.1
