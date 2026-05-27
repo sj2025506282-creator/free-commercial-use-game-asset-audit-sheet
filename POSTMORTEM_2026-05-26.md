@@ -12,8 +12,8 @@ https://www.reddit.com/r/gamedev/comments/1tnz9hk/i_made_a_free_audit_sheet_of_c
 
 - Subreddit: r/gamedev
 - Flair: Feedback Request
-- Reddit score: 10
-- Upvote ratio: 0.81
+- Reddit score: 7
+- Upvote ratio: 0.69
 - Comments: 6
 - Removed: no (`removed_by_category: null`)
 - GitHub stars: 0
@@ -67,7 +67,7 @@ This adds a second validated pain: **font licensing**. The next version should n
 
 ## Current Verdict
 
-Status: **continue, but narrow v0.2**
+Status: **hold distribution; keep product improvement**
 
 This is a valid attention/market-research test, not yet a monetization proof.
 
@@ -79,10 +79,9 @@ The strongest validated angles are:
 
 ## Recommended Next Actions
 
-1. Reply to positive comments and extract format/category preferences.
-2. Wait 12-24 hours before judging score and GitHub traffic.
-3. Build v0.2 by replacing the 8 reference/discovery rows with 8 more direct asset pages.
-4. Add a Google Sheet version for filtering.
-5. Add a dedicated font-licensing section with fields for embedding, modification, commercial use, attribution, and redistribution.
-6. Create a screenshot/preview image of the sheet for future posts.
-7. Make the next test narrower: "CC0-only game jam starter asset sheet", "font licensing tracker", or "attribution tracker for indie game assets."
+1. Do not publish a second Reddit post yet; score and upvote ratio weakened.
+2. Keep v0.2 as a repo improvement and potential comment follow-up, not a new launch.
+3. If posting again, use a narrower hook: "font licensing tracker for game developers" or "CC0-only game jam starter sheet".
+4. Google Sheets-ready workbook added: `free_game_asset_license_tracker_v0.2.xlsx`.
+5. Preview image added: `preview_license_tracker_v0.2.png`.
+6. Replace the 8 reference/discovery rows with more direct page-level asset/font rows.
