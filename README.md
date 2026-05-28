@@ -46,6 +46,17 @@ There is also a narrower free companion package for game jams:
 
 This companion filters the v0.2 tracker down to rows with commercial-use, no-attribution, no-signup, and CC0/public-domain signals. It does not redistribute third-party asset files and is not legal advice.
 
+## Game Jam Asset License Workflow Kit
+
+The strongest productized version is now a workflow kit:
+
+- `game-jam-asset-license-workflow-kit-v0.1/game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
+- `game-jam-asset-license-workflow-kit-v0.1/cc0_starter_sources_v0.1.csv`: CC0/no-attribution/no-signup starter sources.
+- `game-jam-asset-license-workflow-kit-v0.1/attribution_tracker_template_v0.1.csv`: template for CC BY or attribution-required assets.
+- `game-jam-asset-license-workflow-kit-v0.1/provenance_log_template_v0.1.csv`: source/download/license evidence log template.
+
+This version sells or gives away a repeatable workflow, not just more rows.
+
 ## Google Sheets Import
 
 Recommended path:
@@ -82,4 +93,5 @@ Recommended path:
 - `reddit_post_draft.md`: a draft Reddit post for feedback/testing.
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
+- `game-jam-asset-license-workflow-kit-v0.1/`: productized workflow kit with attribution/provenance/checklist templates.
 - `pro-draft/`: Gumroad Pro Preview package, cover media, buyer README, changelog, and strict review notes.

@@ -1,0 +1,2 @@
+asset_name,creator_or_platform,source_url,license_name,license_url,attribution_required,required_credit_text,where_credit_will_appear,modified,modification_notes,redistribution_allowed,checked_on,ship_status,notes
+Example CC BY asset,Example Creator,https://example.com/source-page,CC BY 4.0,https://creativecommons.org/licenses/by/4.0/,yes,"Example Asset by Example Creator, licensed under CC BY 4.0",credits screen / README / itch page,no,,check license/source terms,YYYY-MM-DD,needs final check,Template row; replace before shipping.
