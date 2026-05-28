@@ -1,19 +1,42 @@
-# Free Game Asset License Tracker
+# Game Jam Asset License Workflow Kit
 
-This is a starter license tracker for indie game developers who need free game assets with clearer commercial-use, attribution, redistribution, and font-embedding signals.
+A free workflow kit for indie developers who need to track where game-jam or prototype assets came from, what license signals were visible, whether attribution is needed, and what to re-check before shipping.
 
-![Preview](preview_license_tracker_v0.2.png)
+It links to original creator/source pages. It does not include or redistribute third-party asset files, and it is not legal advice.
 
-## What This Is
+![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
-- 42 direct asset pages with commercial-use/CC0 license signals.
-- 8 additional rows are license/reference/discovery sources, not direct asset packs.
-- Each row records source URL, asset type, license signal, attribution requirement, redistribution risk, signup friction, and audit status.
-- The `row_type` column marks whether a row is an `asset_page`, `license_or_source_reference`, or `discovery_pool`.
-- This sheet links to original creator/source pages. It does not redistribute third-party asset files.
-- Current strict audit status: `conditional_pass`. See `AUDIT_REPORT.md`.
+## Download First
 
-## v0.2 Files
+Latest workflow kit release:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
+
+Use this first if you want a practical game-jam workflow instead of just a resource list:
+
+- `game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
+- `game_jam_asset_license_workflow_kit_v0.1.zip`: all workflow kit files in one download.
+- `cc0_starter_sources_v0.1.csv`: 42 CC0/no-attribution/no-signup starter source rows.
+- `attribution_tracker_template_v0.1.csv`: template for CC BY or attribution-required assets.
+- `provenance_log_template_v0.1.csv`: source/download/license evidence log template.
+- `font_license_checklist_v0.1.csv`: font-specific checklist for embedding, modification, logo/brand use, and redistribution questions.
+- `before_shipping_checklist_v0.1.csv`: final review checklist before publishing a build.
+
+Current strict audit status: `conditional_pass`. See `game-jam-asset-license-workflow-kit-v0.1/AUDIT_NOTES.md`.
+
+## What This Helps With
+
+- Finding low-friction CC0/no-attribution sources for prototypes and jams.
+- Keeping attribution-required assets out of the "I forgot where this came from" pile.
+- Recording source URLs, license signals, download notes, and review status.
+- Separating font checks from general art/audio asset checks.
+- Doing a final before-shipping review without pretending the sheet is legal clearance.
+
+## Original Tracker v0.2
+
+The broader tracker is still available for people who want the full source list:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0
 
 - `free_game_asset_license_tracker_v0.2.xlsx`: Excel/Google Sheets-ready workbook with Summary, Asset License Tracker, Font License Tracker, and Field Guide tabs.
 - `game_asset_license_tracker_v0.2.csv`: Google Sheet-friendly general asset tracker with `license_family`, `evidence_level`, `last_checked`, and `public_claim`.
