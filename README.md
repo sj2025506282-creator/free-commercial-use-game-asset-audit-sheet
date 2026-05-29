@@ -4,15 +4,17 @@ A free workflow kit for indie developers who need to track where game-jam or pro
 
 It links to original creator/source pages. It does not include or redistribute third-party asset files, and it is not legal advice.
 
+## Download
+
+- **Download the full workflow kit ZIP:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
+- **Download the Google Sheets / Excel workbook:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.xlsx
+- Release page: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
+
+Start with the ZIP if you want all templates. Start with the XLSX if you only want the workbook.
+
 ![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
-## Download First
-
-Latest workflow kit release:
-
-https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
-
-Use this first if you want a practical game-jam workflow instead of just a resource list:
+## What's Included
 
 - `game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
 - `game_jam_asset_license_workflow_kit_v0.1.zip`: all workflow kit files in one download.
@@ -68,17 +70,6 @@ There is also a narrower free companion package for game jams:
 - `cc0-game-jam-starter-v0.1/preview_cc0_game_jam_starter_v0.1.png`: preview image for Reddit/social posts.
 
 This companion filters the v0.2 tracker down to rows with commercial-use, no-attribution, no-signup, and CC0/public-domain signals. It does not redistribute third-party asset files and is not legal advice.
-
-## Game Jam Asset License Workflow Kit
-
-The strongest productized version is now a workflow kit:
-
-- `game-jam-asset-license-workflow-kit-v0.1/game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
-- `game-jam-asset-license-workflow-kit-v0.1/cc0_starter_sources_v0.1.csv`: CC0/no-attribution/no-signup starter sources.
-- `game-jam-asset-license-workflow-kit-v0.1/attribution_tracker_template_v0.1.csv`: template for CC BY or attribution-required assets.
-- `game-jam-asset-license-workflow-kit-v0.1/provenance_log_template_v0.1.csv`: source/download/license evidence log template.
-
-This version sells or gives away a repeatable workflow, not just more rows.
 
 ## Google Sheets Import
 
