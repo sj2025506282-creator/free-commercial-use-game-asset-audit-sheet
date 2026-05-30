@@ -12,6 +12,24 @@ It links to original creator/source pages. It does not include or redistribute t
 
 Start with the ZIP if you want all templates. Start with the XLSX if you only want the workbook.
 
+## Paid Option
+
+If you want the expanded paid preview, the Gumroad Pro Preview is here:
+
+https://3813941972097.gumroad.com/l/grjtiq
+
+It includes 75 total asset tracker rows, 25 Pro-only extra rows, a Pro Preview workbook, buyer README, and changelog.
+
+The paid version sells the audit work, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
+
+## Small Audit Service
+
+I am also testing a small manual service for indie developers:
+
+**$19 starter audit:** send up to 10 asset/source URLs and get a short review with license-signal notes, attribution-risk flags, and before-shipping questions.
+
+This is not legal advice and does not replace a lawyer. It is a practical pre-shipping checklist pass for game jam or prototype assets.
+
 ![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
 ## What's Included
@@ -45,7 +63,7 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `font_license_tracker_v0.2.csv`: font-specific tracker with fields for embedding, modification, logo/brand use, editorial vs commercial use, and redistribution risk.
 - `preview_license_tracker_v0.2.png`: visual preview for Reddit/social posts.
 
-## Optional Pro Preview
+## Pro Preview Details
 
 The free tracker is the main public version.
 

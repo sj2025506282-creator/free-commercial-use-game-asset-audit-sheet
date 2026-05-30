@@ -9,6 +9,22 @@ This release packages the tracker as a practical workflow kit for game jams and 
 
 Use the ZIP if you want all templates. Use the XLSX if you only want the workbook.
 
+## Paid Option
+
+If you want the expanded paid preview, the Gumroad Pro Preview is here:
+
+https://3813941972097.gumroad.com/l/grjtiq
+
+It includes 75 total asset tracker rows, 25 Pro-only extra rows, a Pro Preview workbook, buyer README, and changelog.
+
+## Small Audit Service Test
+
+I am also testing a small manual service:
+
+**$19 starter audit:** send up to 10 asset/source URLs and get a short review with license-signal notes, attribution-risk flags, and before-shipping questions.
+
+This is not legal advice and does not replace a lawyer.
+
 ## Included
 
 - `game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
