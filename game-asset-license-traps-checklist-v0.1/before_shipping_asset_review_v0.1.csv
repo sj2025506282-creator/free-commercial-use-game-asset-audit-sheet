@@ -1,0 +1,11 @@
+check_item,status,notes
+"All third-party assets have source URLs","",""
+"CC0/no-attribution assets are separated from attribution-required assets","",""
+"Attribution text is prepared for every attribution-required asset","",""
+"Fonts were reviewed separately","",""
+"No NC/non-commercial assets remain in commercial builds","",""
+"No unclear custom-license assets remain unreviewed","",""
+"No raw third-party assets are redistributed without permission","",""
+"Important source pages were re-checked close to release","",""
+"License/provenance log is stored with the project","",""
+"Final build credits/license notes were reviewed","",""

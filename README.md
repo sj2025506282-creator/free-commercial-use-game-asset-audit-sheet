@@ -58,6 +58,15 @@ Current strict audit status: `conditional_pass`. See `game-jam-asset-license-wor
 - Separating font checks from general art/audio asset checks.
 - Doing a final before-shipping review without pretending the sheet is legal clearance.
 
+## Asset-License Traps Checklist
+
+There is also a small free checklist package for pre-shipping review:
+
+- `game-asset-license-traps-checklist-v0.1/`: 7 common asset-license traps, red-flag CSV, font questions, provenance log, and before-shipping review table.
+- `game_asset_license_traps_checklist_v0.1.zip`: zipped checklist package.
+
+Use it before publishing a jam build, prototype, demo, or commercial release.
+
 ## Original Tracker v0.2
 
 The broader tracker is still available for people who want the full source list:

@@ -1,0 +1,11 @@
+red_flag,why_it_matters,action
+"Only says free, no license text","Free can mean personal-use, non-commercial, attribution-required, or unclear","Find the original license page or replace the asset"
+"Directory tag only, no creator/source confirmation","Directory metadata can be incomplete or outdated","Check the creator/source page and record evidence"
+"Attribution required but no credits file","Credits may be missed during release","Add asset to attribution tracker"
+"Commercial use unclear","Prototype-safe does not always mean commercial-safe","Re-check source terms before release"
+"NC or non-commercial license","Cannot normally be used in commercial games","Remove from commercial builds"
+"ND or no-derivatives license","Modification or adaptation may be restricted","Avoid for game assets that need editing"
+"Custom license with no redistribution clause","Raw-file redistribution may be prohibited","Use only in finished project if allowed; do not repackage"
+"No source URL saved","Cannot re-check terms later","Log source URL and download date"
+"Font used like a normal image/audio asset","Fonts have separate embedding/modification/logo questions","Run font checklist"
+"AI-generated or unclear provenance","Ownership, training, or platform policy questions may exist","Flag and verify before relying on it"
