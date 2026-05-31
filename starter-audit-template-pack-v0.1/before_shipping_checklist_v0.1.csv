@@ -1,0 +1,8 @@
+stage,check,why_it_matters,status
+Before downloading,"Open the original source page, not a mirror or repost.",Mirrors can strip license context or point to stale files.,todo
+Before downloading,Record the source URL and visible license signal in the provenance log.,You need evidence later if the source page changes.,todo
+Before importing,Separate CC0/no-attribution items from attribution-required items.,Game jam credits are often forgotten under time pressure.,todo
+Before importing,"For fonts, check embedding, modification, logo/brand use, and redistribution separately.",Font rights can differ from ordinary sprite/audio asset rights.,todo
+Before publishing,Re-open each source page and confirm the license signal still exists.,Creator pages and platform terms can change.,todo
+Before publishing,Keep original asset packs out of your public repo/build unless redistribution is clearly allowed.,Using an asset in a game and redistributing the raw asset pack are different actions.,todo
+Before publishing,Export a credits/provenance note even when attribution is not required.,It reduces future audit work and takedown panic.,todo
