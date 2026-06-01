@@ -20,20 +20,21 @@ SAMPLE_RATE = 48000
 ROOT = Path("ui-confirmation-error-sfx-pack-v0.1")
 AUDIO_DIR = ROOT / "audio" / "wav"
 ZIP_PATH = Path("ui-confirmation-error-sfx-pack-v0.1.zip")
+RELEASE_URL = "https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0"
 
 
 def clamp(value: float) -> float:
     return max(-1.0, min(1.0, value))
 
 
-def normalize(samples: list[float], peak: float = 0.78) -> list[float]:
+def normalize(samples: list[float], peak: float = 0.62) -> list[float]:
     max_abs = max((abs(s) for s in samples), default=1.0)
     if max_abs < 1e-8:
         return samples
     return [s / max_abs * peak for s in samples]
 
 
-def fade(samples: list[float], fade_in: float = 0.002, fade_out: float = 0.03) -> list[float]:
+def fade(samples: list[float], fade_in: float = 0.006, fade_out: float = 0.035) -> list[float]:
     out = samples[:]
     n = len(out)
     fi = max(1, int(fade_in * SAMPLE_RATE))
@@ -67,7 +68,7 @@ def sine_tone(duration: float, frequencies: list[float], decay: float, rng: rand
             phases[index] += math.tau * freq / SAMPLE_RATE
             value += math.sin(phases[index]) / len(frequencies)
         out.append(value * env)
-    return fade(normalize(out, 0.72))
+    return fade(normalize(out, 0.58))
 
 
 def click(duration: float, base: float, rng: random.Random) -> list[float]:
@@ -78,10 +79,10 @@ def click(duration: float, base: float, rng: random.Random) -> list[float]:
         t = i / SAMPLE_RATE
         env = min(1.0, t / 0.0015) * math.exp(-t / 0.026)
         phase += math.tau * (base + 80 * math.exp(-t / 0.03)) / SAMPLE_RATE
-        transient = rng.uniform(-1.0, 1.0) * math.exp(-t / 0.004) * 0.34
+        transient = rng.uniform(-1.0, 1.0) * math.exp(-t / 0.006) * 0.22
         body = math.sin(phase) * env
         out.append(body + transient)
-    return fade(normalize(out, 0.75))
+    return fade(normalize(out, 0.54), fade_in=0.008, fade_out=0.035)
 
 
 def error_boop(duration: float, start: float, end: float, rng: random.Random) -> list[float]:
@@ -95,7 +96,7 @@ def error_boop(duration: float, start: float, end: float, rng: random.Random) ->
         env = min(1.0, t / 0.008) * math.exp(-t / 0.12)
         phase += math.tau * freq / SAMPLE_RATE
         out.append((math.sin(phase) + 0.22 * math.sin(phase * 2.01)) * env)
-    return fade(normalize(out, 0.7))
+    return fade(normalize(out, 0.56))
 
 
 def layered(*parts: list[float], gap: float = 0.0) -> list[float]:
@@ -105,7 +106,7 @@ def layered(*parts: list[float], gap: float = 0.0) -> list[float]:
         if index:
             out.extend(silence)
         out.extend(part)
-    return normalize(out, 0.76)
+    return normalize(out, 0.58)
 
 
 def make_specs() -> list[dict[str, object]]:
@@ -225,6 +226,54 @@ Commercial use allowed. No attribution required. Raw redistribution as another a
         writer.writeheader()
         writer.writerows(rows)
 
+    (ROOT / "reddit_post_draft.md").write_text(
+        f"""# r/gameassets draft
+
+Title:
+
+`[Free] 20 clean UI confirmation/error SFX | WAV | 48 kHz | commercial-use | no attribution`
+
+Post body:
+
+First free UI SFX pack from my game-asset audit side project. 20 original mono WAV sounds for game menus, HUDs, inventory screens, jam builds, and prototypes.
+
+Theme is clean confirmation/error UI: short select ticks, success chimes, warning tones, and notification sounds that can be layered or processed.
+
+Contents:
+
+- 20 WAV sounds
+- 48 kHz, 16-bit, mono
+- 4 categories: confirm, select, error, notification
+- preview WAV/MP3
+- FILE_LIST.csv, README, LICENSE
+
+License / use notes:
+
+- Commercial use allowed.
+- No attribution required.
+- Modification allowed.
+- Redistribution as standalone raw assets is not allowed.
+- Full terms in LICENSE.txt inside the download.
+
+How they were made:
+
+- Procedurally generated with Python oscillators/noise and hand-coded envelopes.
+- No generative AI, third-party sound libraries, marketplace samples, game audio, film audio, or unclear-rights source material.
+- Technical and automated listenability checks passed: 20 WAVs, 48 kHz mono, no clipping, no flagged transient/tail issues.
+
+Download:
+
+{RELEASE_URL}
+
+Related free resources:
+
+- Game asset license audit sheet: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet
+
+What should I make next: more UI sounds, tiny impact SFX, or a game-jam font/license checklist?
+""",
+        encoding="utf-8",
+    )
+
 
 def make_pack() -> None:
     if ROOT.exists():
@@ -252,7 +301,7 @@ def make_pack() -> None:
             }
         )
 
-    write_wav(ROOT / "preview_all_20_ui_sfx.wav", normalize(preview, 0.72))
+    write_wav(ROOT / "preview_all_20_ui_sfx.wav", normalize(preview, 0.58))
     ffmpeg = shutil.which("ffmpeg")
     if ffmpeg:
         subprocess.run(

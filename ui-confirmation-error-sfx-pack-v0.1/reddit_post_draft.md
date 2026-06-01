@@ -1,8 +1,12 @@
 # r/gameassets draft
 
+Published:
+
+https://www.reddit.com/r/gameassets/comments/1ttc3tr/free_20_clean_ui_confirmationerror_sfx_wav_48_khz/
+
 Title:
 
-`[Free] [Audio] 20 clean UI confirmation/error SFX | WAV | 48 kHz | commercial-use | no attribution`
+`[Free] 20 clean UI confirmation/error SFX | WAV | 48 kHz | commercial-use | no attribution`
 
 Post body:
 
@@ -29,8 +33,8 @@ License / use notes:
 How they were made:
 
 - Procedurally generated with Python oscillators/noise and hand-coded envelopes.
-- No third-party sound libraries, marketplace samples, game audio, film audio, or unclear-rights source material.
-- Technical audit passed: 20 WAVs, 48 kHz mono, no clipping, all files listed in CSV.
+- No generative AI, third-party sound libraries, marketplace samples, game audio, film audio, or unclear-rights source material.
+- Technical and automated listenability checks passed: 20 WAVs, 48 kHz mono, no clipping, no flagged transient/tail issues.
 
 Download:
 

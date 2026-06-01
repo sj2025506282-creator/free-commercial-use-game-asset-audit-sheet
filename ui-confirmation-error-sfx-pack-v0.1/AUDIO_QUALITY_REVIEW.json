@@ -1,0 +1,13 @@
+{
+  "pack_dir": "ui-confirmation-error-sfx-pack-v0.1",
+  "status": "pass",
+  "file_count": 20,
+  "issue_file_count": 0,
+  "summary": {
+    "duration_min": 0.08,
+    "duration_max": 0.42,
+    "rms_dbfs_median": -16.48,
+    "spectral_centroid_hz_median": 889.2
+  },
+  "files_with_issues": []
+}
