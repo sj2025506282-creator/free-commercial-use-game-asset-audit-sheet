@@ -1,0 +1,21 @@
+filename,category,format,sample_rate,channels,description
+audio/wav/confirm/UISFX_001_confirm_soft_chime.wav,confirm,WAV,48000,mono,Soft positive confirmation chime
+audio/wav/confirm/UISFX_002_confirm_double_ping.wav,confirm,WAV,48000,mono,Double confirmation ping
+audio/wav/confirm/UISFX_003_confirm_unlock.wav,confirm,WAV,48000,mono,Unlock or success UI sound
+audio/wav/confirm/UISFX_004_confirm_bright.wav,confirm,WAV,48000,mono,Bright success tone
+audio/wav/confirm/UISFX_005_confirm_low_soft.wav,confirm,WAV,48000,mono,Low soft accept tone
+audio/wav/select/UISFX_006_select_tick_short.wav,select,WAV,48000,mono,Short menu select tick
+audio/wav/select/UISFX_007_select_tick_glass.wav,select,WAV,48000,mono,Glass-like select tick
+audio/wav/select/UISFX_008_select_soft_button.wav,select,WAV,48000,mono,Soft button press
+audio/wav/select/UISFX_009_select_cursor_move.wav,select,WAV,48000,mono,Cursor move tone
+audio/wav/select/UISFX_010_select_tab_switch.wav,select,WAV,48000,mono,Tab switch tick pair
+audio/wav/error/UISFX_011_error_soft_down.wav,error,WAV,48000,mono,Soft descending error tone
+audio/wav/error/UISFX_012_error_wrong_choice.wav,error,WAV,48000,mono,Wrong choice double error
+audio/wav/error/UISFX_013_error_locked.wav,error,WAV,48000,mono,Locked action sound
+audio/wav/error/UISFX_014_error_warning_pulse.wav,error,WAV,48000,mono,Single warning pulse
+audio/wav/error/UISFX_015_error_cancel.wav,error,WAV,48000,mono,Cancel or deny tone
+audio/wav/notification/UISFX_016_notification_light.wav,notification,WAV,48000,mono,Light notification tone
+audio/wav/notification/UISFX_017_notification_popup.wav,notification,WAV,48000,mono,Popup notification sound
+audio/wav/notification/UISFX_018_notification_quest.wav,notification,WAV,48000,mono,Quest or item notification chime
+audio/wav/notification/UISFX_019_notification_subtle.wav,notification,WAV,48000,mono,Subtle notification tone
+audio/wav/notification/UISFX_020_notification_done.wav,notification,WAV,48000,mono,Task complete notification

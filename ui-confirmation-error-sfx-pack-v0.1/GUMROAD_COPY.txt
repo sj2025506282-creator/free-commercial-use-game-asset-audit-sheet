@@ -1,0 +1,14 @@
+Title: Free UI Confirmation + Error SFX Pack
+
+Short description:
+20 original mono WAV UI sounds for game menus, HUDs, jam builds, and prototypes.
+
+Includes:
+- confirmation chimes
+- menu select ticks
+- soft error/warning tones
+- notification sounds
+- preview WAV
+- file list and license
+
+Commercial use allowed. No attribution required. Raw redistribution as another asset pack is not allowed.
