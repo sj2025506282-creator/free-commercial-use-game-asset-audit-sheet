@@ -6,11 +6,20 @@ Drive attention, downloads, comments, and eventually the first cash transaction 
 
 Reddit is the trust and feedback surface. GitHub is the direct free download surface. Gumroad is downstream monetization.
 
+The core product direction is curated information, not raw assets. The user's durable positioning is a materials curator / audit-sheet maker: source lists, checklists, trackers, templates, and reviewed directories. Audio or visual asset packs are traffic side experiments only when they help enter a subreddit or build trust.
+
 ## Default Rule
 
 Before drafting or publishing a new Reddit post, analyze and imitate benchmark accounts/posts in the target subreddit.
 
 Do not write from scratch based only on internal taste.
+
+Default priority:
+
+1. Build and improve information products that reduce research/audit time for indie developers.
+2. Use free information resources on Reddit as the main attention engine.
+3. Use actual game asset packs only as a secondary subreddit-entry tactic.
+4. Keep the paid Gumroad product tied to curated information: Pro sheets, templates, trackers, and done-for-you audits.
 
 ## Benchmark-First Checklist
 
@@ -32,6 +41,32 @@ For every new Reddit post:
 5. Put paid links downstream in GitHub/profile unless the subreddit clearly allows direct paid promotion.
 
 ## Current Benchmark Patterns
+
+### Core Information Product Lane
+
+This is the primary business lane.
+
+Use this lane for:
+
+- commercial-use source directories
+- CC0/no-attribution filtered lists
+- font/license checklists
+- attribution trackers
+- provenance logs
+- shipping-risk checklists
+- starter audit templates
+- workflow kits
+
+The working formula:
+
+- exact count in the title, such as `50 sources`, `7 traps`, `4 templates`, or `100 rows`
+- clear pain: asset licensing, attribution, font embedding, provenance, shipping risk
+- free GitHub-first download
+- visible audit method and limitations
+- one specific feedback question
+- downstream Gumroad CTA only in README/profile/product page
+
+This lane should get most build time because it maps directly to the paid $9 template pack and future Pro sheets/services.
 
 ### r/gameassets
 
@@ -105,6 +140,7 @@ Track these active posts:
 
 - `1tnz9hk`: first r/gamedev asset audit sheet.
 - `1tssd1i`: benchmark-style r/gamedev workflow kit post.
+- `1ttc3tr`: r/gameassets UI SFX side experiment.
 
 Measure:
 

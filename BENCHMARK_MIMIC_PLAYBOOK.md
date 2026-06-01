@@ -4,7 +4,7 @@ Last refreshed: 2026-06-01.
 
 ## Primary Benchmark To Copy
 
-Primary benchmark: `RunebitDice` on `r/gameassets`.
+Primary benchmark for packaging discipline: `RunebitDice` on `r/gameassets`.
 
 Why:
 
@@ -14,6 +14,10 @@ Why:
 - Uses gallery/visual proof.
 - Body has predictable sections: contents, license, creation method, download, related packs.
 - Scores are not huge, but the pattern is sustainable and subreddit-native.
+
+Primary business direction: curated information products.
+
+This project should not become a raw asset factory. The core product is useful reviewed material: source lists, audit sheets, templates, checklists, trackers, and directories. Raw asset packs are side experiments for attention and subreddit access.
 
 Secondary benchmark: `SignatureLabel` on `r/gamedev`.
 
@@ -155,6 +159,12 @@ Imitate:
 - SignatureLabel for periodic archive updates.
 - Dumivid for strong CC0/no-attribution/full-pack wording and feedback CTA.
 
+But keep product priority clear:
+
+- P0: curated information packs that can lead to Gumroad purchases.
+- P1: free asset packs only when they create useful Reddit attention or trust.
+- P2: broad archive-update posts after the information library is large enough.
+
 ## Our Next Copycat Release Type
 
 Best next pack to build:
@@ -166,6 +176,7 @@ Why:
 - Existing Reddit comments specifically mentioned font licensing.
 - Risk-warning posts about fonts perform strongly in `r/gamedev`.
 - It connects naturally to the paid Starter Asset Audit Template Pack.
+- It fits the user's main positioning as a materials curator instead of an asset maker.
 
 ## Execution Lock
 
@@ -177,6 +188,7 @@ Primary operating rule:
 - The title must state exact count, format, use case, license/commercial-use signal, and no-signup/no-email access.
 - The body must reuse the same section order every time: intro, contents, license notes, how it was made or audited, download, related packs, one feedback question.
 - The first link should be GitHub or another no-email download surface. Gumroad stays downstream in README/profile/product links.
+- For the core lane, "pack" means a curated information pack: rows, sources, checklists, trackers, templates, or audit notes.
 - For `r/gameassets`, only post real game assets, with visual/audio proof.
 - For `r/gamedev`, post resource/checklist/workflow packs as Feedback Request or Resource style.
 
