@@ -86,6 +86,8 @@ Minimum standard before publishing:
 
 Do not publish a source directory if it is mostly generic links, unverified search results, or copied directory tags without page-level checks.
 
+Use `INFO_PACK_BENCHMARK_PLUS_ONE.md` before upgrading a free information pack or making a paid Gumroad version. The standard is to copy benchmark packaging while beating benchmarks on verification, row-level evidence, risk fields, and practical workflow value.
+
 ### r/gameassets
 
 Use this subreddit only for actual free game asset submissions.
