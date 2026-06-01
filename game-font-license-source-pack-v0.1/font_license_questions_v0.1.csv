@@ -1,0 +1,9 @@
+id,question,why_it_matters,what_to_record
+Q001,Are you embedding the font file inside the game build?,Embedding can trigger license obligations even when using an open font.,Record license name evidence URL and include license file if required.
+Q002,Does the font have a Reserved Font Name clause?,OFL fonts can allow modification but restrict use of the original reserved name for derivatives.,Record reserved-name wording before modifying or renaming.
+Q003,Are you using the font in a logo or trademark?,Font license permission is not the same as trademark safety or distinctiveness.,Record separate brand/logo review status.
+Q004,Are you redistributing the raw font file?,Redistribution often requires including the license and copyright notice.,Record where the license file is bundled.
+Q005,Is the source row verified or discovery-only?,Directory tags are not enough for shipping decisions.,Count only verified rows in public claims.
+Q006,Does the font cover your target languages?,A font can be legally safe but unusable for localization.,Record glyph/script coverage test.
+Q007,Is the font readable at the smallest in-game size?,Good license does not equal good UX.,Record tested size and viewport.
+Q008,Are you modifying the font file?,Modification can create extra naming/license obligations.,Record derivative name and license handling.

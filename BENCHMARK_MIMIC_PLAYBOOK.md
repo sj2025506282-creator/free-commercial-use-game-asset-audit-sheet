@@ -165,6 +165,8 @@ But keep product priority clear:
 - P1: free asset packs only when they create useful Reddit attention or trust.
 - P2: broad archive-update posts after the information library is large enough.
 
+The packaging can imitate benchmark accounts, but the data cannot be superficial. For curated information products, "free pack" means real audited rows with source URLs, license evidence, risk notes, and last-checked dates. Discovery rows cannot be counted as verified rows.
+
 ## Our Next Copycat Release Type
 
 Best next pack to build:
@@ -177,6 +179,12 @@ Why:
 - Risk-warning posts about fonts perform strongly in `r/gamedev`.
 - It connects naturally to the paid Starter Asset Audit Template Pack.
 - It fits the user's main positioning as a materials curator instead of an asset maker.
+
+Quality condition:
+
+- Do not publish this as `50` unless there are 50 useful rows.
+- If only a smaller verified set is available, title it honestly, such as `15 verified game font sources + license checklist`.
+- Separate verified source rows from discovery-only rows.
 
 ## Execution Lock
 

@@ -68,6 +68,24 @@ The working formula:
 
 This lane should get most build time because it maps directly to the paid $9 template pack and future Pro sheets/services.
 
+### Information Quality Gate
+
+Information packs must be real audited material, not filler.
+
+Minimum standard before publishing:
+
+- Every verified row has a direct source URL.
+- Every verified row has a license evidence URL or exact evidence note.
+- Every verified row has `last_checked`.
+- Discovery rows are clearly marked as discovery only and do not count toward the verified-row promise in the title.
+- Claims in the Reddit title must match verified rows only. Example: do not say `50 verified font sources` if the file contains 35 verified rows plus 15 discovery rows.
+- Include practical columns, not just names and links: commercial use, attribution, redistribution risk, download friction, best use case, and risk notes.
+- Include a README explaining audit method, limitations, and what the pack is not.
+- Include a machine-readable CSV and a human-readable Markdown/XLSX version when practical.
+- Run a local consistency audit before release: required columns present, URLs non-empty, no duplicate URLs, no blank risk notes, verified-count matches title.
+
+Do not publish a source directory if it is mostly generic links, unverified search results, or copied directory tags without page-level checks.
+
 ### r/gameassets
 
 Use this subreddit only for actual free game asset submissions.
