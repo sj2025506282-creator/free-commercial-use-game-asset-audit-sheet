@@ -41,11 +41,11 @@ It includes 75 total asset tracker rows, 25 Pro-only extra rows, a Pro Preview w
 
 The paid version sells the audit work, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
 
-There is also a smaller paid template pack for people who want the audit workflow files without the expanded source list:
+There is also a paid workflow pack for people who want to audit their own game asset folder:
 
 https://3813941972097.gumroad.com/l/isavr
 
-It includes a starter asset audit report template, attribution tracker, provenance/source log, font license checklist, before-shipping checklist, and README.
+It includes an asset inventory template, source/provenance log, attribution tracker, font review template, before-shipping checklist, filterable XLSX workbook, 30-minute audit workflow, and a filled example audit.
 
 If the free font pack helps, the $9 template pack is the paid workflow layer: use it to audit your own asset folder, not just fonts.
 
