@@ -6,11 +6,30 @@ It links to original creator/source pages. It does not include or redistribute t
 
 ## Download
 
+- **Newest font-license pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
 - **Download the full workflow kit ZIP:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
 - **Download the Google Sheets / Excel workbook:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.xlsx
 - Release page: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
 
 Start with the ZIP if you want all templates. Start with the XLSX if you only want the workbook.
+
+## New: Game Font License Source Pack v0.2
+
+The strongest current free information pack is the font-license pack:
+
+- 47 verified font/source rows.
+- 0 discovery rows counted in the public claim.
+- Source URL and evidence URL for every row.
+- Filterable XLSX workbook.
+- Unity / Godot / Unreal notes.
+- Reserved font name risk, logo-use warning, glyph coverage note, recommended-for, and avoid-for fields.
+- Local audit report: `verified_count = 47`, `status = pass`.
+
+Download:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
+
+Use this before shipping a game that embeds or distributes font files. It is not legal advice and does not redistribute font files.
 
 ## Paid Option
 
@@ -27,6 +46,8 @@ There is also a smaller paid template pack for people who want the audit workflo
 https://3813941972097.gumroad.com/l/isavr
 
 It includes a starter asset audit report template, attribution tracker, provenance/source log, font license checklist, before-shipping checklist, and README.
+
+If the free font pack helps, the $9 template pack is the paid workflow layer: use it to audit your own asset folder, not just fonts.
 
 ## Small Audit Service
 

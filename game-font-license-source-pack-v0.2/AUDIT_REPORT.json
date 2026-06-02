@@ -1,0 +1,12 @@
+{
+  "csv_file": "game-font-license-source-pack-v0.2/game_font_sources_verified_v0.2.csv",
+  "status": "pass",
+  "failures": [],
+  "warnings": [],
+  "summary": {
+    "row_count": 47,
+    "verified_count": 47,
+    "discovery_or_reference_count": 0,
+    "min_verified": 40
+  }
+}
