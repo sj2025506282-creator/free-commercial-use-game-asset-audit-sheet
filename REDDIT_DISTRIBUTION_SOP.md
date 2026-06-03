@@ -8,6 +8,8 @@ Reddit is the trust and feedback surface. GitHub is the direct free download sur
 
 The core product direction is curated information, not raw assets. The user's durable positioning is a materials curator / audit-sheet maker: source lists, checklists, trackers, templates, and reviewed directories. Audio or visual asset packs are traffic side experiments only when they help enter a subreddit or build trust.
 
+Use `AI_OPERATIONS_LEVEL_MODEL.md` as the operating-level map. The current target is Level 4 by default with limited Level 5 automation: AI may monitor metrics, draft, audit, and make low-risk CTA/release-note updates, but must keep Reddit posting, pricing, and platform-risk decisions constrained by data and rules.
+
 ## Default Rule
 
 Before drafting or publishing a new Reddit post, analyze and imitate benchmark accounts/posts in the target subreddit.
