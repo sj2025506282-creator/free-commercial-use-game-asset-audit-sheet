@@ -47,6 +47,8 @@ https://3813941972097.gumroad.com/l/isavr
 
 It includes an asset inventory template, source/provenance log, attribution tracker, font review template, before-shipping checklist, filterable XLSX workbook, 30-minute audit workflow, and a filled example audit.
 
+Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
+
 If the free font pack helps, the $9 template pack is the paid workflow layer: use it to audit your own asset folder, not just fonts.
 
 ## Small Audit Service
