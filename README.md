@@ -7,11 +7,27 @@ It links to original creator/source pages. It does not include or redistribute t
 ## Download
 
 - **Newest font-license pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
+- **Free UI SFX side pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
 - **Download the full workflow kit ZIP:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
 - **Download the Google Sheets / Excel workbook:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.xlsx
 - Release page: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
 
 Start with the ZIP if you want all templates. Start with the XLSX if you only want the workbook.
+
+## Start Here
+
+Use the free releases first:
+
+- Need font/source examples? Download the free font-license pack.
+- Need a small tested audio pack? Download the free UI SFX side pack.
+- Need a complete jam/prototype workflow? Download the free workflow kit ZIP.
+- Need to audit your own asset folder? Use the paid $9 template pack as the workflow layer after you understand the free examples.
+
+Paid workflow pack:
+
+https://3813941972097.gumroad.com/l/isavr
+
+Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
 
 ## New: Game Font License Source Pack v0.2
 
@@ -33,31 +49,32 @@ Use this before shipping a game that embeds or distributes font files. It is not
 
 ## Paid Option
 
-If you want the expanded paid preview, the Gumroad Pro Preview is here:
+The main paid option is the $9 workflow pack for auditing your own game asset folder:
+
+https://3813941972097.gumroad.com/l/isavr
+
+It includes:
+
+- asset inventory template
+- source/provenance log
+- attribution tracker
+- font review template
+- before-shipping checklist
+- filterable XLSX workbook
+- 30-minute audit workflow
+- filled example project audit
+
+Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
+
+Use this when the free packs help, but you want the repeatable workflow for your own project files.
+
+Older paid preview:
 
 https://3813941972097.gumroad.com/l/grjtiq
 
 It includes 75 total asset tracker rows, 25 Pro-only extra rows, a Pro Preview workbook, buyer README, and changelog.
 
-The paid version sells the audit work, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
-
-There is also a paid workflow pack for people who want to audit their own game asset folder:
-
-https://3813941972097.gumroad.com/l/isavr
-
-It includes an asset inventory template, source/provenance log, attribution tracker, font review template, before-shipping checklist, filterable XLSX workbook, 30-minute audit workflow, and a filled example audit.
-
-Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
-
-If the free font pack helps, the $9 template pack is the paid workflow layer: use it to audit your own asset folder, not just fonts.
-
-## Small Audit Service
-
-I am also testing a small manual service for indie developers:
-
-**$19 starter audit:** send up to 10 asset/source URLs and get a short review with license-signal notes, attribution-risk flags, and before-shipping questions.
-
-This is not legal advice and does not replace a lawyer. It is a practical pre-shipping checklist pass for game jam or prototype assets.
+The paid products sell audit structure, filtering, source notes, and risk flags. They do not sell or redistribute third-party asset files.
 
 ![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
