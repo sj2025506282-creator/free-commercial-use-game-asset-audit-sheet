@@ -24,11 +24,3 @@ This is a verified starter pack for indie game developers who need practical fon
 Each verified row has source URL, evidence URL, license signal, commercial-use note, attribution note, redistribution note, risk notes, engine notes, reserved-name risk, logo-use warning, glyph coverage note, and last-checked date.
 
 This pack does not redistribute font files. It is not legal advice.
-
-## Paid Workflow Option
-
-If you want reusable audit templates for your whole game asset folder, the paid starter template pack is here:
-
-https://3813941972097.gumroad.com/l/isavr
-
-The paid pack sells workflow templates, not third-party assets.

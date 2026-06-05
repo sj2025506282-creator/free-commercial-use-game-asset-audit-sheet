@@ -23,13 +23,6 @@ Use the free releases first:
 - Need font/source examples? Download the free font-license pack.
 - Need a small tested audio pack? Download the free UI SFX side pack.
 - Need a complete jam/prototype workflow? Download the free workflow kit ZIP.
-- Need to audit your own asset folder? Use the paid $9 template pack as the workflow layer after you understand the free examples.
-
-Paid workflow pack:
-
-https://3813941972097.gumroad.com/l/isavr
-
-Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
 
 ## New: Game Font License Source Pack v0.2
 
@@ -48,35 +41,6 @@ Download:
 https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
 
 Use this before shipping a game that embeds or distributes font files. It is not legal advice and does not redistribute font files.
-
-## Paid Option
-
-The main paid option is the $9 workflow pack for auditing your own game asset folder:
-
-https://3813941972097.gumroad.com/l/isavr
-
-It includes:
-
-- asset inventory template
-- source/provenance log
-- attribution tracker
-- font review template
-- before-shipping checklist
-- filterable XLSX workbook
-- 30-minute audit workflow
-- filled example project audit
-
-Launch code: use `REDDIT40` for 40% off. Limited to the first 10 uses.
-
-Use this when the free packs help, but you want the repeatable workflow for your own project files.
-
-Older paid preview:
-
-https://3813941972097.gumroad.com/l/grjtiq
-
-It includes 75 total asset tracker rows, 25 Pro-only extra rows, a Pro Preview workbook, buyer README, and changelog.
-
-The paid products sell audit structure, filtering, source notes, and risk flags. They do not sell or redistribute third-party asset files.
 
 ![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
@@ -119,22 +83,6 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `game_asset_license_tracker_v0.2.csv`: Google Sheet-friendly general asset tracker with `license_family`, `evidence_level`, `last_checked`, and `public_claim`.
 - `font_license_tracker_v0.2.csv`: font-specific tracker with fields for embedding, modification, logo/brand use, editorial vs commercial use, and redistribution risk.
 - `preview_license_tracker_v0.2.png`: visual preview for Reddit/social posts.
-
-## Pro Preview Details
-
-The free tracker is the main public version.
-
-There is also a small paid Pro Preview for people who want the expanded workbook:
-
-- 75 total asset tracker rows.
-- 25 Pro-only extra rows beyond the free tracker.
-- CC0 Signals tab.
-- Pro Extra Rows tab.
-- Buyer README and changelog.
-
-Gumroad: https://3813941972097.gumroad.com/l/grjtiq
-
-The Pro Preview sells the audit structure, filtering, source notes, and risk flags. It does not sell or redistribute third-party asset files.
 
 ## CC0-only Game Jam Starter
 
@@ -183,4 +131,4 @@ Recommended path:
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
 - `game-jam-asset-license-workflow-kit-v0.1/`: productized workflow kit with attribution/provenance/checklist templates.
-- `pro-draft/`: Gumroad Pro Preview package, cover media, buyer README, changelog, and strict review notes.
+- `pro-draft/`: local draft package materials, cover media, buyer README, changelog, and strict review notes.
