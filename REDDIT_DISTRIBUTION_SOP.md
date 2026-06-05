@@ -152,6 +152,8 @@ Use this structure:
 
 - Do not direct-link Gumroad first on Reddit.
 - Do not mention paid products unless clearly allowed and naturally relevant.
+- Keep every Reddit direct landing page free-only. This includes GitHub Release notes, package README files, and the repo README if they are directly linked from Reddit.
+- Do not put Gumroad links, launch discounts, paid workflow CTAs, or Pro Preview sections on a page that a subreddit post links to directly.
 - Do not use Gumroad as the direct download surface for subreddits requiring no email or registration.
 - Do not post a product before quality/audit status is clear.
 - For Gumroad products, cover and thumbnail are mandatory before considering the publish complete.
