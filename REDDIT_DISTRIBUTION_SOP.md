@@ -112,6 +112,14 @@ Do not post templates, questions, polls, tutorials without download, paid links,
 
 Use this subreddit for resource posts, process posts, feedback requests, postmortems, and workflow/tooling discussions.
 
+Status as of 2026-06-05: do not post or comment in `r/gamedev`.
+
+The account received a 7-day subreddit ban after moderators said there had been
+multiple self-promotion warnings and that sneaking paid products into a free
+resource is not allowed. Do not use another account to bypass the ban. Do not
+repost removed resources, appeal aggressively, or continue the same funnel there
+after the ban expires without a fresh human decision and rule review.
+
 The working formula from benchmark posts:
 
 - Lead with credible effort or concrete learning: "I spent X time curating/building..." or "I made X after feedback..."
@@ -150,6 +158,10 @@ Use this structure:
 
 ## Hard Rules
 
+- Respect subreddit bans and cooldowns. Do not post, comment, vote-brigade, or use
+  another account to bypass a subreddit ban.
+- Treat a mod warning as a hard stop for that subreddit path until the user makes
+  a fresh explicit decision after reviewing the rules.
 - Do not direct-link Gumroad first on Reddit.
 - Do not mention paid products unless clearly allowed and naturally relevant.
 - Keep every Reddit direct landing page free-only. This includes GitHub Release notes, package README files, and the repo README if they are directly linked from Reddit.
