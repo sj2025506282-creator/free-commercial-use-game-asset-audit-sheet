@@ -1,0 +1,12 @@
+check_item,status,notes
+"Every shipped font has an original source URL","",""
+"Every shipped font has evidence URL or bundled license-file location","",""
+"Mirror-only fonts are replaced or verified from original source","",""
+"Commercial-use signal is recorded for each font","",""
+"Embedding/app/game use has been reviewed","",""
+"Raw font file redistribution status is recorded","",""
+"Required license or copyright notices are included","",""
+"Modified fonts have derivative-name and reserved-name review","",""
+"Logo/title font usage has separate brand/title review","",""
+"Glyph coverage and fallback behavior are tested","",""
+"Final re-check date is recorded close to release","",""

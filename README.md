@@ -7,6 +7,7 @@ It links to original creator/source pages. It does not include or redistribute t
 ## Download
 
 - **Newest font-license pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
+- **Free font provenance log kit:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0
 - **Free asset-license traps checklist:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0
 - **Free UI SFX side pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
 - **Download the full workflow kit ZIP:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
@@ -21,6 +22,7 @@ Use the free releases first:
 
 - Need a quick pre-shipping review? Download the free asset-license traps checklist.
 - Need font/source examples? Download the free font-license pack.
+- Need to track where font files came from? Download the free font provenance log kit.
 - Need a small tested audio pack? Download the free UI SFX side pack.
 - Need a complete jam/prototype workflow? Download the free workflow kit ZIP.
 
@@ -41,6 +43,21 @@ Download:
 https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
 
 Use this before shipping a game that embeds or distributes font files. It is not legal advice and does not redistribute font files.
+
+## New: Font Provenance Log Kit v0.1
+
+This free workflow kit focuses on the source-chain problem behind many font mistakes:
+
+- original source URL
+- evidence URL or license-file location
+- mirror/reupload risk
+- embedding and raw-file redistribution status
+- modification and reserved-name review
+- final pre-shipping re-check
+
+Download:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0
 
 ![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
 
@@ -131,4 +148,4 @@ Recommended path:
 - `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
 - `game-jam-asset-license-workflow-kit-v0.1/`: productized workflow kit with attribution/provenance/checklist templates.
-- `pro-draft/`: local draft package materials, cover media, buyer README, changelog, and strict review notes.
+- `pro-draft/`: local draft package materials, cover media, package README, changelog, and strict review notes.

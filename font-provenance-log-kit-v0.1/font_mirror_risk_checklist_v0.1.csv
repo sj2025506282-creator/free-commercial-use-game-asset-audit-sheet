@@ -1,0 +1,11 @@
+check_item,why_it_matters,status,notes
+"Source links to original creator/foundry/platform","Mirror-only files can be unauthorized reuploads","",""
+"License evidence is visible on source or bundled license file","A generic 'free' label is not enough for shipping decisions","",""
+"Creator/foundry name matches font metadata or license text","Mismatched names can signal a bad mirror or repackaged file","",""
+"Commercial-use signal is explicit enough for the project","Personal-use-only fonts can appear on free font sites","",""
+"Embedding or app/game use is not contradicted by terms","Some font terms distinguish desktop, web, app, and embedding use","",""
+"Raw-file redistribution status is recorded","Shipping project files or asset packs can redistribute raw font files","",""
+"License/copyright notice handling is recorded","Some licenses require preserving notice files during redistribution","",""
+"Modified fonts are checked for reserved-name rules","OFL and custom licenses can restrict derivative font names","",""
+"Logo/title-screen use has separate review status","Font license permission is not trademark or brand clearance","",""
+"Final source re-check is dated near release","Pages, files, and terms can change between prototype and shipping","",""
