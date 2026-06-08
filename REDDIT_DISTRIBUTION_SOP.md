@@ -16,6 +16,10 @@ Before drafting or publishing a new Reddit post, analyze and imitate benchmark a
 
 Do not write from scratch based only on internal taste.
 
+Current strategy extension: answer questions first, then provide a matching free
+resource only when it directly helps. Use `FREE_RESOURCE_INDEX.md` to map common
+questions to one safe resource link. Do not turn answers into link drops.
+
 Default priority:
 
 1. Build and improve information products that reduce research/audit time for indie developers.
@@ -162,6 +166,8 @@ Use this structure:
   another account to bypass a subreddit ban.
 - Treat a mod warning as a hard stop for that subreddit path until the user makes
   a fresh explicit decision after reviewing the rules.
+- When answering questions, give the useful answer before any link. Link at most
+  one matching free resource, and skip the link if the answer stands alone.
 - Do not direct-link Gumroad first on Reddit.
 - Do not mention paid products unless clearly allowed and naturally relevant.
 - Keep every Reddit direct landing page free-only. This includes GitHub Release notes, package README files, and the repo README if they are directly linked from Reddit.
