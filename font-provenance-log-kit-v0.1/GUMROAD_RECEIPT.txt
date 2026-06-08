@@ -1,0 +1,15 @@
+Thanks for downloading the Font Provenance Log Kit.
+
+Recommended next step:
+
+1. Open `font_provenance_log_template_v0.1.csv`.
+2. Add every font file currently in your game project.
+3. Mark anything that came from a mirror, bundle, forum post, or old project folder as `needs_review`.
+4. Replace any font where you cannot find an original source URL or license evidence.
+5. Re-check the source URLs close to release.
+
+If you want the broader asset-folder workflow, the Game Asset Audit Template Pack is here:
+
+https://3813941972097.gumroad.com/l/isavr
+
+It is for tracking your own project files across fonts, SFX, art, attribution, provenance, and before-shipping review. It does not include or redistribute third-party assets.

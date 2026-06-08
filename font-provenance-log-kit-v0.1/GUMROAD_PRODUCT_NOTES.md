@@ -16,6 +16,12 @@ Uploaded file:
 
 - `font_provenance_log_kit_v0.1.zip`
 
+Custom receipt:
+
+- `GUMROAD_RECEIPT.txt`
+- Includes a short post-download workflow and a downstream link to the broader Game Asset Audit Template Pack.
+- Do not copy this receipt CTA into Reddit-linked GitHub Release pages.
+
 Media:
 
 - `media/gumroad_cover_font_provenance_log_kit.png`

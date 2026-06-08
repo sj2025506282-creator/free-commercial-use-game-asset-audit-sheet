@@ -1,52 +1,42 @@
-# Game Jam Asset License Workflow Kit
+# Game Asset License Workflow Kit
 
-A free workflow kit for indie developers who need to track where game-jam or prototype assets came from, what license signals were visible, whether attribution is needed, and what to re-check before shipping.
+Free workflow templates for indie developers who need to track where game assets came from, what license evidence was visible, whether attribution is needed, and what to re-check before shipping.
 
-It links to original creator/source pages. It does not include or redistribute third-party asset files, and it is not legal advice.
-
-## Download
-
-- **Newest font-license pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
-- **Free font provenance log kit:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0
-- **Free asset-license traps checklist:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0
-- **Free UI SFX side pack:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
-- **Download the full workflow kit ZIP:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
-- **Download the Google Sheets / Excel workbook:** https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.xlsx
-- Release page: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
-
-Start with the ZIP if you want all templates. Start with the XLSX if you only want the workbook.
+This repository links to original creator/source pages. It does not include or redistribute third-party asset files, and it is not legal advice.
 
 ## Start Here
 
-Use the free releases first:
+Most teams should start with the workflow kit:
 
-- Need a quick pre-shipping review? Download the free asset-license traps checklist.
-- Need font/source examples? Download the free font-license pack.
-- Need to track where font files came from? Download the free font provenance log kit.
-- Need a small tested audio pack? Download the free UI SFX side pack.
-- Need a complete jam/prototype workflow? Download the free workflow kit ZIP.
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
 
-## New: Game Font License Source Pack v0.2
+Download options:
 
-The strongest current free information pack is the font-license pack:
+- Full ZIP: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.zip
+- Google Sheets / Excel workbook: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/download/workflow-kit-v0.1.0/game_jam_asset_license_workflow_kit_v0.1.xlsx
 
-- 47 verified font/source rows.
-- 0 discovery rows counted in the public claim.
-- Source URL and evidence URL for every row.
-- Filterable XLSX workbook.
-- Unity / Godot / Unreal notes.
-- Reserved font name risk, logo-use warning, glyph coverage note, recommended-for, and avoid-for fields.
-- Local audit report: `verified_count = 47`, `status = pass`.
+Use the ZIP if you want all templates. Use the workbook if you only want the spreadsheet.
 
-Download:
+## Choose By Problem
 
-https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
+### I need a complete pre-shipping workflow
 
-Use this before shipping a game that embeds or distributes font files. It is not legal advice and does not redistribute font files.
+Use the free workflow kit:
 
-## New: Font Provenance Log Kit v0.1
+- asset inventory starter
+- attribution tracker
+- provenance/source log
+- font checklist
+- before-shipping checklist
+- CC0 starter source rows
 
-This free workflow kit focuses on the source-chain problem behind many font mistakes:
+Release:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
+
+### I need to track where font files came from
+
+Use the free Font Provenance Log Kit:
 
 - original source URL
 - evidence URL or license-file location
@@ -55,71 +45,39 @@ This free workflow kit focuses on the source-chain problem behind many font mist
 - modification and reserved-name review
 - final pre-shipping re-check
 
-Download:
+Release:
 
 https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0
 
-![Workflow Kit Preview](game-jam-asset-license-workflow-kit-v0.1/preview_workflow_kit_v0.1.png)
+### I need verified font/source examples
 
-## What's Included
+Use the free Game Font License Source Pack v0.2:
 
-- `game_jam_asset_license_workflow_kit_v0.1.xlsx`: workbook with Start Here, CC0 Starter, Attribution Tracker, Provenance Log, Font Checklist, and Before Shipping tabs.
-- `game_jam_asset_license_workflow_kit_v0.1.zip`: all workflow kit files in one download.
-- `cc0_starter_sources_v0.1.csv`: 42 CC0/no-attribution/no-signup starter source rows.
-- `attribution_tracker_template_v0.1.csv`: template for CC BY or attribution-required assets.
-- `provenance_log_template_v0.1.csv`: source/download/license evidence log template.
-- `font_license_checklist_v0.1.csv`: font-specific checklist for embedding, modification, logo/brand use, and redistribution questions.
-- `before_shipping_checklist_v0.1.csv`: final review checklist before publishing a build.
+- 47 verified font/source rows
+- 0 discovery rows counted in the public claim
+- source URL and evidence URL for every row
+- filterable XLSX workbook
+- Unity / Godot / Unreal notes
+- reserved font name risk, logo-use warning, glyph coverage note, recommended-for, and avoid-for fields
+- local audit report: `verified_count = 47`, `status = pass`
 
-Current strict audit status: `conditional_pass`. See `game-jam-asset-license-workflow-kit-v0.1/AUDIT_NOTES.md`.
+Release:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0
+
+## Other Free Releases
+
+- Asset-license traps checklist: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0
+- UI confirmation/error SFX side pack: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
+- Original tracker v0.2: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0
 
 ## What This Helps With
 
-- Finding low-friction CC0/no-attribution sources for prototypes and jams.
 - Keeping attribution-required assets out of the "I forgot where this came from" pile.
 - Recording source URLs, license signals, download notes, and review status.
+- Separating CC0/no-attribution assets from attribution-required assets.
 - Separating font checks from general art/audio asset checks.
 - Doing a final before-shipping review without pretending the sheet is legal clearance.
-
-## Asset-License Traps Checklist
-
-There is also a small free checklist package for pre-shipping review:
-
-- `game-asset-license-traps-checklist-v0.1/`: 7 common asset-license traps, red-flag CSV, font questions, provenance log, and before-shipping review table.
-- `game_asset_license_traps_checklist_v0.1.zip`: zipped checklist package.
-
-Use it before publishing a jam build, prototype, demo, or commercial release.
-
-## Original Tracker v0.2
-
-The broader tracker is still available for people who want the full source list:
-
-https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0
-
-- `free_game_asset_license_tracker_v0.2.xlsx`: Excel/Google Sheets-ready workbook with Summary, Asset License Tracker, Font License Tracker, and Field Guide tabs.
-- `game_asset_license_tracker_v0.2.csv`: Google Sheet-friendly general asset tracker with `license_family`, `evidence_level`, `last_checked`, and `public_claim`.
-- `font_license_tracker_v0.2.csv`: font-specific tracker with fields for embedding, modification, logo/brand use, editorial vs commercial use, and redistribution risk.
-- `preview_license_tracker_v0.2.png`: visual preview for Reddit/social posts.
-
-## CC0-only Game Jam Starter
-
-There is also a narrower free companion package for game jams:
-
-- `cc0-game-jam-starter-v0.1/cc0_game_jam_starter_v0.1.xlsx`: workbook with Summary, CC0 Starter, Game Jam Checklist, and Source Notes tabs.
-- `cc0-game-jam-starter-v0.1/cc0_game_jam_starter_v0.1.csv`: Google Sheets-friendly CC0-only starter table.
-- `cc0-game-jam-starter-v0.1/preview_cc0_game_jam_starter_v0.1.png`: preview image for Reddit/social posts.
-
-This companion filters the v0.2 tracker down to rows with commercial-use, no-attribution, no-signup, and CC0/public-domain signals. It does not redistribute third-party asset files and is not legal advice.
-
-## Google Sheets Import
-
-Recommended path:
-
-1. Download `free_game_asset_license_tracker_v0.2.xlsx`.
-2. Open Google Sheets.
-3. Use `File > Import > Upload`.
-4. Import as a new spreadsheet.
-5. Keep filters enabled on the tracker tabs.
 
 ## Audit Status Meaning
 
@@ -133,19 +91,16 @@ Recommended path:
 
 - CC0/public domain sources are usually the cleanest for game jams and commercial prototypes.
 - CC BY sources can be useful but need attribution tracking.
-- Font licensing needs its own checks: embedding in a game/app, modification, logo/brand usage, and editorial vs commercial use are separate questions.
+- Font licensing needs its own checks: embedding in a game/app, modification, logo/brand usage, and redistribution are separate questions.
 - Avoid NC, ND, unclear custom licenses, and pages that do not explicitly state whether commercial use is allowed.
 - Even with CC0, keep a source log for provenance and future takedown/dispute handling.
 
-## Files
+## Repository Files
 
-- `commercial_use_game_asset_sources_audit_v0.1.csv`: the original v0.1 audit sheet.
-- `free_game_asset_license_tracker_v0.2.xlsx`: the v0.2 workbook.
-- `game_asset_license_tracker_v0.2.csv`: the v0.2 general tracker.
-- `font_license_tracker_v0.2.csv`: the v0.2 font licensing tracker.
-- `preview_license_tracker_v0.2.png`: visual preview.
-- `reddit_post_draft.md`: a draft Reddit post for feedback/testing.
-- `AUDIT_REPORT.md`: strict audit notes and public-claim limits.
+- `game-jam-asset-license-workflow-kit-v0.1/`: workflow kit with attribution/provenance/checklist templates.
+- `font-provenance-log-kit-v0.1/`: font source-chain tracking kit.
+- `game-font-license-source-pack-v0.2/`: verified font/source information pack.
+- `game-asset-license-traps-checklist-v0.1/`: pre-shipping traps checklist.
+- `ui-confirmation-error-sfx-pack-v0.1/`: original UI SFX side pack.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
-- `game-jam-asset-license-workflow-kit-v0.1/`: productized workflow kit with attribution/provenance/checklist templates.
 - `pro-draft/`: local draft package materials, cover media, package README, changelog, and strict review notes.
