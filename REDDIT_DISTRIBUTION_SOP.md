@@ -2,191 +2,249 @@
 
 ## Goal
 
-Drive attention, downloads, comments, and eventually the first cash transaction through a Reddit -> GitHub -> Gumroad funnel.
+Use Reddit and adjacent forums as a low-risk place to answer real developer
+questions, learn what problems repeat, and maintain useful free resources.
 
-Reddit is the trust and feedback surface. GitHub is the direct free download surface. Gumroad is downstream monetization.
+This is not a Reddit -> GitHub -> Gumroad sales funnel. Do not optimize public
+replies for monetization. Optimize for useful answers, clean moderation history,
+and evidence about which problems are worth solving.
 
-The core product direction is curated information, not raw assets. The user's durable positioning is a materials curator / audit-sheet maker: source lists, checklists, trackers, templates, and reviewed directories. Audio or visual asset packs are traffic side experiments only when they help enter a subreddit or build trust.
+GitHub is the preferred free resource surface. Gumroad can exist downstream, but
+it must not be used in subreddit replies or Reddit-linked landing pages unless a
+specific community clearly allows it and the user explicitly approves that path.
 
-Use `AI_OPERATIONS_LEVEL_MODEL.md` as the operating-level map. The current target is Level 4 by default with limited Level 5 automation: AI may monitor metrics, draft, audit, and make low-risk CTA/release-note updates, but must keep Reddit posting, pricing, and platform-risk decisions constrained by data and rules.
+## Default Behavior
 
-## Default Rule
+When participating in Reddit or similar communities:
 
-Before drafting or publishing a new Reddit post, analyze and imitate benchmark accounts/posts in the target subreddit.
+1. Answer the actual question first.
+2. Give concrete steps that work without downloading anything.
+3. Link at most one matching free resource only when it directly helps.
+4. Use `FREE_RESOURCE_INDEX.md` to choose the resource and safe link line.
+5. Do not mention paid products, Gumroad, discounts, or coupons in public replies.
+6. Do not copy-paste the same reply across threads.
+7. Stop immediately if a moderator warning, removal, or ban signal appears.
 
-Do not write from scratch based only on internal taste.
+The working posture is: helpful answer first, optional free tool second.
 
-Current strategy extension: answer questions first, then provide a matching free
-resource only when it directly helps. Use `FREE_RESOURCE_INDEX.md` to map common
-questions to one safe resource link. Do not turn answers into link drops.
+## Participation Tiers
 
-Default priority:
+### Tier 0: Do Not Touch
 
-1. Build and improve information products that reduce research/audit time for indie developers.
-2. Use free information resources on Reddit as the main attention engine.
-3. Use actual game asset packs only as a secondary subreddit-entry tactic.
-4. Keep the paid Gumroad product tied to curated information: Pro sheets, templates, trackers, and done-for-you audits.
+Do not post, comment, vote-brigade, or use another account in:
 
-## Benchmark-First Checklist
+- Any subreddit where the account is currently banned.
+- Any thread removed for self-promotion unless the user explicitly asks for a
+  moderation-safe review.
+- Any community where rules disallow the resource type being discussed.
 
-For every new Reddit post:
+### Tier 1: Answer Only
 
-1. Pull 5-10 recent or top benchmark posts from the target subreddit.
-2. Record for each benchmark:
-   - title formula
-   - score
-   - comments
-   - flair
-   - media type: text, gallery, video, link
-   - value promise
-   - license wording
-   - CTA style
-   - whether the post links to GitHub, itch.io, Gumroad, or a personal site
-3. Copy the successful packaging pattern, not the content.
-4. Keep the Reddit post free-first and rule-compliant.
-5. Put paid links downstream in GitHub/profile unless the subreddit clearly allows direct paid promotion.
+Use this for most communities.
 
-## Current Benchmark Patterns
+Allowed:
 
-### Core Information Product Lane
+- Direct answers.
+- Checklists written inline.
+- Clarifying questions.
+- One free GitHub link only if it is directly relevant.
 
-This is the primary business lane.
+Not allowed:
 
-Use this lane for:
+- Paid links.
+- Coupon codes.
+- Multiple resource links.
+- Repeated promotional phrasing.
+- Replies whose main purpose is to place a link.
 
-- commercial-use source directories
-- CC0/no-attribution filtered lists
-- font/license checklists
-- attribution trackers
-- provenance logs
-- shipping-risk checklists
-- starter audit templates
-- workflow kits
+### Tier 2: Free Resource Link
 
-The working formula:
+Use only when the user question directly matches a resource in
+`FREE_RESOURCE_INDEX.md`.
 
-- exact count in the title, such as `50 sources`, `7 traps`, `4 templates`, or `100 rows`
-- clear pain: asset licensing, attribution, font embedding, provenance, shipping risk
-- free GitHub-first download
-- visible audit method and limitations
-- one specific feedback question
-- downstream Gumroad CTA only in README/profile/product page
+The reply must still be useful if the link is removed.
 
-This lane should get most build time because it maps directly to the paid $9 template pack and future Pro sheets/services.
+Safe structure:
 
-### Information Quality Gate
+1. Short direct answer.
+2. Two to five concrete steps.
+3. One sentence with one free GitHub link.
+4. No paid CTA.
+
+### Tier 3: New Resource Post
+
+Use only after explicit user approval.
+
+Before drafting:
+
+1. Read the target community rules.
+2. Pull 5-10 recent successful benchmark posts from that community.
+3. Confirm the resource type is allowed.
+4. Confirm the landing page is free-only.
+5. Confirm there is no Gumroad, discount, paid upgrade, or Pro Preview CTA on
+   the directly linked page.
+6. Draft in the target community's normal style, not as a sales post.
+
+## Resource Matching
+
+Use `FREE_RESOURCE_INDEX.md` for common scenarios:
+
+- Asset/source provenance before shipping.
+- Font source-chain and mirror risk.
+- Game-safe font/source starter rows.
+- Pre-shipping asset-license traps.
+- Actual free UI SFX in asset-specific communities.
+
+If no resource matches, do not force a link. Answer the question only.
+
+## Information Product Quality Gate
 
 Information packs must be real audited material, not filler.
 
-Minimum standard before publishing:
+Minimum standard before linking or publishing:
 
-- Every verified row has a direct source URL.
-- Every verified row has a license evidence URL or exact evidence note.
-- Every verified row has `last_checked`.
-- Discovery rows are clearly marked as discovery only and do not count toward the verified-row promise in the title.
-- Claims in the Reddit title must match verified rows only. Example: do not say `50 verified font sources` if the file contains 35 verified rows plus 15 discovery rows.
-- Include practical columns, not just names and links: commercial use, attribution, redistribution risk, download friction, best use case, and risk notes.
-- Include a README explaining audit method, limitations, and what the pack is not.
-- Include a machine-readable CSV and a human-readable Markdown/XLSX version when practical.
-- Run a local consistency audit before release: required columns present, URLs non-empty, no duplicate URLs, no blank risk notes, verified-count matches title.
+- Verified rows have a direct source URL.
+- Verified rows have a license evidence URL or exact evidence note.
+- Verified rows have `last_checked`.
+- Discovery rows are clearly marked and do not count toward the public verified
+  claim.
+- Public titles and claims match verified rows only.
+- Practical columns exist where relevant: commercial use, attribution,
+  redistribution risk, download friction, best use case, and risk notes.
+- A README explains audit method, limitations, and what the pack is not.
+- CSV is included when tabular data is central; Markdown/XLSX can be added when
+  useful.
+- Local consistency checks pass before release.
 
-Do not publish a source directory if it is mostly generic links, unverified search results, or copied directory tags without page-level checks.
+Do not publish or link a source directory that is mostly generic links,
+unverified search results, or copied directory tags without page-level checks.
 
-Use `INFO_PACK_BENCHMARK_PLUS_ONE.md` before upgrading a free information pack or making a paid Gumroad version. The standard is to copy benchmark packaging while beating benchmarks on verification, row-level evidence, risk fields, and practical workflow value.
+Use `INFO_PACK_BENCHMARK_PLUS_ONE.md` when upgrading a free information pack.
 
-### r/gameassets
+## Landing Page Rules
 
-Use this subreddit only for actual free game asset submissions.
+Every page linked directly from a subreddit must be free-only.
 
-The working formula from benchmark posts:
+This includes:
 
-- Title includes: `[Free]`, asset type, exact count, format, sizes, commercial-use, no-attribution.
-- Use gallery or strong preview images when possible.
-- Body includes:
-  - short use case
-  - contents
-  - license short version
-  - creation/provenance method
-  - download link with no email or signup
-  - feedback question
+- GitHub Release notes.
+- Package README files.
+- Repo README if it is the linked page.
+- Any itch.io, Gumroad, or personal page used as the direct link.
 
-Do not post templates, questions, polls, tutorials without download, paid links, temporary freebies, crypto, NFT, or generative-AI-related content.
+Do not put these on direct subreddit landing pages:
+
+- Gumroad links.
+- Paid product CTAs.
+- Launch discounts.
+- Coupon codes.
+- Pro Preview sections.
+- "Upgrade" language.
+- Email gates unless the community clearly allows them and the user approves.
+
+## Subreddit Notes
 
 ### r/gamedev
-
-Use this subreddit for resource posts, process posts, feedback requests, postmortems, and workflow/tooling discussions.
 
 Status as of 2026-06-05: do not post or comment in `r/gamedev`.
 
 The account received a 7-day subreddit ban after moderators said there had been
 multiple self-promotion warnings and that sneaking paid products into a free
 resource is not allowed. Do not use another account to bypass the ban. Do not
-repost removed resources, appeal aggressively, or continue the same funnel there
-after the ban expires without a fresh human decision and rule review.
+repost removed resources, appeal aggressively, or automatically resume after the
+ban expires.
 
-The working formula from benchmark posts:
+Any future `r/gamedev` use requires:
 
-- Lead with credible effort or concrete learning: "I spent X time curating/building..." or "I made X after feedback..."
-- Explain the pain clearly before the link.
-- Give a useful free resource.
-- Include exact contents and limitations.
-- Ask one specific feedback question.
-- Avoid a hard Gumroad pitch.
+1. Explicit user approval.
+2. Fresh rule review.
+3. No paid link or paid-adjacent landing page.
+4. Answer-first participation, not resource-post funneling.
 
-## Title Template
+### r/gameassets
 
-Prefer titles that include:
+Use only for actual free game asset submissions.
 
-- `free`
-- exact artifact type
-- exact contents or count
-- target use case
-- license/friction promise when relevant
+Allowed when relevant:
 
-Examples:
+- Original downloadable assets.
+- Clear license notes.
+- No-email GitHub or release download.
+- Preview images or audio samples.
 
-- `I made a free game-jam asset license workflow kit: CC0 starter sources, attribution tracker, font checklist, provenance log`
-- `[Free] [2D] 20 transparent PNG UI icons | 3 sizes | commercial-use | no attribution`
-- `I turned feedback on my asset audit sheet into a free game-jam workflow kit`
+Not appropriate:
 
-## Body Template
+- Templates.
+- Checklists.
+- Questions or polls.
+- Tutorials without an asset download.
+- Paid links.
+- Temporary freebies.
+- Crypto, NFT, or generative-AI-related content.
 
-Use this structure:
+## Reply Template
 
-1. Context: why the post exists.
-2. Concrete contents.
-3. Download link, preferably GitHub Release for no-email access.
-4. License/provenance notes.
-5. What it is not.
-6. One specific feedback question.
+Use this shape when a link is justified:
+
+```text
+Short version: [direct answer].
+
+I would:
+- [step 1]
+- [step 2]
+- [step 3]
+
+I also keep a free [resource type] for this exact workflow here: [GitHub link]
+```
+
+Use this shape when no link is needed:
+
+```text
+Short version: [direct answer].
+
+The main thing I would check is [specific risk]. Record [source/evidence/recheck
+detail] so you are not relying on memory at release time.
+```
+
+For legal/license-sensitive answers:
+
+```text
+Not legal advice, but I would not rely on [weak signal]. I would look for
+[stronger evidence], record the source URL and license evidence, and replace it
+if the source chain is unclear.
+```
 
 ## Hard Rules
 
-- Respect subreddit bans and cooldowns. Do not post, comment, vote-brigade, or use
-  another account to bypass a subreddit ban.
-- Treat a mod warning as a hard stop for that subreddit path until the user makes
-  a fresh explicit decision after reviewing the rules.
-- When answering questions, give the useful answer before any link. Link at most
-  one matching free resource, and skip the link if the answer stands alone.
+- Respect subreddit bans and cooldowns.
+- Do not use another account to bypass a subreddit ban.
+- Treat a moderator warning as a hard stop for that community path.
+- Answer before linking.
+- Link at most one matching free resource.
+- Skip the link if the answer stands alone.
 - Do not direct-link Gumroad first on Reddit.
-- Do not mention paid products unless clearly allowed and naturally relevant.
-- Keep every Reddit direct landing page free-only. This includes GitHub Release notes, package README files, and the repo README if they are directly linked from Reddit.
-- Do not put Gumroad links, launch discounts, paid workflow CTAs, or Pro Preview sections on a page that a subreddit post links to directly.
-- Do not use Gumroad as the direct download surface for subreddits requiring no email or registration.
-- Do not post a product before quality/audit status is clear.
-- For Gumroad products, cover and thumbnail are mandatory before considering the publish complete.
+- Do not mention paid products in public subreddit replies.
+- Do not use Gumroad as a direct download surface for communities requiring no
+  email or registration.
+- Do not post a resource before quality/audit status is clear.
+- For Gumroad products, cover and thumbnail are mandatory before publication,
+  but Gumroad publication is separate from Reddit distribution.
 
-## Current Follow-Up
+## Tracking
 
-Track these active posts:
+Track participation only when it informs future decisions:
 
-- `1tnz9hk`: first r/gamedev asset audit sheet.
-- `1tssd1i`: benchmark-style r/gamedev workflow kit post.
-- `1ttc3tr`: r/gameassets UI SFX side experiment.
+- community/platform
+- question topic
+- whether a link was included
+- which free resource was linked
+- reply score/reactions
+- follow-up questions
+- GitHub release downloads after the reply
+- moderator warnings, removals, or bans
 
-Measure:
+Success metric:
 
-- Reddit score, upvote ratio, comments, removed status.
-- GitHub release downloads.
-- GitHub views/clones.
-- Gumroad product views/sales when available.
+A good day is useful answers with zero moderation issues. Downloads and
+follow-up questions are secondary signals. Revenue is not a public Reddit
+participation metric.

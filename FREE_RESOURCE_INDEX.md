@@ -148,7 +148,7 @@ When using this strategy, track:
 - whether a link was included
 - which resource was linked
 - reply score/reactions
-- resulting GitHub downloads or Gumroad free downloads
+- resulting GitHub downloads or follow-up questions
 - any moderator warning or removal
 
 Success metric:
