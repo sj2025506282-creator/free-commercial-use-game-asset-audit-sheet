@@ -2,6 +2,9 @@
 
 Use this index when answering questions in forums, comments, profiles, issues, or messages.
 
+If no human can review public replies, use this index to draft and log replies
+only. Do not publish automatically.
+
 Default behavior:
 
 1. Answer the question directly first.

@@ -13,7 +13,9 @@ Rules:
 
 | Date | Platform | Community | Thread / Question | Link | Decision | Risk | Resource Linked | Reply Posted | Result / Follow-Up |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-06-09 | example | example | Example: Can I use a font from a mirror site in my game? |  | Draft only | Low | Font Provenance Log Kit | No | Example row; replace with real entries. |
+| 2026-06-09 | example | example | Can I use a font from a mirror site in my game? |  | Answer + free link | Low | Font Provenance Log Kit | No | Example: direct source-chain answer; optional resource link. |
+| 2026-06-09 | example | example | Do I need to credit CC0 assets? |  | Answer only | Low | None | No | Example: answer stands alone; no link needed. |
+| 2026-06-09 | example | example | Is this specific asset legally safe for my commercial game? |  | Skip | High | None | No | Example: too legal-specific; avoid public reply. |
 
 ## Decision Values
 
@@ -35,3 +37,4 @@ Rules:
 - Which free resource was naturally useful?
 - Which resource title/README confused people?
 - Did any reply create moderation risk?
+- Did any repeated question deserve an owned-surface FAQ update instead of a public reply?

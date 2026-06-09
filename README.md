@@ -114,5 +114,7 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `ui-confirmation-error-sfx-pack-v0.1/`: original UI SFX side pack.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
 - `ANSWER_LOG.md`: answer-first participation tracking template.
+- `AUTO_HELP_POLICY.md`: unattended automation rules.
+- `REPLY_DRAFTS.md`: answer-first reply patterns.
 - `archive/strategy-archive/`: historical strategy notes that are not the current Reddit SOP.
 - `pro-draft/`: local draft package materials, cover media, package README, changelog, and strict review notes.

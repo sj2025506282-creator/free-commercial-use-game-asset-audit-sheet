@@ -27,6 +27,10 @@ When participating in Reddit or similar communities:
 
 The working posture is: helpful answer first, optional free tool second.
 
+If the user cannot manually review replies, do not publish public replies
+automatically. Use `AUTO_HELP_POLICY.md`: draft, log, and improve owned resources
+instead.
+
 ## Participation Tiers
 
 ### Tier 0: Do Not Touch
@@ -248,3 +252,10 @@ Success metric:
 A good day is useful answers with zero moderation issues. Downloads and
 follow-up questions are secondary signals. Revenue is not a public Reddit
 participation metric.
+
+## Related Files
+
+- `FREE_RESOURCE_INDEX.md`: maps question types to safe free resources.
+- `REPLY_DRAFTS.md`: reusable answer patterns.
+- `ANSWER_LOG.md`: candidate/reply tracking.
+- `AUTO_HELP_POLICY.md`: rules for unattended automation.
