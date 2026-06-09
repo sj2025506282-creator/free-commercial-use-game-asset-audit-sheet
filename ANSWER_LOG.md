@@ -38,3 +38,21 @@ Rules:
 - Which resource title/README confused people?
 - Did any reply create moderation risk?
 - Did any repeated question deserve an owned-surface FAQ update instead of a public reply?
+
+## Weekly Summary Template
+
+Use this at the end of each week:
+
+```text
+Week:
+Candidates logged:
+Answer only:
+Answer + free link:
+Skipped:
+Low / Medium / High risk:
+Most common topics:
+Resources naturally matched:
+Owned-surface improvements made:
+Moderation issues:
+Next week focus:
+```

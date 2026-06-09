@@ -247,11 +247,44 @@ Track participation only when it informs future decisions:
 - GitHub release downloads after the reply
 - moderator warnings, removals, or bans
 
+## Automation Output Contract
+
+Daily candidate output must use this structure:
+
+```text
+Community:
+Thread:
+URL:
+Decision: Answer only | Answer + free link | Skip | Draft only
+Score: Relevance / Helpfulness / Risk / Link fit / Originality / Total
+Risk: Low | Medium | High
+Resource: [free GitHub resource or None]
+Reason:
+Draft:
+```
+
+Weekly maintenance output must include:
+
+- files scanned
+- public-landing-page risk findings
+- `ANSWER_LOG.md` patterns
+- resource/README/FAQ improvements made or recommended
+- validation run
+- commit hash if committed
+
 Success metric:
 
 A good day is useful answers with zero moderation issues. Downloads and
 follow-up questions are secondary signals. Revenue is not a public Reddit
 participation metric.
+
+## Quality Gate
+
+Target operating score: 9.5/10.
+
+Use `SOP_QUALITY_AUDIT.md` for the scoring rubric. If a proposed change weakens
+moderation safety, unattended-operation safety, answer usefulness, or resource
+link discipline, reject it or move it to an archived experiment.
 
 ## Related Files
 
@@ -259,3 +292,5 @@ participation metric.
 - `REPLY_DRAFTS.md`: reusable answer patterns.
 - `ANSWER_LOG.md`: candidate/reply tracking.
 - `AUTO_HELP_POLICY.md`: rules for unattended automation.
+- `SOP_QUALITY_AUDIT.md`: scorecard and gates.
+- Skill: `/Users/sunji/.codex/skills/reddit-answer-first-operator/SKILL.md`.

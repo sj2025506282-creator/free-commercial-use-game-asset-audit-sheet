@@ -116,5 +116,6 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `ANSWER_LOG.md`: answer-first participation tracking template.
 - `AUTO_HELP_POLICY.md`: unattended automation rules.
 - `REPLY_DRAFTS.md`: answer-first reply patterns.
+- `SOP_QUALITY_AUDIT.md`: current scorecard and quality gates.
 - `archive/strategy-archive/`: historical strategy notes that are not the current Reddit SOP.
 - `pro-draft/`: local draft package materials, cover media, package README, changelog, and strict review notes.

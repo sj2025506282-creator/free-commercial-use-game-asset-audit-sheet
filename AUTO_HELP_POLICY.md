@@ -36,6 +36,33 @@ Notify only when at least one candidate is:
 
 Otherwise, append to `ANSWER_LOG.md` and stay quiet.
 
+## Candidate Scoring
+
+Score each candidate from 0-2:
+
+- Relevance: matches asset licensing, font provenance, jam shipping, UI SFX, or related tooling.
+- Helpfulness: the answer is useful without a link.
+- Risk: outside banned/moderator-sensitive communities and not a legal conclusion request.
+- Link fit: one free GitHub resource is genuinely useful, or no link is needed.
+- Originality: the draft is adapted to the actual question.
+
+Notify only when total score is 8+ and Risk is 2. Otherwise log quietly or
+improve owned surfaces.
+
+## Output Contract
+
+Every candidate record or notification should include:
+
+- Community
+- Thread/question
+- URL
+- Decision: `Answer only`, `Answer + free link`, `Skip`, or `Draft only`
+- Score: Relevance / Helpfulness / Risk / Link fit / Originality / Total
+- Risk: `Low`, `Medium`, or `High`
+- Resource linked, or `None`
+- Reason
+- Draft, when useful
+
 ## Owned-Surface Help
 
 If a repeated question is found but no safe public reply should be posted, help by
