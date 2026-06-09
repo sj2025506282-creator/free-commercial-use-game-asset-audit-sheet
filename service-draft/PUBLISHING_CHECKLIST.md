@@ -1,5 +1,7 @@
 # Gumroad Publishing Checklist - Starter Audit Service
 
+Status: archived draft. Do not use for the current answer-first Reddit strategy.
+
 ## Product Setup
 
 - Product type: Service or digital product with instructions.
@@ -50,7 +52,7 @@ Add the Gumroad service URL to:
 
 - repo README `Small Audit Service`
 - workflow-kit release notes
-- `SERVICE_OFFER_DRAFT.md`
+- `archive/strategy-archive/SERVICE_OFFER_DRAFT.md`
 
 Then measure:
 

@@ -6,6 +6,16 @@ This repository links to original creator/source pages. It does not include or r
 
 ## Start Here
 
+Pick the resource that matches the problem:
+
+| Problem | Start Here |
+| --- | --- |
+| I need a complete pre-shipping workflow | [Workflow Kit](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0) |
+| I found a font on a mirror/free-font site | [Font Provenance Log Kit](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0) |
+| I need verified font/source examples | [Game Font License Source Pack v0.2](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0) |
+| I want a quick pre-release risk checklist | [Asset-License Traps Checklist](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0) |
+| I need small UI confirmation/error sounds | [UI SFX Pack](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0) |
+
 Most teams should start with the workflow kit:
 
 https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
@@ -103,4 +113,6 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `game-asset-license-traps-checklist-v0.1/`: pre-shipping traps checklist.
 - `ui-confirmation-error-sfx-pack-v0.1/`: original UI SFX side pack.
 - `cc0-game-jam-starter-v0.1/`: narrow CC0-only game-jam companion package.
+- `ANSWER_LOG.md`: answer-first participation tracking template.
+- `archive/strategy-archive/`: historical strategy notes that are not the current Reddit SOP.
 - `pro-draft/`: local draft package materials, cover media, package README, changelog, and strict review notes.
