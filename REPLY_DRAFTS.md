@@ -120,3 +120,28 @@ Optional link line:
 ```text
 I made a small free UI confirmation/error SFX pack here if it fits your menu/HUD use case: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
 ```
+
+## Solo Dev SFX Workflow
+
+Use when someone asks how to make or source sound effects while avoiding licensing
+surprises.
+
+```text
+Short version: I would use a mix, but keep the workflow boring and traceable.
+
+For a solo horror project I would:
+- record simple foley yourself when possible: cloth, doors, taps, mouth sounds, vegetables, paper, keys
+- use free libraries only when the license page is clear and you can save the source URL
+- keep bought packs in a separate folder with their license or receipt
+- avoid sounds ripped from games, films, YouTube videos, or unclear reupload sites
+- make a small spreadsheet with file name, source URL, license evidence, attribution text, and whether you modified it
+- export final in-game sounds separately from raw downloaded files
+
+For horror specifically, pitch shifting, EQ, reverb, layering, reverse tails, and volume automation usually get you farther than hunting for one perfect scary sound.
+```
+
+Optional link line, only when UI/menu sounds are directly relevant:
+
+```text
+I made a small free UI confirmation/error SFX pack here if it fits the menu/HUD part of your project: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
+```
