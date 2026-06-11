@@ -1,7 +1,7 @@
 # Auto Help Policy
 
-This project can run without daily human review, but only if public account
-actions are disabled.
+This project can run without daily human review only under the strict publish
+gates below.
 
 ## Allowed Without Human Review
 
@@ -13,10 +13,10 @@ actions are disabled.
   checklists.
 - Update `FREE_RESOURCE_INDEX.md` and `REPLY_DRAFTS.md`.
 - Commit and push low-risk documentation updates.
+- Post a Reddit comment only when all strict publish gates pass.
 
 ## Not Allowed Without Human Review
 
-- Posting Reddit comments.
 - Posting Reddit submissions.
 - Sending direct messages.
 - Voting.
@@ -24,6 +24,26 @@ actions are disabled.
 - Using any alternate account.
 - Publishing paid CTAs in public communities.
 - Linking Gumroad in subreddit replies.
+- Posting Reddit comments that did not pass all strict publish gates.
+
+## Strict Publish Gates
+
+Publish a Reddit comment automatically only when all are true:
+
+- Community is not banned, moderator-sensitive, or unclear.
+- Current subreddit rules allow ordinary helpful replies.
+- Candidate total score is 8+ and Risk score is 2.
+- Draft is answer-first and useful without any link.
+- DeepSeek strict review passes after any needed revisions.
+- Final usefulness score >= 8.
+- Final promotion risk score <= 3.
+- Final standalone value without the link is `High` or `Medium`.
+- No paid, Gumroad, coupon, discount, Pro, upgrade, or sales language.
+- At most one free GitHub link is included, and only if DeepSeek says keep.
+- If DeepSeek says remove the link, publish the no-link version.
+
+If any gate fails, do not publish. Revise and re-review, or mark the candidate
+`Skip` / `Draft only`.
 
 ## Notification Threshold
 
@@ -34,6 +54,8 @@ Notify only when at least one candidate is:
 - Useful even without a link.
 - Outside banned or moderator-sensitive communities.
 - Passed by DeepSeek strict ordinary-user review, when DeepSeek is available.
+- Published automatically under the strict publish gates, or needs a human
+  decision because it is valuable but did not pass automatic publish gates.
 
 Otherwise, append to `ANSWER_LOG.md` and stay quiet.
 
@@ -66,6 +88,20 @@ Pass gates:
 - recommendation is `Yes` or a clearly fixable `Revise`
 - if `link_decision` is `remove`, remove the link before presenting the draft
 
+If a draft does not pass, revise it and run DeepSeek review again. Use the
+reviewer's concrete criticism as the edit brief:
+
+- make the answer more specific to the original post
+- remove or soften self-references
+- remove the resource link when it is not essential
+- add concrete steps, examples, or decision criteria
+- keep banned paid/Gumroad/coupon/upgrade language out
+
+Continue revising until the draft passes. If it passes all strict publish gates,
+publish it and log the final posted version. If a useful, low-risk draft cannot
+be made without becoming generic, promotional, legally conclusive, or off-topic,
+mark the candidate `Skip` or `Draft only` and do not publish.
+
 If DeepSeek is unavailable, apply the same rubric manually and mention that the
 external review was not run.
 
@@ -83,6 +119,7 @@ Every candidate record or notification should include:
 - Reason
 - Draft, when useful
 - DeepSeek review result, when run
+- Reply Posted: `Yes` only after the public comment is actually posted
 
 ## Owned-Surface Help
 

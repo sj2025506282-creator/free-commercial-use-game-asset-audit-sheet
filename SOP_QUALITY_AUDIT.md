@@ -18,7 +18,7 @@ Scope:
 | Dimension | Score | Notes |
 | --- | ---: | --- |
 | Safety / moderation risk control | 9.8 | Public auto-posting is prohibited; banned communities are do-not-touch; moderator warnings stop the path. |
-| Unattended automation suitability | 9.6 | Automation can draft, log, and improve owned surfaces without public account actions. |
+| Unattended automation suitability | 9.4 | Automation may publish only after strict publish gates pass; otherwise it drafts, logs, and improves owned surfaces. |
 | Answer-first usefulness | 9.5 | Replies must stand without links; draft patterns cover the main recurring problem classes. |
 | Resource-link discipline | 9.7 | One free GitHub link maximum; link only on direct match; no paid/Gumroad/coupon language in public replies. |
 | Operational clarity | 9.6 | Tiers, logs, templates, allowed/not-allowed actions, candidate scoring, and output contracts are explicit. |
@@ -31,8 +31,8 @@ Overall: **9.61 / 10**
 
 ## Key Findings
 
-1. The system is now safe for unattended operation only because public account
-   actions are disabled.
+1. The system is now safe for unattended operation only because public comments
+   require strict publish gates and DeepSeek review before posting.
 2. The biggest remaining risk is not policy text; it is future drift if an
    automation or human reintroduces public posting, Gumroad links, or `r/gamedev`
    interaction without explicit review.
@@ -52,7 +52,8 @@ All must pass:
 - No paid/Gumroad/coupon/upgrade language appears.
 - Risk is Low.
 - DeepSeek strict review passes when available.
-- User explicitly approves posting, unless a future policy changes this rule.
+- Either the user explicitly approves posting, or the reply passes the strict
+  automatic publish gates in `AUTO_HELP_POLICY.md`.
 
 ## Required Gates Before Any New Resource Post
 
@@ -67,7 +68,8 @@ All must pass:
 
 ## Unattended Mode Rule
 
-If the user cannot manually review, the system must not publish public replies.
+If the user cannot manually review, the system may publish only when all strict
+publish gates pass. Otherwise it must not publish public replies.
 
 Allowed unattended work:
 
@@ -79,6 +81,7 @@ Allowed unattended work:
 - free-only scans
 - low-risk documentation commits
 - DeepSeek strict draft review when `DEEPSEEK_API_KEY` is available
+- public Reddit comments only after all strict publish gates pass
 
 ## Next Improvements
 

@@ -127,17 +127,19 @@ Use when someone asks how to make or source sound effects while avoiding licensi
 surprises.
 
 ```text
-Short version: I would use a mix, but keep the workflow boring and traceable.
+Short version: use a mix of self-recorded foley, clearly licensed libraries, and light editing, but keep a source log from day one.
 
-For a solo horror project I would:
-- record simple foley yourself when possible: cloth, doors, taps, mouth sounds, vegetables, paper, keys
-- use free libraries only when the license page is clear and you can save the source URL
-- keep bought packs in a separate folder with their license or receipt
-- avoid sounds ripped from games, films, YouTube videos, or unclear reupload sites
-- make a small spreadsheet with file name, source URL, license evidence, attribution text, and whether you modified it
-- export final in-game sounds separately from raw downloaded files
+For a solo horror game, I would handle it like this:
+- record easy foley yourself first: footsteps on different surfaces, cloth movement, door taps, keys, breathing, mouth clicks, paper, water, vegetables, and small impacts
+- use libraries only when each sound has a clear license page; save the exact source URL, license URL, author name, and download date
+- treat Pixabay/Freesound/etc. as sources to verify per file, not as one safe bucket
+- avoid sounds ripped from games, movies, YouTube videos, trailers, or random reupload packs
+- keep raw downloads separate from edited in-game exports
+- name exports by use case, like `ui_confirm_01.wav` or `monster_breath_close_02.wav`, so you can replace one later without losing the project
 
-For horror specifically, pitch shifting, EQ, reverb, layering, reverse tails, and volume automation usually get you farther than hunting for one perfect scary sound.
+For horror specifically, make ordinary sounds do more work: pitch down, layer two or three quiet sounds, reverse a tail, add a short reverb, automate volume, and cut aggressively so the sound starts fast.
+
+For UI sounds specifically, keep them short, mono, consistent in loudness, and less dramatic than the creature/jumpscare sounds so they do not fatigue the player.
 ```
 
 Optional link line, only when UI/menu sounds are directly relevant:
@@ -151,3 +153,10 @@ Strict review note:
 Default to answer-only for broad solo-dev SFX workflow questions. Add the UI SFX
 link only when the original question specifically asks for UI/menu/HUD sounds and
 the answer already has enough concrete value without the link.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link decision: no_link_present

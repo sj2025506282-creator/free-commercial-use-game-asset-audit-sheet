@@ -38,6 +38,16 @@ All must pass before a draft can be recommended:
 - no banned words or paid CTA language
 - no public posting without user approval
 
+If a draft fails, revise and review again. The default fix order is:
+
+1. Improve concrete usefulness.
+2. Adapt more tightly to the original question.
+3. Remove self-reference and optional links.
+4. Re-run the strict review.
+
+Keep iterating until the draft passes. If the only passing version would be too
+generic or not useful, do not recommend a reply.
+
 ## Prompt
 
 ```text
