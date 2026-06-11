@@ -145,3 +145,9 @@ Optional link line, only when UI/menu sounds are directly relevant:
 ```text
 I made a small free UI confirmation/error SFX pack here if it fits the menu/HUD part of your project: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/ui-sfx-v0.1.0
 ```
+
+Strict review note:
+
+Default to answer-only for broad solo-dev SFX workflow questions. Add the UI SFX
+link only when the original question specifically asks for UI/menu/HUD sounds and
+the answer already has enough concrete value without the link.

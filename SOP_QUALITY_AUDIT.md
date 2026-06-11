@@ -9,6 +9,7 @@ Scope:
 - `FREE_RESOURCE_INDEX.md`
 - `REPLY_DRAFTS.md`
 - `ANSWER_LOG.md`
+- `DEEPSEEK_REPLY_REVIEW.md`
 - `README.md`
 - `reddit-answer-first-operator` skill
 
@@ -24,6 +25,7 @@ Scope:
 | Measurement / learning loop | 9.6 | `ANSWER_LOG.md` includes candidate fields, examples, weekly review questions, and a weekly summary template. |
 | Maintainability | 9.5 | Old sales strategy is archived; current files are named and linked; skill captures the operating mode. |
 | Owned-surface improvement path | 9.6 | Unsafe public reply becomes FAQ/README/resource improvement instead of account action. |
+| External draft review | 9.6 | DeepSeek strict review checks usefulness first, then promotion/moderation risk before notification. |
 
 Overall: **9.61 / 10**
 
@@ -49,6 +51,7 @@ All must pass:
 - At most one free GitHub link is included.
 - No paid/Gumroad/coupon/upgrade language appears.
 - Risk is Low.
+- DeepSeek strict review passes when available.
 - User explicitly approves posting, unless a future policy changes this rule.
 
 ## Required Gates Before Any New Resource Post
@@ -75,6 +78,7 @@ Allowed unattended work:
 - README/FAQ/resource improvements
 - free-only scans
 - low-risk documentation commits
+- DeepSeek strict draft review when `DEEPSEEK_API_KEY` is available
 
 ## Next Improvements
 

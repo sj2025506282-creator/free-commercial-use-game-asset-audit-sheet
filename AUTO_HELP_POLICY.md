@@ -33,6 +33,7 @@ Notify only when at least one candidate is:
 - A direct match for an existing free resource or answer template.
 - Useful even without a link.
 - Outside banned or moderator-sensitive communities.
+- Passed by DeepSeek strict ordinary-user review, when DeepSeek is available.
 
 Otherwise, append to `ANSWER_LOG.md` and stay quiet.
 
@@ -49,6 +50,25 @@ Score each candidate from 0-2:
 Notify only when total score is 8+ and Risk is 2. Otherwise log quietly or
 improve owned surfaces.
 
+## DeepSeek Strict Review Gate
+
+Before notifying with a reply draft, run `scripts/deepseek_reply_review.py` when
+`DEEPSEEK_API_KEY` is available.
+
+DeepSeek reviews as a strict, nitpicky ordinary Reddit user with a
+moderator-adjacent view.
+
+Pass gates:
+
+- usefulness score >= 8
+- promotion risk score <= 3
+- standalone value without the link is `High` or `Medium`
+- recommendation is `Yes` or a clearly fixable `Revise`
+- if `link_decision` is `remove`, remove the link before presenting the draft
+
+If DeepSeek is unavailable, apply the same rubric manually and mention that the
+external review was not run.
+
 ## Output Contract
 
 Every candidate record or notification should include:
@@ -62,6 +82,7 @@ Every candidate record or notification should include:
 - Resource linked, or `None`
 - Reason
 - Draft, when useful
+- DeepSeek review result, when run
 
 ## Owned-Surface Help
 
