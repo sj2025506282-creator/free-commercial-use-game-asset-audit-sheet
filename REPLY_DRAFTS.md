@@ -208,6 +208,8 @@ characters that clearly need shared behavior.
 DeepSeek pass example:
 
 - usefulness score: 8
+- subreddit tone score: 9
 - promotion risk score: 0
 - recommendation: Yes
+- link dependency: None
 - link decision: no_link_present

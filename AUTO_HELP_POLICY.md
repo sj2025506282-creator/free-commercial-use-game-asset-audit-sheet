@@ -36,8 +36,9 @@ Publish a Reddit comment automatically only when all are true:
 - Draft is answer-first and useful without any link.
 - DeepSeek strict review passes after any needed revisions.
 - Final usefulness score >= 8.
+- Final subreddit tone score >= 7.
 - Final promotion risk score <= 3.
-- Final standalone value without the link is `High` or `Medium`.
+- Final link dependency is `None` or `Minor`.
 - No paid, Gumroad, coupon, discount, Pro, upgrade, or sales language.
 - At most one free GitHub link is included, and only if DeepSeek says keep.
 - If DeepSeek says remove the link, publish the no-link version.
@@ -83,8 +84,9 @@ moderator-adjacent view.
 Pass gates:
 
 - usefulness score >= 8
+- subreddit tone score >= 7
 - promotion risk score <= 3
-- standalone value without the link is `High` or `Medium`
+- link dependency is `None` or `Minor`
 - recommendation is `Yes` or a clearly fixable `Revise`
 - if `link_decision` is `remove`, remove the link before presenting the draft
 

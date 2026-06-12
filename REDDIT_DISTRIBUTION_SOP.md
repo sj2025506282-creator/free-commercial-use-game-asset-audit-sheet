@@ -27,9 +27,9 @@ When participating in Reddit or similar communities:
 
 The working posture is: helpful answer first, optional free tool second.
 
-If the user cannot manually review replies, do not publish public replies
-automatically. Use `AUTO_HELP_POLICY.md`: draft, log, and improve owned resources
-instead.
+If the user cannot manually review replies, follow `AUTO_HELP_POLICY.md`.
+Automatic Reddit comments are allowed only when all strict publish gates pass;
+otherwise draft, log, and improve owned resources instead.
 
 ## Participation Tiers
 

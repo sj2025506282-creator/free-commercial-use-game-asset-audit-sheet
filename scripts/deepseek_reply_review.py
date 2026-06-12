@@ -25,8 +25,10 @@ API_URL = "https://api.deepseek.com/chat/completions"
 MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
 
 
-SYSTEM_PROMPT = """You are a strict, nitpicky ordinary Reddit user.
-Also review from a moderator-adjacent perspective.
+SYSTEM_PROMPT = """You review Reddit replies in two separate passes.
+
+First pass: strict, nitpicky ordinary Reddit user.
+Second pass: moderator-adjacent rules and self-promotion risk reviewer.
 
 Your most important question:
 Is this reply genuinely useful to the original poster?
@@ -38,27 +40,32 @@ Return strict JSON only. Do not include markdown."""
 
 USER_PROMPT_TEMPLATE = """Review the Reddit reply draft below.
 
-Check:
+Review in two passes.
+
+Pass 1, ordinary Reddit user:
 1. Does it directly answer the original question?
 2. Does it give concrete, actionable steps?
 3. Is it adapted to this exact thread instead of sounding like a generic template?
-4. Does it still have standalone value without the link?
-5. Is the link only a minor supplement?
-6. Does it sound promotional, self-serving, AI-generated, or copy-pasted?
-7. Does it contain paid, Gumroad, coupon, discount, Pro, upgrade, or sales language?
-8. Could a moderator reasonably view it as self-promotion?
+4. Does the tone fit the subreddit: human, concise, non-corporate, and not like support-script text?
+
+Pass 2, moderator-adjacent risk:
+5. Does the reply remain useful if every link is removed?
+6. Are any links minor supplements rather than the core value?
+7. Does it contain or imply promotion, funneling, self-serving language, AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or likely self-promotion risk?
 
 Return strict JSON only:
 {{
   "usefulness_score": 0-10,
+  "subreddit_tone_score": 0-10,
   "promotion_risk_score": 0-10,
   "recommendation": "Yes" | "No" | "Revise",
-  "standalone_value_without_link": "High" | "Medium" | "Low",
+  "link_dependency": "None" | "Minor" | "High",
   "largest_usefulness_problem": "...",
+  "largest_tone_problem": "...",
   "largest_promotion_or_rules_risk": "...",
   "sentence_to_delete_first": "...",
   "link_decision": "keep" | "remove" | "no_link_present",
-  "safer_more_useful_rewrite": "..."
+  "revision_brief": "..."
 }}
 
 Original thread:
