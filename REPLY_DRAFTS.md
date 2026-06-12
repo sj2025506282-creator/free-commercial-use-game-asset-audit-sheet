@@ -160,3 +160,54 @@ DeepSeek pass example:
 - promotion risk score: 0
 - recommendation: Yes
 - link decision: no_link_present
+
+## Beginner State Machine Timer
+
+Use when a beginner understands the idea of a state machine but needs a concrete
+GDScript starting point for waiting, advancing, or locking interaction.
+
+````text
+Short version: make the character logic a tiny state machine, and let a timer decide when the state is allowed to move on.
+
+For a first version, I would keep it very plain:
+
+```gdscript
+enum State { IDLE, TALKING, WAITING, DONE }
+
+var state: State = State.IDLE
+
+func interact() -> void:
+    if state != State.IDLE:
+        return
+    state = State.TALKING
+    play_dialogue_or_animation()
+
+func play_dialogue_or_animation() -> void:
+    $AnimatedSprite2D.play("talk")
+    state = State.WAITING
+    await get_tree().create_timer(1.5).timeout
+    advance_to_next_stage()
+
+func advance_to_next_stage() -> void:
+    state = State.DONE
+    $AnimatedSprite2D.play("idle")
+```
+
+The important part is not the exact names; it is that each state has one job.
+`IDLE` can accept interaction, `TALKING` starts the animation/dialogue, `WAITING`
+prevents the player from triggering it again, and `DONE` means the interaction
+has finished.
+
+Once that works, you can replace `advance_to_next_stage()` with whatever your
+arcade character needs next: change dialogue text, enable another object, play a
+different animation, or emit a signal to another node. I would avoid singletons
+for this at first; keep the logic on the character until you have two or three
+characters that clearly need shared behavior.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- promotion risk score: 0
+- recommendation: Yes
+- link decision: no_link_present
