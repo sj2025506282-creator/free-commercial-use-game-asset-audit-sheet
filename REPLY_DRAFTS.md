@@ -213,3 +213,72 @@ DeepSeek pass example:
 - recommendation: Yes
 - link dependency: None
 - link decision: no_link_present
+
+## Simple Random TileMap Path
+
+Use when a beginner wants a randomly generated path and needs a tiny first
+algorithm rather than a full maze/dungeon generator.
+
+````text
+For a first version, don't start with a maze algorithm. Make a random walk that
+moves mostly forward, then draw one tile at each position.
+
+The simplest shape is:
+
+1. Pick a start cell.
+2. Place a path tile there.
+3. Move one cell to the right.
+4. Sometimes move up or down by 1.
+5. Repeat until the path is long enough.
+
+Something like this for Godot 4 TileMap:
+
+```gdscript
+@onready var tile_map: TileMap = $TileMap
+
+const LAYER := 0
+const SOURCE_ID := 0
+const PATH_TILE := Vector2i(0, 0) # change this to your path tile's atlas coords
+
+func _ready() -> void:
+    generate_path()
+
+func generate_path() -> void:
+    var pos := Vector2i(0, 5)
+    var length := 40
+
+    for i in range(length):
+        tile_map.set_cell(LAYER, pos, SOURCE_ID, PATH_TILE)
+
+        pos.x += 1
+        pos.y += randi_range(-1, 1)
+        pos.y = clampi(pos.y, 2, 10)
+```
+
+That will give you a simple left-to-right path that wiggles up and down. If
+nothing appears, the usual thing to check is whether `SOURCE_ID` and `PATH_TILE`
+match the tile in your TileSet.
+
+The values to change first are `length`, the starting `pos`, and the clamp range
+for `pos.y`.
+
+If you want the path to be less jagged, only change `y` sometimes:
+
+```gdscript
+if randf() < 0.35:
+    pos.y += randi_range(-1, 1)
+```
+
+Once that works, you can add extra rules: avoid going outside the map, add wider
+path tiles around the center tile, or store every path cell in an array so
+enemies/items can spawn on it later.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
