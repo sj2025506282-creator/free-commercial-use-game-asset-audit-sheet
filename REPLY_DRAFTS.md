@@ -237,6 +237,68 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Clock UI State And Repair Interaction
+
+Use when a beginner wants a UI clock/timer to stop sometimes and be restarted by
+interacting with an in-world object.
+
+````text
+I would split it into three small pieces instead of trying to make the clock sprite and UI do everything at once.
+
+One script owns the clock state:
+
+```gdscript
+enum ClockState { RUNNING, STOPPED }
+
+var state: ClockState = ClockState.RUNNING
+var time_left := 60.0
+
+func _process(delta: float) -> void:
+    if state != ClockState.RUNNING:
+        return
+
+    time_left -= delta
+    update_clock_ui(time_left)
+
+func stop_clock() -> void:
+    state = ClockState.STOPPED
+    show_clock_stopped_effect()
+
+func restart_clock() -> void:
+    state = ClockState.RUNNING
+    hide_clock_stopped_effect()
+```
+
+Then use a separate Timer node only to decide *when* the problem happens:
+
+```gdscript
+func _on_break_timer_timeout() -> void:
+    stop_clock()
+```
+
+And your world clock interaction just calls the restart method:
+
+```gdscript
+func interact_with_clock() -> void:
+    if clock_controller.state == clock_controller.ClockState.STOPPED:
+        clock_controller.restart_clock()
+```
+
+So yes, timers are still the right idea, but I would not make the timer itself be
+the clock. Let `_process(delta)` handle the ticking display, let a Timer trigger
+the interruption, and let the interactable clock sprite only repair/restart it.
+That keeps the mechanic from turning into one giant script.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Simple Random TileMap Path
 
 Use when a beginner wants a randomly generated path and needs a tiny first
