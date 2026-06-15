@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-06-09
+Date: 2026-06-15
 
 Scope:
 
@@ -18,27 +18,30 @@ Scope:
 | Dimension | Score | Notes |
 | --- | ---: | --- |
 | Safety / moderation risk control | 9.8 | Public auto-posting is prohibited; banned communities are do-not-touch; moderator warnings stop the path. |
-| Unattended automation suitability | 9.4 | Automation may publish only after strict publish gates pass; otherwise it drafts, logs, and improves owned surfaces. |
-| Answer-first usefulness | 9.5 | Replies must stand without links; draft patterns cover the main recurring problem classes. |
+| Unattended automation suitability | 9.8 | Weekly maintenance now has an explicit owned-surface-only override: no public posting, clearer free-only resource routing, and explicit current-week metrics logging. |
+| Answer-first usefulness | 9.6 | Replies must stand without links; draft patterns now cover the recurring CC0 starter-source question in addition to licensing, font, jam-shipping, and UI SFX cases. |
 | Resource-link discipline | 9.7 | One free GitHub link maximum; link only on direct match; no paid/Gumroad/coupon language in public replies. |
-| Operational clarity | 9.6 | Tiers, logs, templates, allowed/not-allowed actions, candidate scoring, and output contracts are explicit. |
-| Measurement / learning loop | 9.6 | `ANSWER_LOG.md` includes candidate fields, examples, weekly review questions, and a weekly summary template. |
-| Maintainability | 9.5 | Old sales strategy is archived; current files are named and linked; skill captures the operating mode. |
+| Operational clarity | 9.7 | Tiers, logs, templates, allowed/not-allowed actions, weekly-maintenance override, candidate scoring, and output contracts are explicit. |
+| Measurement / learning loop | 9.7 | `ANSWER_LOG.md` plus the weekly maintenance log capture candidate patterns, owned-surface fixes, and which external metrics were verified vs unavailable. |
+| Maintainability | 9.7 | Current free resources are now fully indexed, README routing is clearer, and the owned-surface docs better match the actual safe operating path. |
 | Owned-surface improvement path | 9.6 | Unsafe public reply becomes FAQ/README/resource improvement instead of account action. |
 | External draft review | 9.6 | DeepSeek strict review checks usefulness first, then promotion/moderation risk before notification. |
 
-Overall: **9.61 / 10**
+Overall: **9.71 / 10**
 
 ## Key Findings
 
 1. The system is now safe for unattended operation only because public comments
-   require strict publish gates and DeepSeek review before posting.
-2. The biggest remaining risk is not policy text; it is future drift if an
-   automation or human reintroduces public posting, Gumroad links, or `r/gamedev`
-   interaction without explicit review.
-3. The system should not optimize for revenue signals in Reddit participation.
+   require strict publish gates and DeepSeek review before posting, and the
+   weekly maintenance automation now has a stricter no-public-action override.
+2. The biggest remaining risk is future drift if an automation or human
+   reintroduces public posting, Gumroad links, or `r/gamedev` interaction
+   without explicit review.
+3. The current free-resource entrance is clearer after adding the CC0 starter
+   and flat-tracker paths, which reduces pressure to force mismatched links.
+4. The system should not optimize for revenue signals in Reddit participation.
    Downloads and follow-up questions are acceptable secondary signals.
-4. The skill wrapper reduces drift by making the same rules available outside
+5. The skill wrapper reduces drift by making the same rules available outside
    this repository context.
 
 ## Required Gates Before Any Public Reply
@@ -85,6 +88,6 @@ Allowed unattended work:
 
 ## Next Improvements
 
-- Add real entries to `ANSWER_LOG.md` for 7-14 days.
-- Add FAQ sections to resources when repeated questions appear.
-- Re-score this audit after the first week of logged candidates.
+- Keep logging real entries to `ANSWER_LOG.md` and roll up a dated weekly note.
+- Add package-level FAQ only when a repeated question maps cleanly to one owned resource.
+- Re-check public metrics with authenticated GitHub/Gumroad paths if unattended reporting needs stronger numerics.

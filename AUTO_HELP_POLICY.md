@@ -15,6 +15,21 @@ gates below.
 - Commit and push low-risk documentation updates.
 - Post a Reddit comment only when all strict publish gates pass.
 
+## Weekly Maintenance Override
+
+For the recurring weekly resource-maintenance automation, do not publish any
+Reddit comment or submission even if the strict publish gates would otherwise
+pass.
+
+In that mode, unattended work is limited to:
+
+- reading and summarizing logs
+- owned-surface documentation fixes
+- free-only landing-page scans
+- read-only GitHub / Gumroad / Reddit status checks
+- weekly notes / metrics updates
+- low-risk commits and pushes
+
 ## Not Allowed Without Human Review
 
 - Posting Reddit submissions.

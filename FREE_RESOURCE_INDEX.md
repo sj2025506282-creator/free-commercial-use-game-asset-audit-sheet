@@ -46,6 +46,25 @@ Safe link line:
 
 `I also keep a free workflow kit with a provenance log, attribution tracker, font checklist, and before-shipping checklist here: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0`
 
+### "I just need quick CC0 starter sources for a jam prototype"
+
+Use:
+
+CC0-only Game Jam Starter Sheet
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/tree/main/cc0-game-jam-starter-v0.1
+
+Best answer angle:
+
+- Use it as a starting pool, not a final clearance list.
+- Re-check the exact asset page before shipping.
+- Keep the later provenance log separate from the starter list.
+- Prefer it when the team wants no-signup, low-friction CC0 sources first.
+
+Safe link line:
+
+`I also keep a free CC0-only starter sheet for quick jam prototypes here: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/tree/main/cc0-game-jam-starter-v0.1`
+
 ### "I found a font on a free font site. Can I use it in my game?"
 
 Use:
@@ -103,6 +122,24 @@ Best answer angle:
 Safe link line:
 
 `I also keep a free pre-shipping asset-license traps checklist here: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0`
+
+### "I want a simple tracker, not the full workflow kit"
+
+Use:
+
+Original Tracker v0.2
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0
+
+Best answer angle:
+
+- Use it when a flat tracker is enough.
+- It is lighter than the workflow kit, but still records source and font checks.
+- Move to the workflow kit if the project needs attribution and pre-shipping tabs.
+
+Safe link line:
+
+`I also keep a free flat asset/font tracker here if you want the lighter version first: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0`
 
 ### "Where can I get simple free UI SFX?"
 

@@ -99,6 +99,29 @@ Optional link line:
 I also keep a free pre-shipping asset-license traps checklist here: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/asset-license-traps-checklist-v0.1.0
 ```
 
+## CC0 Starter Sources For A Jam
+
+Use when someone wants quick no-signup CC0 starting points instead of a full
+workflow.
+
+```text
+Short version: start from a small CC0/no-signup source list, but treat it as a starter pool, not final proof.
+
+I would:
+- pick likely sources first so the team can prototype fast
+- save the exact asset page you actually used, not just the starter row
+- keep a separate provenance log for anything that survives into the final build
+- re-check the page one more time before release in case the listing changed
+
+The main risk is assuming "it was on my safe starter sheet" is enough evidence later.
+```
+
+Optional link line:
+
+```text
+I also keep a free CC0-only starter sheet for quick jam prototypes here: https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/tree/main/cc0-game-jam-starter-v0.1
+```
+
 ## Simple UI SFX
 
 Use only in asset-specific communities where actual asset links are appropriate.
