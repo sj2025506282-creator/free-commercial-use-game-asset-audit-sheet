@@ -237,6 +237,82 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Marker3D Spawnpoints By Upgrade Level
+
+Use when a Godot user wants editor-friendly projectile spawn points grouped by
+weapon upgrade level and is fighting nested exported arrays.
+
+````text
+I would not fight the inspector with `Array[Array[Marker3D]]` for this. For Godot, I would make the weapon scene hierarchy express the upgrade levels, then build the arrays in `_ready()`.
+
+Example structure:
+
+```text
+Weapon
+  Level1
+    SpawnA
+    SpawnB
+  Level2
+    SpawnA
+    SpawnB
+    SpawnC
+  Level3
+    SpawnA
+    SpawnB
+    SpawnC
+    SpawnD
+```
+
+Then export the level containers, not every marker:
+
+```gdscript
+@export var level_containers: Array[Node3D] = []
+
+var spawn_points_by_level: Array[Array] = []
+
+func _ready() -> void:
+    for container in level_containers:
+        var points: Array[Marker3D] = []
+        for child in container.get_children():
+            if child is Marker3D:
+                points.append(child)
+        spawn_points_by_level.append(points)
+```
+
+In the editor, drag `Level1`, `Level2`, etc. into `level_containers`. The markers
+can be direct children of those level nodes.
+
+When firing, pick the current upgrade level and use each marker's transform:
+
+```gdscript
+func fire(level: int) -> void:
+    var points: Array = spawn_points_by_level[level]
+    for marker: Marker3D in points:
+        var projectile := projectile_scene.instantiate()
+        get_tree().current_scene.add_child(projectile)
+        projectile.global_transform = marker.global_transform
+```
+
+That gives you the editor workflow you probably want: move/rotate the markers
+visually, group them by upgrade level, and avoid typing transforms by hand. It is
+also less fragile than name-pattern lookup because renaming a marker does not
+break anything as long as it stays under the right level node.
+
+If you later need per-spawn metadata, like damage multiplier or fire delay, then
+I would make a small `WeaponLevel` Resource or a custom child node. But for just
+positions and directions, level containers plus Marker3D children is the simplest
+version.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Clock UI State And Repair Interaction
 
 Use when a beginner wants a UI clock/timer to stop sometimes and be restarted by
