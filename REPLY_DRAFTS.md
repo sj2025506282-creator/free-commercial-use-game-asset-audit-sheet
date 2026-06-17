@@ -237,6 +237,58 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## TMP Styles With Localization
+
+Use when a Unity user asks whether TMP style tags or sprite tags should live
+inside localization tables.
+
+````text
+I would split this by whether the styling is part of the language or just
+presentation.
+
+If the style/icon is fixed UI decoration, keep it out of the translation table
+and compose it in code:
+
+```csharp
+label.text = $"<style=Cost>{localizedCostText}</style> <sprite name=coin>";
+```
+
+That is safer because translators do not have to preserve TMP tags or sprite
+names.
+
+If the style needs to move with the sentence, then put a semantic placeholder in
+the localized string instead of raw TMP markup, then replace it after
+localization. For example, the table can contain something like:
+
+```text
+You need {coin_icon} {amount} more coins.
+```
+
+Then your UI code maps `{coin_icon}` to `<sprite name=coin>` and maybe wraps
+`{amount}` in a style. That keeps the localization entry readable while still
+letting word order change per language.
+
+I would only put raw TMP tags directly in the localization table when the
+translators/localization pipeline can validate them. It works, but one missing
+closing tag or renamed sprite can break the rendered text.
+
+A practical rule:
+- color/size/icon that always appears in the same place: compose outside the
+  localized string
+- tags/icons whose position depends on grammar: use placeholders in the
+  localized string
+- raw `<style>` / `<sprite>` tags in tables: only if your loc process checks them
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Projectile Mods As Resources
 
 Use when a Godot user is scaling projectile modifiers and has started using
