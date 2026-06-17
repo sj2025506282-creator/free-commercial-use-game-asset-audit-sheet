@@ -237,6 +237,96 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Projectile Mods As Resources
+
+Use when a Godot user is scaling projectile modifiers and has started using
+string IDs, global dictionaries, or exported Callables.
+
+````text
+I would move the data into Resources, but not by trying to export a `Callable`.
+Treat each mod as a small Resource with normal methods. The editor can assign
+the Resource; the code can call its methods.
+
+For example, make a base mod resource:
+
+```gdscript
+# projectile_mod.gd
+class_name ProjectileMod
+extends Resource
+
+func apply(projectile: Blast) -> void:
+    pass
+
+func tick(projectile: Blast, delta: float) -> void:
+    pass
+```
+
+Then make concrete mods as separate Resource scripts:
+
+```gdscript
+# ice_mod.gd
+class_name IceMod
+extends ProjectileMod
+
+@export var speed := 200.0
+@export var color := Color(0.056, 0.093, 0.8, 1.0)
+
+func apply(projectile: Blast) -> void:
+    projectile.speed = speed
+    projectile.modulate = color
+```
+
+```gdscript
+# wave_mod.gd
+class_name WaveMod
+extends ProjectileMod
+
+@export var frequency := 5.0
+@export var amplitude := 150.0
+
+func apply(projectile: Blast) -> void:
+    projectile.dynamicVars["wave_time"] = 0.0
+
+func tick(projectile: Blast, delta: float) -> void:
+    projectile.dynamicVars["wave_time"] += delta
+    projectile.position += projectile.transform.y * cos(projectile.dynamicVars["wave_time"] * frequency) * amplitude * delta
+```
+
+Then your projectile keeps an array of mod resources:
+
+```gdscript
+@export var mods: Array[ProjectileMod] = []
+
+func constructor(selected_mods: Array[ProjectileMod]) -> void:
+    mods = selected_mods.duplicate()
+    for mod in mods:
+        mod.apply(self)
+
+func _process(delta: float) -> void:
+    basic_movement(self, delta)
+    for mod in mods:
+        mod.tick(self, delta)
+```
+
+That removes the global string dictionary for most cases. Your weapon/spell
+Resource can simply export `Array[ProjectileMod]`, so you build combinations in
+the inspector instead of remembering string keys.
+
+I would keep a dictionary only if you need lookup by save-file ID, like
+`"stat_ice" -> preload("res://mods/ice_mod.tres")`. For gameplay code, passing
+actual Resource instances around is cleaner than passing strings and resolving
+them later.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Marker3D Spawnpoints By Upgrade Level
 
 Use when a Godot user wants editor-friendly projectile spawn points grouped by
