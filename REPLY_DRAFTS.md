@@ -237,6 +237,79 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity IK Tip Target With Local Offset
+
+Use when a Unity user needs `OnAnimatorIK` to place a hand so a held object's tip
+or hook lands on a target point. The common bug is subtracting an unrotated
+world-space offset.
+
+````text
+The part that is probably breaking is that your offset is being treated like a
+world-space offset. The offset from the hand to the rod tip has to be rotated by
+the hand's final IK rotation before you subtract it from the zipline point.
+
+I would set this up with two reference transforms on the held object:
+
+```text
+HeldRod
+  GripPose      # where the hand should be, orientation included
+  AttachPoint   # the rod tip / hook point that must land on the zipline
+```
+
+At equip time, cache the attach point relative to the grip pose:
+
+```csharp
+Vector3 attachLocalPos = gripPose.InverseTransformPoint(attachPoint.position);
+Quaternion attachLocalRot = Quaternion.Inverse(gripPose.rotation) * attachPoint.rotation;
+```
+
+Then in `OnAnimatorIK`, solve rotation first, then position:
+
+```csharp
+void OnAnimatorIK(int layerIndex)
+{
+    Vector3 zipPoint = _zipPosition;
+
+    // Pick whatever direction the rod tip should face while hanging.
+    Vector3 rodForward = (_zipForward.sqrMagnitude > 0.001f)
+        ? _zipForward.normalized
+        : transform.forward;
+
+    Quaternion desiredAttachRotation = Quaternion.LookRotation(rodForward, transform.up);
+
+    // Convert desired attach/tip rotation into the hand rotation needed to produce it.
+    Quaternion desiredHandRotation = desiredAttachRotation * Quaternion.Inverse(attachLocalRot);
+
+    // This is the important bit: rotate the local hand->tip offset by the desired hand rotation.
+    Vector3 desiredHandPosition = zipPoint - (desiredHandRotation * attachLocalPos);
+
+    _animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1f);
+    _animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+    _animator.SetIKPosition(AvatarIKGoal.LeftHand, desiredHandPosition);
+    _animator.SetIKRotation(AvatarIKGoal.LeftHand, desiredHandRotation);
+}
+```
+
+The key idea is:
+
+```csharp
+handPosition = targetTipPosition - handRotation * localHandToTipOffset;
+```
+
+Your current version is close, but it subtracts an offset that does not change
+when the hand/rod rotates. That is why it only works in the one pose where the
+rod happens to match the original offset.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 8
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## TMP Styles With Localization
 
 Use when a Unity user asks whether TMP style tags or sprite tags should live
