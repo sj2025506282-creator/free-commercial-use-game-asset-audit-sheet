@@ -237,6 +237,79 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Reverse Resource Owners
+
+Use when a Godot user asks whether the FileSystem dock's View Owners behavior is
+available from script. The safe public route is to scan editor resources and
+invert `ResourceLoader.get_dependencies()`.
+
+````text
+I do not think the FileSystem dock's `View Owners` action is exposed as a nice
+one-call API. The stable public route is usually to invert the dependency list
+yourself: walk the editor filesystem, call `ResourceLoader.get_dependencies()`
+for each resource/scene, and collect the files that depend on your target.
+
+Something like this is the shape I would start with:
+
+```gdscript
+@tool
+extends EditorScript
+
+const TARGET := "res://path/to/your_resource.tres"
+
+func _run() -> void:
+    var owners: Array[String] = []
+    var fs := EditorInterface.get_resource_filesystem()
+    _scan_dir(fs.get_filesystem(), TARGET, owners)
+
+    for owner in owners:
+        print(owner)
+
+func _scan_dir(dir: EditorFileSystemDirectory, target_path: String, owners: Array[String]) -> void:
+    for i in range(dir.get_file_count()):
+        var path := dir.get_file_path(i)
+        if path == target_path:
+            continue
+
+        for dep in ResourceLoader.get_dependencies(path):
+            if _dependency_matches(dep, target_path):
+                owners.append(path)
+                break
+
+    for i in range(dir.get_subdir_count()):
+        _scan_dir(dir.get_subdir(i), target_path, owners)
+
+func _dependency_matches(dep: String, target_path: String) -> bool:
+    if dep == target_path:
+        return true
+
+    # Godot 4 dependency strings may include UID/fallback path info.
+    if dep.contains("::"):
+        return dep.get_slice("::", 2) == target_path
+
+    return false
+```
+
+That is still not a raw project-file parser. You are asking Godot's resource
+loaders for dependency information, which is safer than regexing `.tscn` /
+`.tres` yourself.
+
+The main caveat is that this finds serialized resource dependencies. It will not
+reliably catch paths built dynamically in code, strings inside scripts, or
+resources loaded from custom logic unless those references are actually
+serialized as dependencies. It also scans the project, so I would keep it as an
+editor-only tool rather than something that runs during normal gameplay.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity IK Tip Target With Local Offset
 
 Use when a Unity user needs `OnAnimatorIK` to place a hand so a held object's tip
