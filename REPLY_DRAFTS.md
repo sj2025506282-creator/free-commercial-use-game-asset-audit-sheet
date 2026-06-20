@@ -237,6 +237,86 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Time-Scaled SFX
+
+Use when a Unity user wants already-playing sound effects to speed up or slow
+down with a time manipulation mechanic.
+
+````text
+Yes, if the sound is playing through an `AudioSource`, you can change
+`AudioSource.pitch` while it is already playing. The catch is that
+`PlayOneShot()` is awkward here because you do not get a separate handle for each
+one-shot voice.
+
+I would make every important SFX come from a small pooled prefab instead:
+
+```csharp
+public class TimeScaledSfx : MonoBehaviour
+{
+    [SerializeField] private AudioSource source;
+
+    public void Play(AudioClip clip, float timeScale)
+    {
+        source.clip = clip;
+        source.pitch = timeScale;
+        source.Play();
+    }
+
+    public void SetTimeScale(float timeScale)
+    {
+        source.pitch = timeScale;
+    }
+
+    private void Update()
+    {
+        if (!source.isPlaying)
+            gameObject.SetActive(false); // or return to pool
+    }
+}
+```
+
+Then have one central time/audio manager notify active SFX when the clock changes:
+
+```csharp
+public class TimeAudioController : MonoBehaviour
+{
+    private readonly List<TimeScaledSfx> active = new();
+    private float currentTimeScale = 1f;
+
+    public void SetTimeScale(float scale)
+    {
+        currentTimeScale = scale;
+
+        foreach (var sfx in active)
+            sfx.SetTimeScale(scale);
+    }
+
+    public void Register(TimeScaledSfx sfx)
+    {
+        active.Add(sfx);
+        sfx.SetTimeScale(currentTimeScale);
+    }
+}
+```
+
+For short impacts, this is usually enough: pitch `2.0` sounds faster and higher,
+pitch `0.5` sounds slower and lower.
+
+For looping ambience or music, I would handle those separately through an
+AudioMixer snapshot or middleware, because raw pitch changes can get ugly fast.
+But for instantiated SFX like hits, UI sounds, whooshes, reloads, etc., pooled
+`AudioSource` instances with live `pitch` updates are the simple version.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Reverse Resource Owners
 
 Use when a Godot user asks whether the FileSystem dock's View Owners behavior is
