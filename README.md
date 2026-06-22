@@ -11,6 +11,7 @@ Pick the resource that matches the problem:
 | Problem | Start Here |
 | --- | --- |
 | I need a complete pre-shipping workflow | [Workflow Kit](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0) |
+| I want a lighter flat tracker first | [Original Tracker v0.2](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0) |
 | I just need quick CC0 starter sources for a jam | [CC0-only Game Jam Starter Sheet](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/tree/main/cc0-game-jam-starter-v0.1) |
 | I found a font on a mirror/free-font site | [Font Provenance Log Kit](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/font-provenance-log-kit-v0.1.0) |
 | I need verified font/source examples | [Game Font License Source Pack v0.2](https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/game-font-license-pack-v0.2.0) |
@@ -33,8 +34,8 @@ Use the ZIP if you want all templates. Use the workbook if you only want the spr
 ### Which free download should I start with?
 
 - Start with the Workflow Kit if you want a full pre-shipping process with attribution, provenance, font checks, and a final checklist.
+- Start with the original tracker v0.2 if you want one lighter flat sheet for asset rows plus a separate font tab, without the full workflow layer yet.
 - Start with the CC0-only Game Jam Starter Sheet if you only need a narrow no-signup source pool to prototype quickly.
-- Start with the original tracker v0.2 if you want a lighter flat sheet before moving to the full workflow kit.
 
 ### What is the difference between the CC0 starter sheet and the workflow kit?
 
@@ -58,6 +59,18 @@ Use the free workflow kit:
 Release:
 
 https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/workflow-kit-v0.1.0
+
+### I want a lighter flat tracker first
+
+Use the original tracker v0.2:
+
+- one workbook with asset and font tracking tabs
+- lighter than the workflow kit when you do not need attribution and final checklist tabs yet
+- good first step before moving to the full workflow kit
+
+Release:
+
+https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-sheet/releases/tag/v0.2.0
 
 ### I need to track where font files came from
 

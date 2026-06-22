@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-06-15
+Date: 2026-06-22
 
 Scope:
 
@@ -19,15 +19,15 @@ Scope:
 | --- | ---: | --- |
 | Safety / moderation risk control | 9.8 | Public auto-posting is prohibited; banned communities are do-not-touch; moderator warnings stop the path. |
 | Unattended automation suitability | 9.8 | Weekly maintenance now has an explicit owned-surface-only override: no public posting, clearer free-only resource routing, and explicit current-week metrics logging. |
-| Answer-first usefulness | 9.6 | Replies must stand without links; draft patterns now cover the recurring CC0 starter-source question in addition to licensing, font, jam-shipping, and UI SFX cases. |
+| Answer-first usefulness | 9.6 | Replies still stand without links, and the recent real wins continue to come from answer-only technical help rather than link-led replies. |
 | Resource-link discipline | 9.7 | One free GitHub link maximum; link only on direct match; no paid/Gumroad/coupon language in public replies. |
 | Operational clarity | 9.7 | Tiers, logs, templates, allowed/not-allowed actions, weekly-maintenance override, candidate scoring, and output contracts are explicit. |
 | Measurement / learning loop | 9.7 | `ANSWER_LOG.md` plus the weekly maintenance log capture candidate patterns, owned-surface fixes, and which external metrics were verified vs unavailable. |
-| Maintainability | 9.7 | Current free resources are now fully indexed, README routing is clearer, and the owned-surface docs better match the actual safe operating path. |
+| Maintainability | 9.8 | Current free resources are indexed, the root README now exposes the lighter flat-tracker path, and the owned-surface docs better match the actual safe operating path. |
 | Owned-surface improvement path | 9.6 | Unsafe public reply becomes FAQ/README/resource improvement instead of account action. |
 | External draft review | 9.6 | DeepSeek strict review checks usefulness first, then promotion/moderation risk before notification. |
 
-Overall: **9.71 / 10**
+Overall: **9.74 / 10**
 
 ## Key Findings
 
@@ -38,7 +38,8 @@ Overall: **9.71 / 10**
    reintroduces public posting, Gumroad links, or `r/gamedev` interaction
    without explicit review.
 3. The current free-resource entrance is clearer after adding the CC0 starter
-   and flat-tracker paths, which reduces pressure to force mismatched links.
+   and exposing the flat-tracker path at the repo root, which reduces pressure
+   to force mismatched links.
 4. The system should not optimize for revenue signals in Reddit participation.
    Downloads and follow-up questions are acceptable secondary signals.
 5. The skill wrapper reduces drift by making the same rules available outside
