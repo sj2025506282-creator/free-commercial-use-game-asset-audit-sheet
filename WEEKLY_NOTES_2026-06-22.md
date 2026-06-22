@@ -15,26 +15,24 @@ Scope:
 
 Window reviewed:
 
-- 2026-06-15 through 2026-06-21 entries currently in `ANSWER_LOG.md`
+- 2026-06-15 through 2026-06-22 entries currently in `ANSWER_LOG.md`
 
 Counts:
 
-- Candidates logged: 31
-- Answer only: 8
+- Candidates logged: 36
+- Answer only: 9
 - Answer + free link: 0
-- Draft only: 7
-- Skip: 16
-- Low risk: 29
+- Draft only: 8
+- Skip: 19
+- Low risk: 33
 - Medium risk: 1
-- High risk: 1
+- High risk: 2
 
 Most common topics:
 
-- Godot / engine help: 18
-- Unity / engine help: 12
-- Audio / SFX: 3
-- Fonts / text rendering: 2
-- Asset / license: 1
+- Godot / engine help: 21
+- Unity / engine help: 14
+- Fonts / text rendering: 1
 
 Observed patterns:
 
@@ -42,6 +40,7 @@ Observed patterns:
 - The repository's owned resources remain relevant for licensing, provenance, and UI SFX, but the recent question stream was mostly engine implementation help.
 - No repeated public pattern this week justified adding a new resource-link draft. The bigger owned-surface gap was making the lighter flat tracker easier to find from the repo root.
 - `r/gamedev` remains a hard no-touch path even when the topic is adjacent.
+- The new `2026-06-22` entries did not change the pattern: still no natural answer-plus-link win, and the safest public posture remains answer-only or skip.
 
 Owned-surface implication:
 
@@ -71,6 +70,7 @@ Result:
 
 - No paid/Gumroad/coupon/discount/upgrade leakage found in the free package README files, release notes, or root README.
 - Risk-word hits remained in SOP/policy/archive or draft files where they are part of internal control language, not subreddit landing-page CTA copy.
+- `starter-audit-template-pack-v0.2/README.md` was checked separately and is a paid workflow layer, so it should remain outside the free-resource routing surfaces.
 
 ## External Read-Only Status Check
 
@@ -88,17 +88,17 @@ Could not verify cleanly in this unattended run:
 Reason:
 
 - Direct unauthenticated network fetches for GitHub, Gumroad, and Reddit failed in this environment during the maintenance run, so no fresh public metrics were recorded.
+- A web fetch retry was attempted during this run as well and still did not produce reliable public metrics in the current environment.
 
 ## Documentation Fixes Made
 
-- Added an `Original Tracker v0.2` entry to the root README's top-level `Start Here` table.
-- Added a dedicated root README section for the lighter flat-tracker path.
-- Re-scored `SOP_QUALITY_AUDIT.md` after the README routing improvement.
+- Refreshed the weekly note counts and review window to include the current `2026-06-22` entries.
+- Documented that `starter-audit-template-pack-v0.2` is paid-only and therefore excluded from free-resource routing.
 
 ## Current Weekly Assessment
 
 - Safety posture: pass
 - Public-interaction posture: unchanged; no new posting or commenting
-- Free-resource coverage: pass; all current free resources remain represented, and the flat-tracker path is now clearer
+- Free-resource coverage: pass; all current free resources remain represented, while the paid `starter-audit-template-pack-v0.2` remains intentionally excluded
 - Score target: pass at 9.74 / 10
 - Next week focus: keep weekly notes current, maintain answer-only bias for technical questions, and refresh public metrics only when external read-only access is actually available
