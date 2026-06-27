@@ -27,6 +27,17 @@ When participating in Reddit or similar communities:
 
 The working posture is: helpful answer first, optional free tool second.
 
+Default daily posture:
+
+- Treat public comments as capped, not quota-driven. A normal patrol can publish
+  zero comments, and should publish at most the single strongest candidate unless
+  the user explicitly asks to continue.
+- Prefer no-link answers. A reply that solves the question without a resource is
+  the safest normal outcome.
+- If the candidate is marginal, repetitive, already solved by existing comments,
+  or would require a generic answer, log it as `Skip` / `Draft only` and use the
+  pattern for owned-surface learning instead.
+
 If the user cannot manually review replies, follow `AUTO_HELP_POLICY.md`.
 Automatic Reddit comments are allowed only when all strict publish gates pass;
 otherwise draft, log, and improve owned resources instead.
@@ -100,6 +111,13 @@ Use `FREE_RESOURCE_INDEX.md` for common scenarios:
 - Actual free UI SFX in asset-specific communities.
 
 If no resource matches, do not force a link. Answer the question only.
+
+Link escalation gate:
+
+Add a free GitHub link only when the original question directly asks about asset
+licensing, font provenance, jam shipping, UI/audio sourcing, or another workflow
+covered in `FREE_RESOURCE_INDEX.md`, and the resource is a near-perfect fit. If
+the resource is merely adjacent, keep the public reply no-link.
 
 ## Information Product Quality Gate
 
@@ -274,9 +292,10 @@ Weekly maintenance output must include:
 
 Success metric:
 
-A good day is useful answers with zero moderation issues. Downloads and
-follow-up questions are secondary signals. Revenue is not a public Reddit
-participation metric.
+A good day is correct skips, zero-risk published replies, and reusable
+owned-surface learning. Comment count, link placement, downloads, and follow-up
+questions are secondary signals. Revenue is not a public Reddit participation
+metric.
 
 ## Quality Gate
 

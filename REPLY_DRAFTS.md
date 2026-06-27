@@ -8,7 +8,19 @@ Rules:
 - Answer first; link only when the free resource directly matches.
 - Use at most one free GitHub link.
 - Do not mention paid products, Gumroad, coupons, discounts, or upgrades.
-- If no human can review, do not publish the reply automatically.
+- If no human can review, publish only when `AUTO_HELP_POLICY.md` strict gates
+  pass; otherwise draft, log, or improve owned surfaces only.
+
+Default daily pattern:
+
+- Start from a no-link answer.
+- Add steps, examples, checks, or decision criteria before considering any
+  resource.
+- Add a free GitHub link only when the question directly asks about asset
+  licensing, font provenance, jam shipping, UI/audio sourcing, or a workflow
+  already covered in `FREE_RESOURCE_INDEX.md`.
+- When a no-link answer pattern repeats, turn it into a reusable draft or FAQ
+  entry during weekly maintenance.
 
 ## Font From Mirror Site
 

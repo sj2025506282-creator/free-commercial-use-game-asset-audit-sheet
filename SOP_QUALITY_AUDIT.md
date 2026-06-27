@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-06-22
+Date: 2026-06-27
 
 Scope:
 
@@ -17,17 +17,17 @@ Scope:
 
 | Dimension | Score | Notes |
 | --- | ---: | --- |
-| Safety / moderation risk control | 9.8 | Public auto-posting is prohibited; banned communities are do-not-touch; moderator warnings stop the path. |
-| Unattended automation suitability | 9.8 | Weekly maintenance now has an explicit owned-surface-only override: no public posting, clearer free-only resource routing, and explicit current-week metrics logging. |
-| Answer-first usefulness | 9.6 | Replies still stand without links, and the recent real wins continue to come from answer-only technical help rather than link-led replies. |
-| Resource-link discipline | 9.7 | One free GitHub link maximum; link only on direct match; no paid/Gumroad/coupon language in public replies. |
-| Operational clarity | 9.7 | Tiers, logs, templates, allowed/not-allowed actions, weekly-maintenance override, candidate scoring, and output contracts are explicit. |
-| Measurement / learning loop | 9.7 | `ANSWER_LOG.md` plus the weekly maintenance log capture candidate patterns, owned-surface fixes, and which external metrics were verified vs unavailable. |
+| Safety / moderation risk control | 9.8 | Public submissions are prohibited; comments require all strict publish gates; banned communities are do-not-touch; moderator warnings stop the path. |
+| Unattended automation suitability | 9.8 | Daily patrol now has an explicit no-quota posture: default no-link, publish at most the strongest candidate, and use Skip/Draft only for marginal cases. |
+| Answer-first usefulness | 9.7 | Recent real wins continue to come from answer-only technical help; the SOP now makes no-link replies the default safe outcome. |
+| Resource-link discipline | 9.8 | One free GitHub link maximum; link only after the new escalation gate passes; no paid/Gumroad/coupon language in public replies. |
+| Operational clarity | 9.8 | Tiers, logs, templates, allowed/not-allowed actions, weekly-maintenance override, candidate scoring, output contracts, and daily comment caps are explicit. |
+| Measurement / learning loop | 9.8 | Primary KPI is now correct skips, zero-risk published replies, and reusable owned-surface material rather than comment count or link placement. |
 | Maintainability | 9.8 | Current free resources are indexed, the root README now exposes the lighter flat-tracker path, and the owned-surface docs better match the actual safe operating path. |
 | Owned-surface improvement path | 9.6 | Unsafe public reply becomes FAQ/README/resource improvement instead of account action. |
 | External draft review | 9.6 | DeepSeek strict review checks usefulness first, then promotion/moderation risk before notification. |
 
-Overall: **9.74 / 10**
+Overall: **9.79 / 10**
 
 ## Key Findings
 
@@ -37,12 +37,16 @@ Overall: **9.74 / 10**
 2. The biggest remaining risk is future drift if an automation or human
    reintroduces public posting, Gumroad links, or `r/gamedev` interaction
    without explicit review.
-3. The current free-resource entrance is clearer after adding the CC0 starter
+3. Recent log analysis shows the safest successful public replies are no-link
+   technical answers. Resource links should be treated as an escalation path, not
+   a default.
+4. The system should not optimize for comment count, link placement, or revenue
+   signals in Reddit participation. Correct skips and owned-surface learning are
+   primary operating metrics.
+5. The current free-resource entrance is clearer after adding the CC0 starter
    and exposing the flat-tracker path at the repo root, which reduces pressure
    to force mismatched links.
-4. The system should not optimize for revenue signals in Reddit participation.
-   Downloads and follow-up questions are acceptable secondary signals.
-5. The skill wrapper reduces drift by making the same rules available outside
+6. The skill wrapper reduces drift by making the same rules available outside
    this repository context.
 
 ## Required Gates Before Any Public Reply
@@ -52,7 +56,8 @@ All must pass:
 - Community is not banned or moderator-sensitive.
 - Current community rules allow helpful replies and relevant free resources.
 - Reply answers the question without needing a link.
-- At most one free GitHub link is included.
+- At most one free GitHub link is included, and only after the link escalation
+  gate in `AUTO_HELP_POLICY.md` passes.
 - No paid/Gumroad/coupon/upgrade language appears.
 - Risk is Low.
 - DeepSeek strict review passes when available.
@@ -91,4 +96,7 @@ Allowed unattended work:
 
 - Keep logging real entries to `ANSWER_LOG.md` and roll up a dated weekly note.
 - Add package-level FAQ only when a repeated question maps cleanly to one owned resource.
-- Re-check public metrics with authenticated GitHub/Gumroad paths if unattended reporting needs stronger numerics.
+- During weekly maintenance, synthesize repeated no-link answers into
+  `REPLY_DRAFTS.md` or README FAQ before seeking more public reply volume.
+- Re-check public metrics with authenticated GitHub/Gumroad paths only if
+  unattended reporting needs stronger secondary numerics.

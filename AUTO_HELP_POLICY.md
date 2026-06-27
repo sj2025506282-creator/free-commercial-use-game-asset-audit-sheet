@@ -15,6 +15,20 @@ gates below.
 - Commit and push low-risk documentation updates.
 - Post a Reddit comment only when all strict publish gates pass.
 
+## Default Daily Posture
+
+Daily patrol has no posting quota. The default safe outcome is a no-link answer,
+`Skip`, `Draft only`, or owned-surface improvement.
+
+- Publish at most one strongest public comment per daily run unless the user
+  explicitly asks to continue.
+- Prefer no-link answers when the reply is already useful.
+- Do not publish when the answer would be generic, the thread is already solved,
+  the community rules are unclear, or the only reason to reply is placing a
+  resource.
+- Treat skipped high-signal questions as learning material for
+  `REPLY_DRAFTS.md`, README FAQ, or `FREE_RESOURCE_INDEX.md`.
+
 ## Weekly Maintenance Override
 
 For the recurring weekly resource-maintenance automation, do not publish any
@@ -49,13 +63,16 @@ Publish a Reddit comment automatically only when all are true:
 - Current subreddit rules allow ordinary helpful replies.
 - Candidate total score is 8+ and Risk score is 2.
 - Draft is answer-first and useful without any link.
+- The run has not already published a stronger candidate today, unless the user
+  explicitly asked to continue.
 - DeepSeek strict review passes after any needed revisions.
 - Final usefulness score >= 8.
 - Final subreddit tone score >= 7.
 - Final promotion risk score <= 3.
 - Final link dependency is `None` or `Minor`.
 - No paid, Gumroad, coupon, discount, Pro, upgrade, or sales language.
-- At most one free GitHub link is included, and only if DeepSeek says keep.
+- At most one free GitHub link is included, and only if the link escalation gate
+  below passes and DeepSeek says keep.
 - If DeepSeek says remove the link, publish the no-link version.
 
 If any gate fails, do not publish. Revise and re-review, or mark the candidate
@@ -87,6 +104,20 @@ Score each candidate from 0-2:
 
 Notify only when total score is 8+ and Risk is 2. Otherwise log quietly or
 improve owned surfaces.
+
+## Link Escalation Gate
+
+Add a free GitHub link only when all are true:
+
+- The original question directly asks about asset licensing, font provenance,
+  jam shipping, UI/audio sourcing, or another workflow covered in
+  `FREE_RESOURCE_INDEX.md`.
+- The specific resource solves that workflow better than a plain-text answer
+  alone.
+- The answer remains useful if the link is removed.
+- DeepSeek's final `link_decision` is `keep`.
+
+If any condition fails, remove the link and use the no-link version.
 
 ## DeepSeek Strict Review Gate
 
@@ -150,3 +181,21 @@ updating owned surfaces:
 - Add or refine a pattern in `REPLY_DRAFTS.md`.
 
 This is the default solution when the user cannot manually review public replies.
+
+## Weekly Learning Loop
+
+Once per week, review `ANSWER_LOG.md` for repeated high-score skips, draft-only
+records, and answer-only wins. Convert repeated patterns into owned-surface
+improvements before looking for more public comments.
+
+Primary KPI:
+
+- correct skips
+- zero-risk published replies
+- reusable owned-surface material
+
+Secondary KPI:
+
+- comment replies or follow-up questions
+- GitHub release downloads after a directly relevant answer
+- number of templates or FAQ entries improved
