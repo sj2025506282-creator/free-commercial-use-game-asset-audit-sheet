@@ -2,8 +2,9 @@
 
 Use this index when answering questions in forums, comments, profiles, issues, or messages.
 
-If no human can review public replies, use this index to draft and log replies
-only. Do not publish automatically.
+If no human can review public replies, use this index only inside the strict
+publish gates in `AUTO_HELP_POLICY.md`. If any gate fails, draft, log, or
+improve owned surfaces only.
 
 Default behavior:
 
@@ -193,4 +194,6 @@ When using this strategy, track:
 
 Success metric:
 
-Answer quality first. A good day is 10 useful answers, 2-3 relevant free-resource links, zero moderation issues, and at least one measurable download or follow-up question.
+Answer quality first. A good day is correct skips, zero-risk published replies,
+and reusable owned-surface learning. Comment count, link placement, downloads,
+and follow-up questions are secondary signals.

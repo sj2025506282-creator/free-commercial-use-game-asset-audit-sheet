@@ -329,6 +329,41 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot UI Control Position For Damage Numbers
+
+Use when someone is trying to spawn UI damage numbers from a `Control` inside a
+`VBoxContainer`, `HBoxContainer`, or similar layout container.
+
+````text
+Short version: for damage numbers, I would keep the damage number as UI too, and
+position it from the Control's global rect after the container has done its
+layout.
+
+A container owns the layout of its children, so the child position can be
+misleading if you read it too early or then try to use it as a world/Node2D
+position. The usual setup I would use is:
+
+- put a top-level Control or CanvasLayer over the playfield for floating numbers
+- after the lane UI has been laid out, get the lane center with `var p := lane_control.get_global_rect().get_center()`
+- instantiate the damage label as a Control under that same overlay
+- set `label.global_position = p - label.size * 0.5` after the label has a real size
+- if the lane can move because the container resizes, call it deferred or after `await get_tree().process_frame` so the container has finished sorting
+
+If your damage number is a Node2D in the game world, then you also need to
+convert between screen/UI coordinates and world coordinates. For this case I
+would avoid that and make the damage popup part of the UI layer, because your
+target is already a Control inside a container.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Reverse Resource Owners
 
 Use when a Godot user asks whether the FileSystem dock's View Owners behavior is
