@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-06-27
+Date: 2026-06-29
 
 Scope:
 
@@ -48,6 +48,14 @@ Overall: **9.79 / 10**
    to force mismatched links.
 6. The skill wrapper reduces drift by making the same rules available outside
    this repository context.
+
+## 2026-06-29 Weekly Recheck
+
+- 2026-06-23 through 2026-06-29 `ANSWER_LOG.md` entries stayed no-link by default: 32 candidates, 6 answer-only posts, 0 answer-plus-link posts, 17 skips, and 9 draft-only records.
+- The two high-risk license/IP boundary questions were skipped, preserving the no-legal-conclusion rule.
+- Free landing pages and current free package README files did not contain paid/Gumroad/coupon/discount/upgrade leakage.
+- `FREE_RESOURCE_INDEX.md` still covers the current free resources; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
+- Current score remains **9.79 / 10** with no dimension below 9.5.
 
 ## Required Gates Before Any Public Reply
 
