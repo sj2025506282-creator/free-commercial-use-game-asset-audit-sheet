@@ -329,6 +329,43 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Large Battle Audio Overflow
+
+Use when someone has many weapons/projectiles/audio sources firing at once and
+the mix clips, stacks, or overwhelms playback.
+
+````text
+For the audio overflow, I would treat weapon sounds as a limited pool instead of
+letting every weapon/projectile own its own unlimited AudioStreamPlayer.
+
+A setup that works well for big battles is:
+
+- make one small AudioManager/AudioBus node for combat SFX
+- keep a pool of AudioStreamPlayer or AudioStreamPlayer3D nodes for lasers/explosions
+- when a weapon fires, ask the pool for a free player instead of creating/playing a new one every time
+- if the pool is full, either skip the quietest/farthest sound or steal the oldest one
+- add a short per-weapon cooldown for repeated fire sounds, like 0.03-0.08s, so a burst becomes a texture instead of 80 separate sounds
+- for distant ships, play fewer sounds or switch to one looping battle-ambience layer
+
+Also check `max_polyphony` on the players you are using. It can stop a single
+player from stacking too many copies of the same stream, but I would still use a
+pool/global limit because the real problem is usually the total number of active
+sounds across the whole battle.
+
+For safety, put combat SFX on its own audio bus and add a limiter/compressor
+there. That won't fix the logic, but it will stop sudden piles of shots from
+clipping your output while you tune the pooling rules.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot UI Control Position For Damage Numbers
 
 Use when someone is trying to spawn UI damage numbers from a `Control` inside a
