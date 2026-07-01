@@ -329,6 +329,46 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Shader Color ID Picking
+
+Use when someone is rendering object/tile IDs into color values in a separate
+viewport and decoding the pixel under the mouse.
+
+````text
+Short version: I would debug this as an ID-picking render pass, not as a normal
+visual shader. Exact color picking breaks very easily if anything in the
+viewport changes the color even slightly.
+
+A few things I would check first:
+
+- Turn off anything that blends pixels in the picking viewport: MSAA, TAA/FSR, glow, tonemapping, transparent edges, texture filtering, etc. You want one flat unfiltered pixel value, not a pretty render.
+- Make the picking mesh use a very simple unshaded material and test hard-coded colors first: red, green, blue, then `vec3(5.0 / 255.0, 0.0, 0.0)`. If green never reads back, the problem is in the viewport/readback path, not your ID math.
+- Do not classify cube faces from `NORMAL` until the ID color itself is proven stable. `NORMAL` in the fragment shader can vary near edges/corners and can be affected by interpolation/transform details, so your face ID can flicker with angle. For a picking pass, separate face meshes/materials or pass a fixed face ID per surface is usually more reliable.
+- Reserve a clear background color and check it before decoding. If ID 5 sometimes becomes 0, you may be reading a background/edge/anti-aliased pixel rather than the solid face pixel.
+- Avoid testing right on tile borders. Sample the center of the hovered screen pixel/area or use a small neighborhood rule, because one mixed edge pixel can decode to a different ID.
+
+For the red/green rollover, the packing math is fine in principle: 255 is
+`(255, 0, 0)`, 260 is `(4, 1, 0)`, 510 is `(254, 1, 0)`. So if green is not
+showing up, I would temporarily ignore faces and set:
+
+```glsl
+ALBEDO = vec3(4.0 / 255.0, 1.0 / 255.0, 0.0);
+```
+
+Then read it back. If it does not decode as 260, fix the picking viewport/color
+pipeline first. If it does decode correctly, then the next suspect is your face
+selection from `NORMAL` or sampling a blended edge pixel.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Large Battle Audio Overflow
 
 Use when someone has many weapons/projectiles/audio sources firing at once and
