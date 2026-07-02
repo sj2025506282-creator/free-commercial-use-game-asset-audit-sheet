@@ -329,6 +329,58 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot GraphEdit Click Delete Connection
+
+Use when someone wants to remove a `GraphEdit` connection by clicking the line
+instead of dragging from a port.
+
+````text
+Yes. You can do this without manually tracking all the curve geometry.
+GraphEdit has a closest-connection query for exactly this kind of hit test.
+
+The basic pattern is:
+
+```gdscript
+extends GraphEdit
+
+func _gui_input(event: InputEvent) -> void:
+    if event is InputEventMouseButton \
+            and event.pressed \
+            and event.button_index == MOUSE_BUTTON_LEFT:
+        var c := get_closest_connection_at_point(event.position, 8.0)
+        if c.is_empty():
+            return
+
+        disconnect_node(
+            c.from_node,
+            c.from_port,
+            c.to_node,
+            c.to_port
+        )
+        accept_event()
+```
+
+A few details matter:
+
+- `event.position` is already local/screen-space for the GraphEdit input event, which is what the connection hit test expects.
+- Increase or decrease the `8.0` max distance depending on how forgiving you want the click target to be.
+- If you only want this on right-click or middle-click, change `button_index`. Left-click may conflict with normal node selection/dragging.
+- If your actual graph data lives in your own model, remove the connection there too, not only visually in the GraphEdit.
+
+There is also the built-in `right_disconnects` behavior, but that is still
+port-drag based. For click-to-delete on the line itself, closest connection +
+`disconnect_node()` is the route I would use.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Shader Color ID Picking
 
 Use when someone is rendering object/tile IDs into color values in a separate
