@@ -329,6 +329,40 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Blender Imported Room Walls Disappear
+
+Use when someone imports a simple room from Blender and walls disappear while
+moving the camera.
+
+````text
+Most likely this is backface culling / flipped normals, not the `-col` collision
+setup. In Godot a flat wall plane is usually only visible from the side its
+normal points toward. If the camera moves behind that face, it can look like the
+wall is disappearing.
+
+I would check it in this order:
+
+- In Blender, enable face orientation view. Blue faces should point toward the side you expect to see; red faces mean you are looking at the back side.
+- Select the room mesh and recalculate normals outside: Edit Mode -> select all -> Mesh -> Normals -> Recalculate Outside.
+- If your walls are just single planes, give them thickness instead of leaving them paper-thin. A room made from thin boxes is much easier for Godot to render and collide with correctly than one-sided planes.
+- Apply transforms in Blender before export: Ctrl+A -> Rotation & Scale. This avoids weird imported scale/collision behavior.
+- Keep the collision mesh separate and named for Godot's import convention, but do not use the collision mesh as the visible wall mesh. The visible mesh should be normal geometry/materials; the `-col` mesh is only for collision.
+
+For quick testing in Godot, you can also set the material cull mode to
+disabled/double-sided. If that makes the wall stop disappearing, it confirms the
+issue is face direction/backface culling. I would still fix the normals/thickness
+in Blender afterward instead of relying on double-sided materials everywhere.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot GraphEdit Click Delete Connection
 
 Use when someone wants to remove a `GraphEdit` connection by clicking the line
