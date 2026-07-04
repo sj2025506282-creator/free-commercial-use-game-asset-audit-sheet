@@ -329,6 +329,55 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Local Multiplayer Virtual Cursors
+
+Use when someone wants multiple on-screen cursors for local multiplayer UI.
+
+````text
+That approach is reasonable. For local multiplayer I would treat these as
+virtual cursors, not real OS mouse cursors. Godot's normal Control focus/mouse
+path is built around one pointer, so trying to force four real UI focus states
+usually gets messy fast.
+
+The clean version of what you described would be:
+
+```text
+CanvasLayer
+  VirtualCursorP1
+  VirtualCursorP2
+  VirtualCursorP3
+  VirtualCursorP4
+  MenuRoot
+    ButtonLikeThing
+    InventorySlot
+```
+
+Each `VirtualCursor` stores its own player id, input actions, position, hover
+target, and pressed state. UI targets expose a small script/API like
+`cursor_entered(cursor)`, `cursor_exited(cursor)`, and `cursor_accept(cursor)`.
+The target then decides what to do with that player id instead of relying on
+global focus.
+
+Area2D hitboxes are fine for a small party-game menu. If the UI gets larger, I
+would consider keeping the cursors in a UI `CanvasLayer` and testing against
+`Control.get_global_rect()` for clickable Controls instead of giving every UI
+element a physics body. That keeps the visual UI and cursor logic in the same
+coordinate system.
+
+The main thing is to avoid using Godot's focused Control as the source of truth.
+Let focus be cosmetic if you want highlighting, but keep the actual interaction
+state per virtual cursor.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Blender Imported Room Walls Disappear
 
 Use when someone imports a simple room from Blender and walls disappear while
