@@ -329,6 +329,44 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Baked Lightmap Bleeding
+
+Use when baked area lights bleed through floors, ceilings, or adjacent rooms.
+
+````text
+For baked light bleeding, I would treat it as a geometry/UV separation problem
+first, then a bake-settings problem. There usually is not one magic setting that
+fixes it if the lightmapper thinks the lit and unlit surfaces are too close or
+share bad lightmap UV space.
+
+Checks I would do in order:
+
+- Make sure ceilings/walls/floors have real thickness. Single planes are very easy to leak through in baked lighting.
+- Split large continuous floors/ceilings by room if the rooms are meant to be isolated. One huge mesh spanning multiple rooms makes it easier for lightmap charts and indirect lighting to smear across boundaries.
+- Check the object's lightmap UVs. You want separate islands for separate faces, enough padding between islands, and no overlaps.
+- Raise lightmap resolution only after the UVs are clean. More resolution helps, but it will not fix overlapped or badly packed UVs.
+- If the bleed is from indirect lighting, reduce overly strong bounce/indirect intensity before trying extreme bake settings.
+- For the light objects, check baked/mixed/realtime mode and make sure the lights that should not affect nearby rooms are not huge area lights intersecting the ceiling/floor volume.
+
+The comment about breaking up the geometry is probably the first thing I would
+try. For interiors, separate wall/floor/ceiling pieces with clean UV islands are
+usually much easier to bake than one connected shell.
+
+For the pixel light count resetting on build, check which Quality level your
+build is actually using in Project Settings > Quality. It is common to edit one
+quality tier in the editor, then build with a different tier selected for the
+target platform.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Local Multiplayer Virtual Cursors
 
 Use when someone wants multiple on-screen cursors for local multiplayer UI.
