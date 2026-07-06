@@ -416,6 +416,42 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Chunked World Shadows Disappear
+
+Use when a procedural 3D world streams chunks and lights pass through walls when
+the player moves away.
+
+````text
+This sounds less like attenuation and more like the shadow casters are being
+culled / not loaded when you are far away. A light can only cast a shadow from
+geometry that exists and is considered visible enough for rendering/shadow
+rendering. If your wall chunk unloads, hides, or has a visibility range/fade,
+the light will pass through it.
+
+I would check these in order:
+
+- On the wall objects, make sure `Cast Shadow` is not disabled.
+- Temporarily disable any chunk unloading, visibility range, or distance fade on the wall/chunk meshes. If shadows stop disappearing, your streaming/culling radius is too small for your lights.
+- Keep chunks that can affect lighting loaded farther out than chunks the player can directly see. For example: visible chunks radius = 3, shadow/physics blocker radius = 4 or 5.
+- Check the OmniLight3D's range after the chunks are loaded. If the light reaches across multiple chunks, the shadow-casting walls in those chunks also need to stay loaded.
+- For procedural levels, avoid relying on lots of live `CSGBox3D` nodes long term. CSG is useful for prototyping, but for runtime chunks I would generate MeshInstance3D/StaticBody3D pieces or bake the shapes once, then stream those.
+
+A quick test: place one permanent wall between the light and the camera that
+never unloads and has no visibility fade. If that wall always casts a shadow,
+the light is fine and the bug is in chunk visibility/loading. If even that wall
+does not cast, then look at the wall material/mesh shadow settings and the
+light's shadow settings.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Blender Imported Room Walls Disappear
 
 Use when someone imports a simple room from Blender and walls disappear while
