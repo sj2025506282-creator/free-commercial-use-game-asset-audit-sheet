@@ -367,6 +367,69 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot CharacterBody3D Knockback Without RigidBody
+
+Use when someone wants an enemy controlled by `CharacterBody3D`,
+`NavigationAgent3D`, and `move_and_slide()` to get pushed by hits without using
+`RigidBody3D`.
+
+````text
+For a `CharacterBody3D`, don't think of it as applying a real physics force.
+Since you are controlling it with `move_and_slide()`, the usual approach is to
+add a temporary knockback velocity and let it decay over time.
+
+Something like this:
+
+```gdscript
+extends CharacterBody3D
+
+var move_speed := 4.0
+var knockback := Vector3.ZERO
+var knockback_decay := 12.0
+
+func _physics_process(delta: float) -> void:
+    var nav_velocity := get_navigation_velocity() # replace with your current NavigationAgent movement velocity
+
+    velocity = nav_velocity + knockback
+    move_and_slide()
+
+    knockback = knockback.move_toward(Vector3.ZERO, knockback_decay * delta)
+
+func push_from(hit_origin: Vector3, strength: float) -> void:
+    var dir := global_position - hit_origin
+    dir.y = 0.0
+    if dir.length_squared() == 0.0:
+        return
+
+    knockback += dir.normalized() * strength
+```
+
+Then when the bullet hits:
+
+```gdscript
+enemy.push_from(bullet.global_position, 3.0)
+```
+
+Two important details:
+
+- Your direction should usually be `enemy_position - bullet_or_player_position`, not `player_position - enemy_position`, because knockback should push the enemy away from the hit source.
+- Keep your normal navigation velocity and knockback velocity separate. If you overwrite the same velocity directly, the NavigationAgent movement will fight the knockback every frame.
+
+If you want heavier enemies, multiply the strength down before adding it, e.g.
+`strength / mass_like_value`. It is not real physics, but for CharacterBody
+enemies it is usually simpler and more controllable than switching to
+RigidBody3D.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Local Multiplayer Virtual Cursors
 
 Use when someone wants multiple on-screen cursors for local multiplayer UI.
