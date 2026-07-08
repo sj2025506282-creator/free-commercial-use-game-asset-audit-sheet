@@ -367,6 +367,43 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Transparent Mesh Self-Overlap
+
+Use when a transparent ghost/character mesh gets darker where its own geometry
+overlaps and the user wants the whole object to composite once.
+
+````text
+If you mean "the whole character should be composited once, as one silhouette",
+then there is not really a clean one-material transparent-shader fix for a normal
+mesh. Standard alpha blending happens per fragment, so every visible triangle
+layer contributes. The shader does not know "this is the same ghost object, only
+blend it once" after those fragments hit the framebuffer.
+
+The practical options are:
+
+- Use alpha scissor / dithered transparency instead of blended transparency. That avoids stacking because pixels are either written or skipped, but you get a stippled look unless TAA/post smoothing hides it.
+- Use fresnel/rim-only opacity so most front-facing interior surfaces become almost invisible. This is often good enough for ghosts because the silhouette carries the effect.
+- Make a simplified outer shell mesh for the ghost effect and hide or reduce opacity on the internal/body mesh. If there is no overlapping internal geometry in the transparent pass, there is nothing to stack.
+- Render the character to a SubViewport or separate pass as opaque/depth-resolved, then apply opacity to the resulting texture. That is the "correct" way if you need the entire character to behave like one flat translucent cutout.
+
+Depth prepass can help with sorting and some self-overlap, but it will not give
+you a true whole-object alpha composite. It can also create hard
+missing/intersecting areas depending on the mesh.
+
+So the answer is basically: for a quick ghost, use dither/fresnel/shell mesh. For
+the exact "one opacity for the whole character" result, the viewport/separate-pass
+approach is the robust one.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot CharacterBody3D Knockback Without RigidBody
 
 Use when someone wants an enemy controlled by `CharacterBody3D`,
