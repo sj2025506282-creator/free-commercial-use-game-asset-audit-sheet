@@ -1244,3 +1244,28 @@ DeepSeek pass example:
 - recommendation: Yes
 - link dependency: None
 - link decision: no_link_present
+
+## Rotating Kinematic Body Tunnels Through a Dynamic Body
+
+Use when a manually rotated flipper, door, paddle, or similar physics body
+passes through or becomes embedded in a dynamic body.
+
+```text
+Short version: there is no per-body physics substep setting, so first make sure
+the moving body is updated on physics ticks rather than render ticks.
+
+I would:
+- use an AnimatableBody3D with sync_to_physics, or drive the kinematic body's
+  transform from _physics_process()
+- use a simple convex collider and make it slightly thicker than the visual mesh
+- reduce angular travel per physics tick as a diagnostic
+- keep CCD on the dynamic body, but do not rely on CCD to correct a
+  transform-teleported rotating collider
+
+If it still tunnels, either raise the global physics tick rate while that scene
+is active or explicitly detect the swept hit and apply the resulting impulse.
+```
+
+Do not imply that CCD guarantees reliable collision for a manually
+transform-driven rotating body. Adapt node names and fallback mechanics to the
+actual engine version and gameplay.
