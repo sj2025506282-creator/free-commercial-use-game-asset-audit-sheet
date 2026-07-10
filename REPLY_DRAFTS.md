@@ -1269,3 +1269,51 @@ is active or explicitly detect the swept hit and apply the resulting impulse.
 Do not imply that CCD guarantees reliable collision for a manually
 transform-driven rotating body. Adapt node names and fallback mechanics to the
 actual engine version and gameplay.
+
+## Unreal Low-Cost Crowd NPC Layers
+
+Use when an Unreal beginner wants many simple civilians, enemies, or background
+agents where only nearby entities need full gameplay interaction.
+
+```text
+I would not start with Niagara as the main gameplay representation. Niagara/VAT
+can be good for background crowds, but the moment a person needs to be picked up,
+hit, routed around obstacles, or have per-person state, you usually want
+something with gameplay data behind it.
+
+For a first playable version, I would split the problem into two layers:
+
+- Close to the player: use simple Actor/Pawn entities. Give each one a small
+  state list like Fleeing, Grabbed, Dead, Despawned. Movement can be simple at
+  first: pick a point away from the threat, move there, repick if blocked.
+- Far from the player: use cheaper visual-only people. These can be instanced
+  meshes, VAT/Niagara, or Mass-style agents later, but they should not all need
+  full skeletal meshes, tick-heavy Blueprints, or full AIControllers.
+
+Then make interaction upgrade the representation. If the player gets near a
+crowd cell, spawn or activate real entities for that area. If an entity leaves
+the important area, downgrade or despawn it and keep only whatever state matters.
+
+Prototype it in this order:
+
+1. Make one entity that can flee directly away from the threat.
+2. Add death/grab/interact state to that one entity.
+3. Add a spawner that releases a small group from marked exits.
+4. Add a manager that caps active real entities near the player.
+5. Only after that, add the cheap background crowd layer for the rest of the
+   level.
+
+If you jump straight to hundreds of skeletal AI characters, performance and
+debugging will get ugly. If you jump straight to Niagara, interaction will get
+ugly. The useful middle ground is: real lightweight Actors only where the player
+can actually affect them, fake/cheap crowd visuals everywhere else.
+```
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
