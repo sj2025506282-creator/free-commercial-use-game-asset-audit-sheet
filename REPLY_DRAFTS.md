@@ -329,6 +329,91 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot 3D Footsteps By Surface
+
+Use when a Godot beginner has a `CharacterBody3D`, `Timer`, `RayCast3D`, and
+separate footstep sound arrays, and wants different footstep sounds per surface
+plus a faster cadence while sprinting.
+
+````text
+Your structure is close. I would simplify it by making the footstep system
+answer three questions separately: am I moving on the floor, what surface am I
+standing on, and what interval should the next step use?
+
+The biggest things I would change:
+
+- Put the surface metadata on the actual collider the ray hits, usually the
+  StaticBody3D or CollisionObject3D, not only on a visual MeshInstance.
+- Make sure the FloorRayCast3D is enabled, points downward, and its collision
+  mask can hit the floor.
+- Do not rely on the Timer's old wait time after changing sprint state. Start it
+  again with the interval you want for the next step.
+
+```gdscript
+@onready var footstep_player: AudioStreamPlayer3D = $Grass_Sounds
+@onready var step_timer: Timer = $StepTimer
+@onready var floor_ray: RayCast3D = $FloorRayCast
+
+@export var grass_sounds: Array[AudioStream]
+@export var stone_sounds: Array[AudioStream]
+
+const WALK_STEP_TIME := 0.8
+const SPRINT_STEP_TIME := 0.4
+
+var current_surface := "Stone"
+var last_step := -1
+var is_sprinting := false
+var direction := Vector3.ZERO
+
+func _physics_process(delta: float) -> void:
+    # movement code sets direction/is_sprinting here
+
+    if direction.length_squared() > 0.0 and is_on_floor():
+        if step_timer.is_stopped():
+            step_timer.start(get_step_interval())
+    else:
+        step_timer.stop()
+
+    move_and_slide()
+
+func get_step_interval() -> float:
+    return SPRINT_STEP_TIME if is_sprinting else WALK_STEP_TIME
+
+func _on_step_timer_timeout() -> void:
+    if direction.length_squared() == 0.0 or not is_on_floor():
+        return
+
+    detect_surface()
+    play_footstep()
+    step_timer.start(get_step_interval())
+
+func detect_surface() -> void:
+    current_surface = "Stone"
+
+    if not floor_ray.is_colliding():
+        return
+
+    var body := floor_ray.get_collider()
+    if body and body.has_meta("surface"):
+        current_surface = str(body.get_meta("surface"))
+```
+
+Keep the random-pick `play_footstep()` logic, but reset `last_step` when the
+surface changes if the arrays have different lengths. Add a temporary
+`print(floor_ray.get_collider(), " surface=", current_surface)` while debugging.
+If it always prints the default surface, the ray is not hitting the expected
+floor or the metadata is on the wrong node.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Baked Lightmap Bleeding
 
 Use when baked area lights bleed through floors, ceilings, or adjacent rooms.
