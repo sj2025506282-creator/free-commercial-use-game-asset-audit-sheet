@@ -1457,3 +1457,44 @@ DeepSeek pass example:
 - recommendation: Yes
 - link dependency: None
 - link decision: no_link_present
+
+## Godot Transparent Shader Self-Overlap
+
+Use when a Godot user has a transparent material, ghost, highlight, shield, or
+portal-like mesh where overlapping triangles or overlapping parts of the same
+mesh make the opacity stack darker than intended.
+
+```text
+Short version: normal alpha blending is doing what it is told. If the mesh draws
+over itself, each layer contributes alpha again, so the overlap looks darker.
+
+I would decide which version of the effect you actually want:
+
+- If the whole object should have one uniform fade, fade the final object or
+  viewport result instead of relying on per-triangle alpha.
+- If you want a ghost/shell look, use dithered alpha, fresnel/rim lighting, or a
+  mostly opaque shell with a soft edge instead of semi-transparent overlapping
+  surfaces.
+- If only the outline/edge matters, render an outline or duplicate shell pass and
+  keep the interior less transparent.
+- If the effect is screen-space, render it through a SubViewport or post-process
+  path so you control the final compositing once.
+
+For debugging, temporarily make the material opaque and then add the transparency
+back. If the opaque version is correct but the transparent version darkens only
+where geometry overlaps, the problem is blend order/overdraw rather than the
+color math in the shader.
+
+I would avoid promising a single shader flag that fixes it for every mesh. The
+right fix depends on whether the desired result is a uniform fade, a ghost shell,
+an outline, or a screen-space effect.
+```
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present

@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-06-29
+Date: 2026-07-13
 
 Scope:
 
@@ -55,6 +55,15 @@ Overall: **9.79 / 10**
 - The two high-risk license/IP boundary questions were skipped, preserving the no-legal-conclusion rule.
 - Free landing pages and current free package README files did not contain paid/Gumroad/coupon/discount/upgrade leakage.
 - `FREE_RESOURCE_INDEX.md` still covers the current free resources; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
+- Current score remains **9.79 / 10** with no dimension below 9.5.
+
+## 2026-07-13 Weekly Recheck
+
+- 2026-07-07 through 2026-07-12 `ANSWER_LOG.md` entries stayed no-link by default: 44 candidates, 6 answer-only posts, 0 answer-plus-link posts, 18 skips, and 20 draft-only records.
+- Risk mix was 41 low, 3 medium, and 0 high; medium-risk items stayed draft-only because they depended on current tooling, product cost, plugin compatibility, or third-party routing.
+- Free landing pages and current free package README files did not contain paid/Gumroad/coupon/discount/upgrade leakage.
+- `FREE_RESOURCE_INDEX.md` still covers the current free resources; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
+- Added a no-link `REPLY_DRAFTS.md` pattern for Godot transparent shader self-overlap because shader/visual troubleshooting repeated across the week.
 - Current score remains **9.79 / 10** with no dimension below 9.5.
 
 ## Required Gates Before Any Public Reply
