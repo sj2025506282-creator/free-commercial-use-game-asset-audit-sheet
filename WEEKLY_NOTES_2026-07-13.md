@@ -99,7 +99,8 @@ Gumroad public checks:
 
 Reddit read-only checks:
 
-- Reviewed known posted-comment permalinks from `ANSWER_LOG.md` only through the existing log state.
+- Sampled three recent posted-comment permalinks through unauthenticated Reddit JSON endpoints.
+- Reddit returned HTTP 403 for those read-only checks in this environment.
 - No Reddit post, comment, vote, DM, appeal, or account action was attempted.
 
 ## Documentation Fixes Made
