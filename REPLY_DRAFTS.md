@@ -414,6 +414,61 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Camera Zoom Cursor Jitter
+
+Use when a Godot 2D camera zooms with a smoothed target value and a custom cursor
+or sprite is counter-scaled to stay visually constant.
+
+````text
+The mismatch is probably coming from using two different zoom values. Your camera
+is actually using the smoothed value in `camera.zoom`, but the cursor visual is
+being scaled with the target value in `zoom`. During the lerp, those are
+temporarily different, so the cursor scale will be ahead of the camera.
+
+Use the camera's current zoom for the visual, not the target zoom:
+
+```gdscript
+camera.zoom = camera.zoom.lerp(zoom, zoom_change_speed)
+
+var current_zoom := camera.zoom
+visual.global_position = get_global_mouse_position()
+visual.scale = visual_default_scale / current_zoom
+```
+
+Move the zoom clamp before applying it to the camera:
+
+```gdscript
+if Input.is_action_just_pressed("zoom_in"):
+    zoom *= 1.2
+if Input.is_action_just_pressed("zoom_out"):
+    zoom *= 0.8
+
+zoom = zoom.clamp(MIN_ZOOM, MAX_ZOOM)
+camera.zoom = camera.zoom.lerp(zoom, zoom_change_speed)
+
+visual.global_position = get_global_mouse_position()
+visual.scale = visual_default_scale / camera.zoom
+```
+
+If this is meant to be a UI-style mouse cursor that always stays the same size on
+screen, the cleaner option is to put it under a `CanvasLayer` or UI `Control` and
+position it with the viewport mouse position instead of world position. Then it
+will not need to counter-scale against the camera at all.
+
+Short version: if the visual is part of the world, scale it by `camera.zoom`, not
+the target `zoom`. If it is just a cursor overlay, make it screen-space and stop
+scaling it with the camera.
+````
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Baked Lightmap Bleeding
 
 Use when baked area lights bleed through floors, ceilings, or adjacent rooms.
