@@ -15,23 +15,23 @@ Scope:
 
 Window reviewed:
 
-- 2026-07-07 through 2026-07-12 entries currently in `ANSWER_LOG.md`
+- 2026-07-07 through 2026-07-13 entries currently in `ANSWER_LOG.md`
 
 Counts:
 
-- Candidates logged: 44
-- Answer only: 6
+- Candidates logged: 50
+- Answer only: 7
 - Answer + free link: 0
-- Draft only: 20
-- Skip: 18
-- Low / Medium / High risk: 41 / 3 / 0
+- Draft only: 22
+- Skip: 21
+- Low / Medium / High risk: 47 / 3 / 0
 - Resources linked: 0
 
 Most common topics:
 
-- Godot / engine help: 26
-- Unity / engine help: 10
-- Unreal / engine help: 8
+- Godot / engine help: 29
+- Unity / engine help: 12
+- Unreal / engine help: 9
 - Repeated visual/shader/UI/camera questions appeared, but they remained no-link technical help rather than free-resource matches.
 
 Observed patterns:
@@ -46,6 +46,8 @@ Owned-surface implication:
 
 - `FREE_RESOURCE_INDEX.md` still covers the current free resources.
 - Added a no-link `REPLY_DRAFTS.md` pattern for Godot transparent shader self-overlap because shader/visual troubleshooting repeated across the week.
+- The July 13 Unity material/export answer is already covered by the no-link
+  `Unity Mod Export Materials Missing In Game` pattern in `REPLY_DRAFTS.md`.
 - No README or release-title repair was needed: the current root README already routes free resource seekers by problem type.
 
 ## Landing Page Risk Scan
@@ -84,6 +86,7 @@ Checked on 2026-07-13:
 - GitHub open issues: 0
 - GitHub releases: 7
 - Repo pushed_at: 2026-07-12T04:19:24Z
+- Follow-up repo pushed_at: 2026-07-13T08:21:11Z
 - Highest release asset download count: `ui-confirmation-error-sfx-pack-v0.1.zip` at 37
 - `game_jam_asset_license_workflow_kit_v0.1.zip`: 15 downloads
 - `game-font-license-source-pack-v0.1.zip`: 6 downloads
@@ -108,6 +111,8 @@ Reddit read-only checks:
 - Added this weekly maintenance note.
 - Added a no-link shader/visual troubleshooting draft to `REPLY_DRAFTS.md`.
 - Refreshed `SOP_QUALITY_AUDIT.md` with the 2026-07-13 weekly recheck.
+- Refreshed this note after the July 13 answer-log additions and repeated the
+  free-page, release-copy, GitHub, Gumroad, and Reddit read-only checks.
 
 ## Current Weekly Assessment
 
