@@ -1498,3 +1498,49 @@ DeepSeek pass example:
 - recommendation: Yes
 - link dependency: None
 - link decision: no_link_present
+
+## Unity Mod Export Materials Missing In Game
+
+Use when a Unity mod/map/export looks correct in the editor, but colors,
+textures, or materials vanish after loading in the target game.
+
+```text
+Most likely the export is not carrying the same material/shader setup that the
+editor is using. Seeing the colors in Unity only proves the materials are
+assigned; it does not prove the target game can load those shaders/textures
+from the mod package.
+
+I would debug it in this order:
+
+1. Export a tiny test scene with one cube, one material, and one texture. If
+   that also loses color, the problem is the export/mod pipeline, not the map.
+2. Make sure the material, texture files, and shader used by that material are
+   actually included in whatever you are exporting, not just the mesh/prefab.
+3. Use a shader the target game already supports. A Built-in/URP/HDRP mismatch,
+   or a custom editor shader that is not bundled, can look fine in the editor
+   and then turn white/gray/unstyled in-game.
+4. Keep the materials explicitly referenced by the exported objects. If the
+   only reference is loose in the project, an asset bundle/build step may strip
+   it.
+5. Build/export with the same Unity version and render pipeline the game expects
+   if this is going through AssetBundles or a mod SDK.
+
+Quick diagnosis: if everything becomes white/gray, suspect missing or
+incompatible shader. If flat colors remain but images vanish, suspect missing
+texture references. If it only breaks inside the actual game, suspect Unity
+version/render pipeline mismatch or the game's mod loader not loading your
+shader variants.
+```
+
+Keep this answer no-link unless the thread explicitly asks for a specific mod
+SDK or official game tooling page. Do not recommend paid tools or generic asset
+store packages.
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
