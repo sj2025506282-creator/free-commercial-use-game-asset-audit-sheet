@@ -249,6 +249,49 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Spawned Objects Calling Player Methods
+
+Use when a Godot user has scene objects calling methods directly on the player,
+but spawned instances cannot rely on the same scene-path or unique-node
+reference.
+
+```text
+The cleaner split is: spawned objects should not need to know where the player
+is, and the autoload should not be doing current_scene.get_node() every time
+either. Let the thing that owns the player wire that connection once.
+
+A common setup is:
+
+1. Put the signal on an autoload/event bus, like request_big_jump or
+   request_speed_change.
+2. Spawned objects only emit that signal. They do not look up the player.
+3. The player, or the level script after it creates/gets the player, connects to
+   that signal when the scene is ready.
+4. When changing levels, disconnect/reconnect from the current player so the bus
+   is not holding an old node reference.
+
+If only one spawner needs to affect one player, direct injection is also fine:
+when the spawner creates the object, assign spawned.player = player. That is
+simpler for tightly related objects.
+
+Avoid making the autoload search the scene tree for "character". It works, but
+it turns the global script into a hidden dependency on scene names. Use the bus
+for loose events, or pass the player reference in from the spawner/level when
+the relationship is direct.
+```
+
+Keep this answer no-link. Adapt method names, signal names, and disconnect
+examples to the user's exact Godot version and scene ownership pattern.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Time-Scaled SFX
 
 Use when a Unity user wants already-playing sound effects to speed up or slow
