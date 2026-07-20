@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-07-13
+Date: 2026-07-20
 
 Scope:
 
@@ -67,6 +67,14 @@ Overall: **9.79 / 10**
 - The July 13 Unity material/export answer is covered by the existing no-link
   `Unity Mod Export Materials Missing In Game` pattern, so no new FAQ or resource
   index entry is justified.
+- Current score remains **9.79 / 10** with no dimension below 9.5.
+
+## 2026-07-20 Weekly Recheck
+
+- No new `ANSWER_LOG.md` entries were recorded from 2026-07-14 through 2026-07-20, so there is no new repeated question pattern requiring an FAQ, README, or reply-template change.
+- Free landing pages and current free package README files remain clear of paid/Gumroad/coupon/discount/upgrade leakage.
+- `FREE_RESOURCE_INDEX.md` still covers all seven current free resource paths; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
+- Read-only GitHub metrics were stable except for one additional UI SFX ZIP download; unauthenticated Reddit JSON checks remained limited by HTTP 403.
 - Current score remains **9.79 / 10** with no dimension below 9.5.
 
 ## Required Gates Before Any Public Reply
