@@ -71,10 +71,12 @@ Overall: **9.79 / 10**
 
 ## 2026-07-20 Weekly Recheck
 
-- No new `ANSWER_LOG.md` entries were recorded from 2026-07-14 through 2026-07-20, so there is no new repeated question pattern requiring an FAQ, README, or reply-template change.
+- Late 2026-07-20 and 2026-07-21 `ANSWER_LOG.md` entries were folded into the weekly review on 2026-07-21: 14 candidates, 2 answer-only posts, 0 answer-plus-link posts, 7 skips, and 5 draft-only records.
+- Risk mix was 14 low, 0 medium, and 0 high; both posted replies were no-link ordinary technical-help answers.
 - Free landing pages and current free package README files remain clear of paid/Gumroad/coupon/discount/upgrade leakage.
 - `FREE_RESOURCE_INDEX.md` still covers all seven current free resource paths; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
-- Read-only GitHub metrics were stable except for one additional UI SFX ZIP download; unauthenticated Reddit JSON checks remained limited by HTTP 403.
+- Read-only GitHub metrics were stable except for one additional UI SFX ZIP download; authenticated read-only Gumroad CLI still showed 0 sales and 0 `REDDIT40` uses; unauthenticated Reddit JSON checks remained limited by HTTP 403.
+- The latest Unity additive-scene streaming answer was captured in `REPLY_DRAFTS.md` as a no-link reusable pattern, so no free-resource index expansion is justified.
 - Current score remains **9.79 / 10** with no dimension below 9.5.
 
 ## Required Gates Before Any Public Reply
