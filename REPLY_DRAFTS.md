@@ -249,6 +249,51 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Linear World Additive Scene Streaming Hitches
+
+Use when a long Unity level is divided into additive scenes but crossing a
+checkpoint still causes a visible frame hitch.
+
+```text
+Additive scenes are a reasonable way to divide this. `LoadSceneAsync` moves much
+of the loading off the main thread, but scene activation still runs object
+creation plus `Awake`/`OnEnable`, physics registration, and related setup on the
+main thread, so a large chunk can still hitch.
+
+I would first profile a development build and see whether the spike is during
+loading, activation, scripts, physics, or unloading/GC. Then try:
+
+- Start loading by distance well before the checkpoint, not when the player
+  crosses it.
+- Hold activation until the chunk is needed (`allowSceneActivation = false`),
+  but remember activation itself can still spike.
+- Split each checkpoint into a cheap visual chunk and a smaller gameplay chunk;
+  pool repeated traps/props instead of creating thousands at once.
+- Reduce per-object work: combine static geometry where sensible, use GPU
+  instancing for repeated foliage, and keep heavy work out of
+  `Awake`/`OnEnable`.
+- Keep a small ring loaded ahead and behind instead of unloading immediately at
+  every boundary, since unloading can also produce a spike.
+
+For co-op, base that ring on all player positions or constrain how far apart
+players can get, otherwise two players can force most of the course to remain
+loaded. Addressables can help organize dependencies, but switching APIs alone
+will not remove an activation spike.
+```
+
+Keep this answer no-link. If adapting it, first identify whether the Profiler
+spike is loading, activation, user scripts, physics, or unload/GC; do not promise
+that Addressables or additive scenes alone make activation hitch-free.
+
+DeepSeek pass example:
+
+- usefulness score: 8
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Spawned Objects Calling Player Methods
 
 Use when a Godot user has scene objects calling methods directly on the player,
