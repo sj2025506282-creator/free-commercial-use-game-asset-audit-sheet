@@ -249,6 +249,52 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Online Melee Hit Detection Authority
+
+Use when a Unity user asks whether an online or split-screen melee game should
+use simple range checks, hitboxes, or weapon collision for hack-and-slash damage.
+
+```text
+For this kind of game I would not treat it as "range check vs hitbox". Use
+hitboxes/overlaps to find candidates, but make the final damage decision from
+one authoritative place.
+
+A practical setup is:
+
+1. The attacker starts an attack with a known attack id and timing window.
+2. During the active frames, use a hitbox, overlap, sphere cast, capsule cast, or
+   box cast around the weapon/attack arc to collect possible targets.
+3. Send or confirm the hit through the host/server, not independently on every
+   client.
+4. On the authority side, validate basic things: target was in range, attack
+   window was active, target was not already hit by that swing, and line/angle
+   is plausible.
+5. Let clients play prediction/VFX immediately, but let the authority result
+   decide actual HP changes.
+
+A pure distance check is easier to sync, but it often feels wrong for melee
+because the player sees a weapon miss or connect visually. A pure client-side
+hitbox feels good locally, but it becomes unfair or inconsistent online unless
+the host/server validates it.
+
+If the game is split-screen only, you can be looser because there is no network
+authority problem. If it is online co-op, keep actual damage authority
+centralized and use the local hitbox mainly for feel and feedback.
+```
+
+Keep this answer no-link. Adapt authority wording to the user's networking
+stack: dedicated server, host-authoritative co-op, rollback, or local
+split-screen.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Linear World Additive Scene Streaming Hitches
 
 Use when a long Unity level is divided into additive scenes but crossing a
