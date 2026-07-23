@@ -249,6 +249,65 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Bullet Trajectory Raycast Simulation
+
+Use when a Godot user is trying to use Curve3D, Path3D, or a precomputed curve
+as the main authority for a bullet that needs travel time, gravity, collision,
+penetration, ricochet, or other dynamic behavior.
+
+```text
+I would not use Curve3D as the main simulation for this. A curve is good for
+drawing or previewing a known path, but a bullet that can hit, penetrate, drop
+with gravity, or react to changing conditions should be simulated step by step.
+
+The usual structure is:
+
+1. Store bullet state: position, velocity, remaining lifetime, remaining
+   penetration energy.
+2. Each physics tick, calculate the next position from velocity and gravity.
+3. Raycast or shape cast from the old position to the new position.
+4. If the cast hits, handle impact/penetration/ricochet there.
+5. If it does not hit, move the bullet to the new position.
+
+So instead of asking "is this point on the Curve3D blocked?", ask "does anything
+block the segment the bullet traveled this frame?" That avoids tunneling and
+works with dynamic objects.
+
+For a first version:
+
+```gdscript
+var from := global_position
+velocity += gravity * delta
+var to := from + velocity * delta
+
+var query := PhysicsRayQueryParameters3D.create(from, to)
+var hit := get_world_3d().direct_space_state.intersect_ray(query)
+
+if hit:
+    global_position = hit.position
+    # apply damage / penetration / stop / ricochet here
+else:
+    global_position = to
+```
+
+If the projectile has thickness, switch from a ray to a shape cast or
+sphere-style query later. If you need a visible tracer, draw a line, mesh, or
+sampled curve from the simulated points.
+```
+
+Keep this answer no-link. Adapt query type, collision masks, and penetration
+handling to the user's projectile scale and whether they need hitscan,
+fast-projectile, or visible-tracer behavior.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Online Melee Hit Detection Authority
 
 Use when a Unity user asks whether an online or split-screen melee game should
