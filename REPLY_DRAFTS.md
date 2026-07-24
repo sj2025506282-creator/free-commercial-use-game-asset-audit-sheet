@@ -249,6 +249,47 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Raycast Cube Face From Local Normal
+
+Use when a Unity user wants to classify which of the six faces of a rotated
+`BoxCollider` was hit by a raycast.
+
+````text
+Use `RaycastHit.normal`. Convert that world-space normal into the collider's
+local space, then use the largest absolute component as the face axis and its
+sign as the side.
+
+```csharp
+Vector3 n = hit.collider.transform.InverseTransformDirection(hit.normal);
+Vector3 a = new Vector3(Mathf.Abs(n.x), Mathf.Abs(n.y), Mathf.Abs(n.z));
+
+string face;
+if (a.x > a.y && a.x > a.z)
+    face = n.x > 0f ? "Right" : "Left";
+else if (a.y > a.z)
+    face = n.y > 0f ? "Top" : "Bottom";
+else
+    face = n.z > 0f ? "Front" : "Back";
+```
+
+Use `hit.collider.transform`, not the root object's transform, because the
+collider may be on a rotated child. For a beveled mesh or `MeshCollider`, the
+normal may point between axes near an edge; the largest-component test
+classifies it into the nearest cube face.
+````
+
+Keep this answer no-link. Adapt the returned face type to the user's code:
+string, enum, local direction, or gameplay action.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Bullet Trajectory Raycast Simulation
 
 Use when a Godot user is trying to use Curve3D, Path3D, or a precomputed curve
