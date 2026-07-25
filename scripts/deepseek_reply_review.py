@@ -22,7 +22,7 @@ import requests
 
 
 API_URL = "https://api.deepseek.com/chat/completions"
-MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat")
+MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
 
 
 SYSTEM_PROMPT = """You review Reddit replies in two separate passes.

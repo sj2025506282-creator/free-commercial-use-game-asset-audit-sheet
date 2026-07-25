@@ -249,6 +249,46 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Rhythm Game DSP Timeline And First-Beat Sync
+
+Use when a rhythm game's first few UI markers start out offset but later markers
+appear synchronized, especially when markers are spawned by beat events.
+
+```text
+The startup offset may come from creating a marker only when its beat event
+fires. At that point the beat has already reached its DSP time, so the first
+marker has no travel time. Later markers can look correct after the queue fills.
+
+Use one absolute DSP timeline instead:
+
+1. Schedule the song slightly in the future with PlayScheduled.
+2. Derive every note's absolute hit time from the scheduled song start and BPM.
+3. Create or prewarm each marker one full marker-travel interval before its hit.
+4. Calculate its position from hitDsp - AudioSettings.dspTime every frame rather
+   than integrating movement from spawn time.
+
+Keep input calibration separate. Apply the input offset when comparing an input
+timestamp with the note's hit time; use a separate visual offset only when the
+display needs it. Otherwise the compensation can be applied twice.
+
+The beat event can still trigger effects, but it should not be the source of
+truth for note travel.
+```
+
+Verify the current project actually spawns markers on the beat event before
+using this diagnosis. Adapt the lead-in and marker-travel interval to the chart.
+Keep the answer no-link unless official API documentation is specifically
+requested.
+
+DeepSeek pass example:
+
+- usefulness score: 10
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Raycast Cube Face From Local Normal
 
 Use when a Unity user wants to classify which of the six faces of a rotated
