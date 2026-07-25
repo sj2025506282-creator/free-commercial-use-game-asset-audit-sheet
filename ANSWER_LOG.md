@@ -8,6 +8,11 @@ Rules:
 - Public replies should answer first and link only when the free resource directly matches.
 - Do not include paid links, Gumroad links, coupon codes, or upgrade language.
 - Keep `r/gamedev` as do-not-touch unless the user explicitly approves a fresh rule review.
+- For posted comments, attempt a 48-72 hour readback and append visible score,
+  direct replies, OP response/follow-up, and moderation state to Result /
+  Follow-Up. Use `Unknown` when Reddit does not expose a metric.
+- New candidate rows use `Thread fit / Helpfulness / Risk / Link fit /
+  Originality`; historical `Relevance` scores remain unchanged.
 
 ## Columns
 

@@ -40,7 +40,8 @@ All must pass before a draft can be recommended:
 - link decision is `keep`, `remove`, or `no_link_present`
 - if DeepSeek says `remove`, remove the link before presenting the draft
 - no banned words or paid CTA language
-- no public posting without user approval
+- no public posting unless the user explicitly approves it or every strict
+  automatic publish gate in `AUTO_HELP_POLICY.md` passes
 
 If a draft fails, revise and review again. The default fix order is:
 

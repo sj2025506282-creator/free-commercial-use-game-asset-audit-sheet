@@ -274,7 +274,7 @@ Community:
 Thread:
 URL:
 Decision: Answer only | Answer + free link | Skip | Draft only
-Score: Relevance / Helpfulness / Risk / Link fit / Originality / Total
+Score: Thread fit / Helpfulness / Risk / Link fit / Originality / Total
 Risk: Low | Medium | High
 Resource: [free GitHub resource or None]
 Reason:
@@ -289,6 +289,24 @@ Weekly maintenance output must include:
 - resource/README/FAQ improvements made or recommended
 - validation run
 - commit hash if committed
+
+Use the `reddit-answer-first-reviewer` skill for weekly review and requested SOP
+retrospectives. Keep the daily operator and weekly reviewer separate:
+
+- `reddit-answer-first-operator` owns one atomic daily discover-to-readback
+  transaction.
+- `reddit-answer-first-reviewer` owns evidence review, drift detection,
+  owned-surface consolidation, and conservative SOP changes.
+
+Do not split discovery, drafting, review, and publishing into independent
+unattended skills. Those stages share safety state: current rules, candidate
+context, whether a stronger comment was already published today, final draft
+hash/body, and permalink recovery.
+
+For every posted comment, attempt a 48-72 hour result readback and update the
+existing Result / Follow-Up field with visible score, direct replies, OP
+response, follow-up question, and moderation state. Record unavailable metrics
+as `Unknown`.
 
 Success metric:
 
@@ -313,3 +331,5 @@ link discipline, reject it or move it to an archived experiment.
 - `AUTO_HELP_POLICY.md`: rules for unattended automation.
 - `SOP_QUALITY_AUDIT.md`: scorecard and gates.
 - Skill: `/Users/sunji/.codex/skills/reddit-answer-first-operator/SKILL.md`.
+- Review skill:
+  `/Users/sunji/.codex/skills/reddit-answer-first-reviewer/SKILL.md`.

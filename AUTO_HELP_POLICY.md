@@ -96,11 +96,28 @@ Otherwise, append to `ANSWER_LOG.md` and stay quiet.
 
 Score each candidate from 0-2:
 
-- Relevance: matches asset licensing, font provenance, jam shipping, UI SFX, or related tooling.
-- Helpfulness: the answer is useful without a link.
-- Risk: outside banned/moderator-sensitive communities and not a legal conclusion request.
-- Link fit: one free GitHub resource is genuinely useful, or no link is needed.
-- Originality: the draft is adapted to the actual question.
+- Thread fit: the question is inside the approved help scope and enough concrete
+  context exists to answer it precisely. Score 2 for a direct strategic match
+  such as asset licensing, font provenance, jam shipping, UI SFX, or
+  open-source tooling; score 1 for a concrete adjacent game-development
+  question; score 0 for an off-scope, context-empty, showcase, commercial, or
+  legal-conclusion thread.
+- Helpfulness: score 2 when a standalone answer gives concrete steps or a
+  diagnostic path; 1 when it can only give partial direction or needs missing
+  project details; 0 when it would be generic, speculative, or link-dependent.
+- Risk: score 2 when community status/rules are clear and the thread is an
+  ordinary help request; 1 when rules, version/plugin facts, commercial context,
+  or legal adjacency remain uncertain; 0 for a stopped/banned community,
+  legal-conclusion request, dispute, argument, or moderator-sensitive surface.
+- Link fit: score 2 when no link is needed or one indexed free GitHub resource
+  is a direct match; 1 when a resource is merely adjacent and should normally be
+  omitted; 0 when the reply's value depends on a link or links are unwelcome.
+- Originality: score 2 when the answer uses the thread's actual constraints,
+  examples, or code path; 1 when it is adapted but still broadly reusable; 0
+  when it is copied, templated, or not grounded in the post.
+
+Historical logs and automation prompts may label Thread fit as `Relevance`.
+Interpret that legacy label using the rubric above; do not rewrite old rows.
 
 Notify only when total score is 8+ and Risk is 2. Otherwise log quietly or
 improve owned surfaces.
@@ -150,8 +167,8 @@ publish it and log the final posted version. If a useful, low-risk draft cannot
 be made without becoming generic, promotional, legally conclusive, or off-topic,
 mark the candidate `Skip` or `Draft only` and do not publish.
 
-If DeepSeek is unavailable, apply the same rubric manually and mention that the
-external review was not run.
+If DeepSeek is unavailable, apply the same rubric manually for drafting and
+logging, mention that the external review was not run, and do not auto-publish.
 
 ## Output Contract
 
@@ -161,7 +178,7 @@ Every candidate record or notification should include:
 - Thread/question
 - URL
 - Decision: `Answer only`, `Answer + free link`, `Skip`, or `Draft only`
-- Score: Relevance / Helpfulness / Risk / Link fit / Originality / Total
+- Score: Thread fit / Helpfulness / Risk / Link fit / Originality / Total
 - Risk: `Low`, `Medium`, or `High`
 - Resource linked, or `None`
 - Reason
@@ -188,6 +205,15 @@ Once per week, review `ANSWER_LOG.md` for repeated high-score skips, draft-only
 records, and answer-only wins. Convert repeated patterns into owned-surface
 improvements before looking for more public comments.
 
+Use the `reddit-answer-first-reviewer` skill for this work. Weekly review is
+read-only on public communities even when a daily candidate would otherwise
+pass.
+
+For every posted comment, attempt one outcome readback after 48-72 hours. Record
+visible score, direct replies, OP reply or follow-up, and moderation state in the
+existing Result / Follow-Up cell. Treat unavailable data as `Unknown`; do not
+invent zeros.
+
 Primary KPI:
 
 - correct skips
@@ -197,5 +223,18 @@ Primary KPI:
 Secondary KPI:
 
 - comment replies or follow-up questions
+- OP reply or evidence that the answer was adopted
+- moderation survival after 48-72 hours
 - GitHub release downloads after a directly relevant answer
 - number of templates or FAQ entries improved
+
+## SOP Change Control
+
+The weekly reviewer may automatically clarify contradictions, update compatible
+tool/model names, improve logs and templates, and consolidate repeated
+owned-surface patterns.
+
+Explicit user approval is required before lowering publish thresholds,
+increasing public volume, reopening a stopped community, weakening banned-word
+rules, or expanding public links/actions. When rules conflict, preserve the more
+conservative behavior.

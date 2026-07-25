@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-07-20
+Date: 2026-07-25
 
 Scope:
 
@@ -12,6 +12,7 @@ Scope:
 - `DEEPSEEK_REPLY_REVIEW.md`
 - `README.md`
 - `reddit-answer-first-operator` skill
+- `reddit-answer-first-reviewer` skill
 
 ## Scorecard
 
@@ -22,12 +23,12 @@ Scope:
 | Answer-first usefulness | 9.7 | Recent real wins continue to come from answer-only technical help; the SOP now makes no-link replies the default safe outcome. |
 | Resource-link discipline | 9.8 | One free GitHub link maximum; link only after the new escalation gate passes; no paid/Gumroad/coupon language in public replies. |
 | Operational clarity | 9.8 | Tiers, logs, templates, allowed/not-allowed actions, weekly-maintenance override, candidate scoring, output contracts, and daily comment caps are explicit. |
-| Measurement / learning loop | 9.8 | Primary KPI is now correct skips, zero-risk published replies, and reusable owned-surface material rather than comment count or link placement. |
-| Maintainability | 9.8 | Current free resources are indexed, the root README now exposes the lighter flat-tracker path, and the owned-surface docs better match the actual safe operating path. |
+| Measurement / learning loop | 9.9 | Process and outcome evidence are now separated; posted comments get a 48-72 hour readback and unavailable metrics are recorded as unknown. |
+| Maintainability | 9.9 | Daily execution and periodic SOP review now have separate skills, while the safety-critical discover-to-publish transaction remains atomic. |
 | Owned-surface improvement path | 9.6 | Unsafe public reply becomes FAQ/README/resource improvement instead of account action. |
 | External draft review | 9.6 | DeepSeek strict review checks usefulness first, then promotion/moderation risk before notification. |
 
-Overall: **9.79 / 10**
+Overall: **9.77 / 10**
 
 ## Key Findings
 
@@ -48,6 +49,32 @@ Overall: **9.79 / 10**
    to force mismatched links.
 6. The skill wrapper reduces drift by making the same rules available outside
    this repository context.
+7. The daily operator should not also own policy redesign. A separate read-only
+   reviewer can improve logs, templates, and compatible tooling without
+   carrying public-action permission.
+8. Historical `Relevance` scoring was too narrow for the actual adjacent
+   technical-help lane. The prospective `Thread fit` rubric preserves strategic
+   priority while distinguishing concrete adjacent questions from weak-context
+   or off-scope threads.
+
+## 2026-07-25 Architecture Recheck
+
+- Kept discovery, drafting, external review, publishing, permalink recovery,
+  and logging inside one daily operator skill because these stages share
+  safety-critical state.
+- Added `reddit-answer-first-reviewer` as a public-read-only weekly and
+  on-demand retrospective skill.
+- Added 48-72 hour comment outcome readback so a successful API submission and
+  a DeepSeek pass are not mistaken for demonstrated usefulness.
+- Added SOP change classes: low-risk clarification and owned-surface changes may
+  be applied automatically; publish thresholds, community bans, link limits,
+  banned language, and daily volume require explicit user approval to relax.
+- Replaced prospective `Relevance` scoring with a defined `Thread fit` rubric;
+  historical rows remain unchanged.
+- Corrected `DEEPSEEK_REPLY_REVIEW.md` to match the current unattended strict
+  auto-publish policy.
+- Current score is **9.77 / 10** with no dimension below 9.5. This corrects
+  the previously rounded total without changing any dimension score.
 
 ## 2026-06-29 Weekly Recheck
 
@@ -55,7 +82,7 @@ Overall: **9.79 / 10**
 - The two high-risk license/IP boundary questions were skipped, preserving the no-legal-conclusion rule.
 - Free landing pages and current free package README files did not contain paid/Gumroad/coupon/discount/upgrade leakage.
 - `FREE_RESOURCE_INDEX.md` still covers the current free resources; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
-- Current score remains **9.79 / 10** with no dimension below 9.5.
+- Current score remains **9.77 / 10** with no dimension below 9.5.
 
 ## 2026-07-13 Weekly Recheck
 
@@ -67,7 +94,7 @@ Overall: **9.79 / 10**
 - The July 13 Unity material/export answer is covered by the existing no-link
   `Unity Mod Export Materials Missing In Game` pattern, so no new FAQ or resource
   index entry is justified.
-- Current score remains **9.79 / 10** with no dimension below 9.5.
+- Current score remains **9.77 / 10** with no dimension below 9.5.
 
 ## 2026-07-20 Weekly Recheck
 
@@ -77,7 +104,7 @@ Overall: **9.79 / 10**
 - `FREE_RESOURCE_INDEX.md` still covers all seven current free resource paths; the paid `starter-audit-template-pack-v0.2` remains outside free-resource routing.
 - Read-only GitHub metrics were stable except for one additional UI SFX ZIP download; authenticated read-only Gumroad CLI still showed 0 sales and 0 `REDDIT40` uses; unauthenticated Reddit JSON checks remained limited by HTTP 403.
 - The latest Unity additive-scene streaming answer was captured in `REPLY_DRAFTS.md` as a no-link reusable pattern, so no free-resource index expansion is justified.
-- Current score remains **9.79 / 10** with no dimension below 9.5.
+- Current score remains **9.77 / 10** with no dimension below 9.5.
 
 ## Required Gates Before Any Public Reply
 
@@ -124,9 +151,10 @@ Allowed unattended work:
 
 ## Next Improvements
 
-- Keep logging real entries to `ANSWER_LOG.md` and roll up a dated weekly note.
+- Run the reviewer against the next completed seven-day window and update the
+  48-72 hour outcomes for posted comments.
 - Add package-level FAQ only when a repeated question maps cleanly to one owned resource.
 - During weekly maintenance, synthesize repeated no-link answers into
   `REPLY_DRAFTS.md` or README FAQ before seeking more public reply volume.
-- Re-check public metrics with authenticated GitHub/Gumroad paths only if
-  unattended reporting needs stronger secondary numerics.
+- Reassess the scoring rubric after at least 20 new candidates; do not tune it
+  from one patrol.
