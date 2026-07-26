@@ -249,6 +249,46 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Retro Texture Alpha Clipping
+
+Use when a low-poly or pixel-styled model has transparent texture regions that
+render as solid blocks when opaque, while making the whole material Transparent
+causes ghosting or sorting problems.
+
+```text
+Anti-aliasing and texture filtering do not create transparency. Keep Point
+filtering when that is part of the art style.
+
+For hard pixel cutouts:
+
+1. Import the texture with Input Texture Alpha.
+2. Keep the material Surface Type Opaque.
+3. Enable Alpha Clipping.
+4. Adjust the clipping threshold until background pixels disappear without
+   cutting away the intended shape.
+
+Use a separate material slot for geometry that genuinely needs soft partial
+transparency, and make only that material Transparent. Keep skin and opaque
+clothing on opaque materials.
+
+Do not change render queue as the first fix. It only helps draw ordering between
+transparent surfaces after the alpha/material setup is correct.
+```
+
+Inspect the source screenshots before choosing clipping. Use Transparent alpha
+blending instead when the desired effect truly contains soft gradients such as
+glass, smoke, or a fading fringe. Keep this answer no-link unless the OP asks
+for the matching official pipeline documentation.
+
+DeepSeek pass example:
+
+- usefulness score: 10
+- subreddit tone score: 10
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Rhythm Game DSP Timeline And First-Beat Sync
 
 Use when a rhythm game's first few UI markers start out offset but later markers
