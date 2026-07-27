@@ -249,6 +249,51 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Screen-Edge Shader Effect
+
+Use when a Unity user wants a damage, electricity, frost, poison, or warning
+effect around the screen border and needs a beginner-friendly Shader Graph
+sequence with script-controlled intensity.
+
+Rewrite the visual language and node choices for the specific effect. Do not
+paste this as a generic answer when the thread already has a complete graph.
+
+```text
+Confirm the rendering path first: a full-screen UI Image with a transparent
+Unlit Shader Graph is a reasonable option for a HUD-only effect.
+
+Build and test three independent layers:
+
+1. Border mask: center the UV, take Absolute X/Y, combine with Maximum, and use
+   Smoothstep to leave the center clear.
+2. Pattern: scale the UV, add time, then use Gradient Noise, Voronoi, or another
+   pattern suited to the requested look. Use Step/Smoothstep to control density.
+3. Control: multiply the mask and pattern by an exposed intensity and color,
+   then connect the result to color/alpha with the appropriate blend mode.
+
+For a stepped or static update, quantize time with a Floor operation before it
+enters the pattern. For a smooth effect, use continuous time instead.
+
+From script, animate the exposed intensity property. Instantiate the UI
+material once before changing it so the shared material asset is not modified.
+
+Debug in this order: solid border, pattern alone, combined effect, then script
+animation. If the center is obscured, fix the border mask before tuning noise.
+```
+
+Keep this no-link unless the user asks for a specific official Shader Graph
+reference. Avoid naming a third-party shader package when the built-in graph can
+answer the question.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Retro Texture Alpha Clipping
 
 Use when a low-poly or pixel-styled model has transparent texture regions that
