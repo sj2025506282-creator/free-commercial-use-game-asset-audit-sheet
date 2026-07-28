@@ -249,6 +249,53 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Unity Mixamo Rig, Avatar, And Frozen Animation
+
+Use when a Mixamo animation imports into Unity but the target character remains
+frozen. Rewrite this around whether the target mesh is already rigged, whether
+the Mixamo FBX was downloaded with skin, and what happens in the clip preview.
+
+```text
+If the original model was not already rigged and skinned, that is likely the
+missing step. An animation clip contains bone motion; it cannot deform a mesh
+that is not bound to a compatible skeleton.
+
+Start with one isolation test: download a Mixamo FBX with Skin, import it, and
+play its own clip on its own mesh. If that works, the clip is valid and the
+failure is in the target model's rig, Avatar, or Animator setup.
+
+Then check the normal retargeting chain:
+
+1. Import one rigged base character with Skin.
+2. Set its Rig to Humanoid and Create From This Model. Open Configure and verify
+   that the required bone mapping is valid.
+3. Import additional animation FBXs without Skin.
+4. Set each animation FBX to Humanoid, Copy From Other Avatar, and select the
+   base character's Avatar.
+5. Confirm Import Animation is enabled and the clip has a non-empty frame range.
+6. Put the clip in an Animator Controller and assign that controller to the
+   target character's Animator.
+
+If the with-Skin FBX is also frozen on its own mesh, inspect the Animator state,
+controller assignment, clip import, and Animator speed. If it moves on its own
+mesh but not on the target, focus on skinning and Avatar compatibility.
+```
+
+Keep this answer no-link by default. Do not assume that every Mixamo failure is
+an Avatar problem: rest-pose, root-motion, Blender re-export, or transform
+problems require different evidence. Preserve the isolation test and adapt the
+remaining checks to the screenshots, clip preview, and model pipeline in the
+thread.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Screen-Edge Shader Effect
 
 Use when a Unity user wants a damage, electricity, frost, poison, or warning
