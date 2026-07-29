@@ -249,6 +249,47 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Fixed-View Resolution Scaling
+
+Use when a Godot 2D project is designed around a small base resolution, but the
+game does not scale with the window or a larger display appears to reveal more
+of the world than intended.
+
+```text
+The base resolution can stay small. Treat the viewport size, displayed window
+size, and camera zoom as three separate controls.
+
+In Project Settings > Display > Window:
+
+- Keep Viewport Width / Height at the intended base resolution.
+- Use Stretch Mode `viewport` for pixel art or `canvas_items` for smooth 2D.
+- Use Stretch Aspect `keep` when every player should see the same framed area.
+
+`keep` scales the same base view and adds letterboxing or pillarboxing when the
+window has a different aspect ratio. It does not expand the visible world.
+
+Use Window Width Override / Height Override only to choose a convenient test
+window size. In the embedded editor game view, also enable Stretch to Fit so
+the preview itself does not make a correct configuration look fixed-size.
+
+Test at two matching-aspect resolutions and one mismatched-aspect resolution.
+The matching pair should fill the window; the mismatch should show bars. If the
+world framing still changes, inspect Camera2D zoom scripts separately from the
+project stretch settings.
+```
+
+Keep this answer no-link unless the thread explicitly asks for the relevant
+official Godot documentation.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 10
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Unity Mixamo Rig, Avatar, And Frozen Animation
 
 Use when a Mixamo animation imports into Unity but the target character remains
