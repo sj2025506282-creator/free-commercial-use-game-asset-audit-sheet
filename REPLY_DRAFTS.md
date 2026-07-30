@@ -249,6 +249,45 @@ DeepSeek pass example:
 - link dependency: None
 - link decision: no_link_present
 
+## Godot Spaced 3x3 UI Sheet Versus NinePatchRect
+
+Use when a UI asset contains nine visibly separated corner, edge, and center
+pieces and looks wrong when the entire sheet is assigned to a `NinePatchRect`.
+
+```text
+That sheet is already nine separate panel pieces, not one continuous NinePatch
+texture. If you give the whole sheet to a NinePatchRect, the transparent gaps
+become part of what Godot stretches, which is why it looks strange.
+
+You can use it in either of these ways:
+
+1. Keep it as a 3x3 sheet. Create an AtlasTexture region for each piece, then
+   place nine TextureRects in a 3x3 GridContainer. Keep the corners fixed, let
+   the top/bottom pieces expand horizontally, the left/right pieces expand
+   vertically, and let the center expand both ways.
+2. Make a new texture where those nine pieces touch with no gaps. Use that
+   rebuilt texture in a NinePatchRect, then set the four patch margins to the
+   width/height of the corner areas. For pixel art, set the axis stretch modes
+   to Tile and use nearest-neighbor filtering.
+
+The important part is not to set NinePatchRect margins on the entire spaced-out
+sheet. Either split the nine regions, or first turn them into one contiguous
+panel texture.
+```
+
+Adapt the node/layout suggestion to the actual source image. If the pieces are
+already contiguous, skip the AtlasTexture route and explain only patch margins
+and stretch modes.
+
+DeepSeek pass example:
+
+- usefulness score: 9
+- subreddit tone score: 9
+- promotion risk score: 0
+- recommendation: Yes
+- link dependency: None
+- link decision: no_link_present
+
 ## Godot Fixed-View Resolution Scaling
 
 Use when a Godot 2D project is designed around a small base resolution, but the
