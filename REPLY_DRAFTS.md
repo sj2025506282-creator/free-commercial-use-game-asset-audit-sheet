@@ -14,6 +14,10 @@ Rules:
 Default daily pattern:
 
 - Start from a no-link answer.
+- Put the diagnosis and first action in the opening paragraph.
+- Compare with existing comments and remove anything they already solve.
+- Default to two to five steps. Use a longer tutorial only when the thread's
+  actual complexity requires it.
 - Add steps, examples, checks, or decision criteria before considering any
   resource.
 - Add a free GitHub link only when the question directly asks about asset

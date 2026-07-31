@@ -21,11 +21,14 @@ DeepSeek should check:
 1. Does the reply directly answer the original question?
 2. Does it give concrete steps the poster can use immediately?
 3. Is it adapted to the thread, not a reusable template pasted in?
-4. If the link is removed, does the reply still have clear standalone value?
-5. Is the link a minor supplement rather than the core of the reply?
-6. Does the tone fit the subreddit: human, concise, non-corporate, and not like
+4. Does it add a specific useful point not already covered by existing replies?
+5. Is the direct answer and first action visible immediately, without an
+   unnecessarily long tutorial?
+6. If the link is removed, does the reply still have clear standalone value?
+7. Is the link a minor supplement rather than the core of the reply?
+8. Does the tone fit the subreddit: human, concise, non-corporate, and not like
    support-script text?
-7. Does it contain or imply promotion, funneling, self-serving language,
+9. Does it contain or imply promotion, funneling, self-serving language,
    AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or
    likely self-promotion risk?
 
@@ -36,6 +39,8 @@ All must pass before a draft can be recommended:
 - usefulness score >= 8
 - subreddit tone score >= 7
 - promotion risk score <= 3
+- brevity score >= 7
+- redundancy risk score <= 3
 - link dependency is `None` or `Minor`
 - link decision is `keep`, `remove`, or `no_link_present`
 - if DeepSeek says `remove`, remove the link before presenting the draft
@@ -47,8 +52,10 @@ If a draft fails, revise and review again. The default fix order is:
 
 1. Improve concrete usefulness.
 2. Adapt more tightly to the original question.
-3. Remove self-reference and optional links.
-4. Re-run the strict review.
+3. Remove points already covered by existing replies.
+4. Put the direct answer and first action in the opening paragraph.
+5. Remove self-reference and optional links.
+6. Re-run the strict review.
 
 Keep iterating until the draft passes. If the only passing version would be too
 generic or not useful, do not recommend a reply.
@@ -74,18 +81,22 @@ Pass 1, ordinary Reddit user:
 1. Does it directly answer the original question?
 2. Does it give concrete, actionable steps?
 3. Is it adapted to this exact thread instead of sounding like a generic template?
-4. Does the tone fit the subreddit: human, concise, non-corporate, and not like support-script text?
+4. Does it add a specific useful point that the existing replies have not already covered?
+5. Is the direct answer and first action visible immediately, without an unnecessarily long tutorial?
+6. Does the tone fit the subreddit: human, concise, non-corporate, and not like support-script text?
 
 Pass 2, moderator-adjacent risk:
-5. Does the reply remain useful if every link is removed?
-6. Are any links minor supplements rather than the core value?
-7. Does it contain or imply promotion, funneling, self-serving language, AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or likely self-promotion risk?
+7. Does the reply remain useful if every link is removed?
+8. Are any links minor supplements rather than the core value?
+9. Does it contain or imply promotion, funneling, self-serving language, AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or likely self-promotion risk?
 
 Return strict JSON only:
 {
   "usefulness_score": 0-10,
   "subreddit_tone_score": 0-10,
   "promotion_risk_score": 0-10,
+  "brevity_score": 0-10,
+  "redundancy_risk_score": 0-10,
   "recommendation": "Yes" | "No" | "Revise",
   "link_dependency": "None" | "Minor" | "High",
   "largest_usefulness_problem": "...",
@@ -98,6 +109,9 @@ Return strict JSON only:
 
 Original thread:
 [thread summary]
+
+Existing replies:
+[summary of existing replies, or None]
 
 Draft reply:
 [draft]

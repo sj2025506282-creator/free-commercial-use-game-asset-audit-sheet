@@ -23,6 +23,11 @@ Daily patrol has no posting quota. The default safe outcome is a no-link answer,
 - Publish at most one strongest public comment per daily run unless the user
   explicitly asks to continue.
 - Prefer no-link answers when the reply is already useful.
+- Compare the draft with the existing replies. Publish only when it fills a
+  specific gap that a shorter existing answer has not already solved.
+- Put the direct answer and first action in the opening paragraph. Default to a
+  compact diagnosis plus two to five steps; add a longer tutorial only when the
+  thread's actual complexity requires it.
 - Do not publish when the answer would be generic, the thread is already solved,
   the community rules are unclear, or the only reason to reply is placing a
   resource.
@@ -63,12 +68,17 @@ Publish a Reddit comment automatically only when all are true:
 - Current subreddit rules allow ordinary helpful replies.
 - Candidate total score is 8+ and Risk score is 2.
 - Draft is answer-first and useful without any link.
+- Draft adds a concrete point not already covered by existing replies.
+- Direct answer and first action are visible immediately; no unnecessary
+  tutorial remains.
 - The run has not already published a stronger candidate today, unless the user
   explicitly asked to continue.
 - DeepSeek strict review passes after any needed revisions.
 - Final usefulness score >= 8.
 - Final subreddit tone score >= 7.
 - Final promotion risk score <= 3.
+- Final brevity score >= 7.
+- Final redundancy risk score <= 3.
 - Final link dependency is `None` or `Minor`.
 - No paid, Gumroad, coupon, discount, Pro, upgrade, or sales language.
 - At most one free GitHub link is included, and only if the link escalation gate
@@ -141,6 +151,9 @@ If any condition fails, remove the link and use the no-link version.
 Before notifying with a reply draft, run `scripts/deepseek_reply_review.py` when
 `DEEPSEEK_API_KEY` is available.
 
+Include a compact summary of the current thread's existing replies in the
+`existing_replies` input. For unattended publishing, do not omit this field.
+
 DeepSeek reviews as a strict, nitpicky ordinary Reddit user with a
 moderator-adjacent view.
 
@@ -149,6 +162,8 @@ Pass gates:
 - usefulness score >= 8
 - subreddit tone score >= 7
 - promotion risk score <= 3
+- brevity score >= 7
+- redundancy risk score <= 3
 - link dependency is `None` or `Minor`
 - recommendation is `Yes` or a clearly fixable `Revise`
 - if `link_decision` is `remove`, remove the link before presenting the draft
@@ -157,6 +172,9 @@ If a draft does not pass, revise it and run DeepSeek review again. Use the
 reviewer's concrete criticism as the edit brief:
 
 - make the answer more specific to the original post
+- remove points already covered by current replies
+- move the direct answer and first action into the opening paragraph
+- shorten tutorial detail that the OP did not ask for
 - remove or soften self-references
 - remove the resource link when it is not essential
 - add concrete steps, examples, or decision criteria

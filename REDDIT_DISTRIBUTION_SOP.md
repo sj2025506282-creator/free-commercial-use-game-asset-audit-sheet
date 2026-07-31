@@ -19,11 +19,13 @@ When participating in Reddit or similar communities:
 
 1. Answer the actual question first.
 2. Give concrete steps that work without downloading anything.
-3. Link at most one matching free resource only when it directly helps.
-4. Use `FREE_RESOURCE_INDEX.md` to choose the resource and safe link line.
-5. Do not mention paid products, Gumroad, discounts, or coupons in public replies.
-6. Do not copy-paste the same reply across threads.
-7. Stop immediately if a moderator warning, removal, or ban signal appears.
+3. Compare against existing replies and add only a concrete missing point.
+4. Keep the direct answer and first action visible in the opening paragraph.
+5. Link at most one matching free resource only when it directly helps.
+6. Use `FREE_RESOURCE_INDEX.md` to choose the resource and safe link line.
+7. Do not mention paid products, Gumroad, discounts, or coupons in public replies.
+8. Do not copy-paste the same reply across threads.
+9. Stop immediately if a moderator warning, removal, or ban signal appears.
 
 The working posture is: helpful answer first, optional free tool second.
 
@@ -41,6 +43,21 @@ Default daily posture:
 If the user cannot manually review replies, follow `AUTO_HELP_POLICY.md`.
 Automatic Reddit comments are allowed only when all strict publish gates pass;
 otherwise draft, log, and improve owned resources instead.
+
+## Authority And Ownership
+
+Keep one source of truth for each kind of rule:
+
+- `REDDIT_DISTRIBUTION_SOP.md`: goals, boundaries, and participation model.
+- `AUTO_HELP_POLICY.md`: authoritative unattended publish gates and thresholds.
+- `reddit-answer-first-operator`: one daily discover-to-readback transaction.
+- `reddit-answer-first-reviewer`: read-only evidence review and conservative
+  improvement.
+- Automations: schedule and mode only; they must not redefine thresholds.
+
+When wording conflicts, preserve the more conservative behavior and repair the
+duplicate during the next review. Do not copy the full procedure into a new
+skill or automation.
 
 ## Participation Tiers
 

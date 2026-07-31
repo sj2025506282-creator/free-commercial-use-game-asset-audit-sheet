@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-07-25
+Date: 2026-07-31
 
 Scope:
 
@@ -75,6 +75,30 @@ Overall: **9.77 / 10**
   auto-publish policy.
 - Current score is **9.77 / 10** with no dimension below 9.5. This corrects
   the previously rounded total without changing any dimension score.
+
+## 2026-07-31 Outcome And Drift Recheck
+
+- Read back the five mature published comments from 2026-07-24 through
+  2026-07-28. All five remained present with no comment removal or lock signal;
+  each had visible score 1 and no direct reply. The Mixamo parent post was
+  deleted, but the comment itself remained available.
+- This is positive moderation-safety evidence but weak user-adoption evidence.
+  A score of 1 or no reply is not treated as proof of failure; the repeated
+  pattern is enough to test answer compression and overlap control.
+- Added an authority ladder so automations schedule work, skills orchestrate it,
+  and `AUTO_HELP_POLICY.md` remains the unattended threshold source of truth.
+- Added strict checks for a concrete gap beyond existing replies, an immediate
+  direct answer and first action, DeepSeek brevity >= 7, and redundancy risk
+  <= 3.
+- Extended DeepSeek input with an `existing_replies` summary so high standalone
+  usefulness scores cannot hide duplication with the live thread.
+- Added deterministic DeepSeek output validation and normalization for required
+  scores and enum values before an automated gate can consume the result.
+- Kept the two-skill architecture. More execution skills would fragment the
+  safety-critical daily transaction; deterministic checks and evidence review
+  are the appropriate next layer.
+- Current score remains **9.77 / 10** with no dimension below 9.5. The new gates
+  are stricter and do not expand public permissions.
 
 ## 2026-06-29 Weekly Recheck
 
@@ -153,6 +177,9 @@ Allowed unattended work:
 
 - Run the reviewer against the next completed seven-day window and update the
   48-72 hour outcomes for posted comments.
+- Compare the next five mature comments against the 2026-07-24 through
+  2026-07-28 baseline for opening clarity, answer length, direct replies, and
+  overlap with existing answers.
 - Add package-level FAQ only when a repeated question maps cleanly to one owned resource.
 - During weekly maintenance, synthesize repeated no-link answers into
   `REPLY_DRAFTS.md` or README FAQ before seeking more public reply volume.
