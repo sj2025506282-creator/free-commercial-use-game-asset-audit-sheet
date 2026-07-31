@@ -60,6 +60,10 @@ If a draft fails, revise and review again. The default fix order is:
 Keep iterating until the draft passes. If the only passing version would be too
 generic or not useful, do not recommend a reply.
 
+The review script adds `draft_sha256` locally after the model response. The
+model does not generate this value. Any draft edit invalidates the hash and
+requires another review before `scripts/reddit_prepublish_gate.py` can pass.
+
 ## Prompt
 
 ```text

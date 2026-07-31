@@ -146,6 +146,9 @@ https://github.com/sj2025506282-creator/free-commercial-use-game-asset-audit-she
 - `AUTO_HELP_POLICY.md`: unattended automation rules.
 - `REPLY_DRAFTS.md`: answer-first reply patterns.
 - `SOP_QUALITY_AUDIT.md`: current scorecard and quality gates.
+- `scripts/deepseek_reply_review.py`: strict external draft review with a local
+  reviewed-body hash.
+- `scripts/reddit_prepublish_gate.py`: deterministic unattended-comment gate.
 - `reddit-answer-first-operator`: one atomic daily discovery-to-readback patrol.
 - `reddit-answer-first-reviewer`: read-only weekly evidence review and
   conservative SOP improvement.

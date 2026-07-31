@@ -84,9 +84,19 @@ Publish a Reddit comment automatically only when all are true:
 - At most one free GitHub link is included, and only if the link escalation gate
   below passes and DeepSeek says keep.
 - If DeepSeek says remove the link, publish the no-link version.
+- `scripts/reddit_prepublish_gate.py` returns `passed: true` for the exact final
+  draft after the last live thread/rules re-read.
+- The final draft SHA-256 matches the hash added locally by
+  `scripts/deepseek_reply_review.py`; any edit requires a new DeepSeek review.
 
 If any gate fails, do not publish. Revise and re-review, or mark the candidate
 `Skip` / `Draft only`.
+
+The deterministic prepublish gate checks machine-verifiable conditions such as
+candidate scores, daily public-comment count, stopped communities, banned
+language, link count/domain, DeepSeek thresholds, and final-draft identity.
+Semantic claims such as standalone usefulness and the concrete missing gap must
+still be verified from the live thread and included truthfully in its input.
 
 ## Notification Threshold
 

@@ -94,6 +94,10 @@ Overall: **9.77 / 10**
   usefulness scores cannot hide duplication with the live thread.
 - Added deterministic DeepSeek output validation and normalization for required
   scores and enum values before an automated gate can consume the result.
+- Added a deterministic prepublish gate for daily cap, candidate scores,
+  community stops, banned language, link restrictions, DeepSeek thresholds,
+  and exact reviewed-draft SHA-256. Five focused regression tests cover the
+  passing path and major block paths.
 - Kept the two-skill architecture. More execution skills would fragment the
   safety-critical daily transaction; deterministic checks and evidence review
   are the appropriate next layer.

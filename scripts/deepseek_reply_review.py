@@ -14,6 +14,7 @@ Prints strict JSON from the reviewer. Requires DEEPSEEK_API_KEY.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import sys
@@ -181,6 +182,9 @@ def main() -> int:
     response.raise_for_status()
     content = response.json()["choices"][0]["message"]["content"]
     review = validate_review(extract_json(content))
+    review["draft_sha256"] = hashlib.sha256(
+        payload["draft"].strip().encode("utf-8")
+    ).hexdigest()
     print(json.dumps(review, ensure_ascii=False, indent=2))
     return 0
 
