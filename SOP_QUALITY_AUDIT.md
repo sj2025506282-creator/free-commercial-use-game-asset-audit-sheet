@@ -10,6 +10,7 @@ Scope:
 - `REPLY_DRAFTS.md`
 - `ANSWER_LOG.md`
 - `DEEPSEEK_REPLY_REVIEW.md`
+- `SOP_EXPERIMENTS.md`
 - `README.md`
 - `reddit-answer-first-operator` skill
 - `reddit-answer-first-reviewer` skill
@@ -139,6 +140,9 @@ Overall: **9.77 / 10**
   and last-used tracking before further template growth.
 - Current score remains **9.77 / 10** with no dimension below 9.5. The live
   reply-ID binding strengthens unattended safety without expanding permissions.
+- Added `SOP_EXPERIMENTS.md` and deterministic answer-log summaries so future
+  optimizations retain a baseline, minimum sample, confounders, and explicit
+  decision rule instead of reacting to isolated comments.
 
 ## 2026-06-29 Weekly Recheck
 

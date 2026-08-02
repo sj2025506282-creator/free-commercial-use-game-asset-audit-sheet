@@ -241,6 +241,11 @@ Use the `reddit-answer-first-reviewer` skill for this work. Weekly review is
 read-only on public communities even when a daily candidate would otherwise
 pass.
 
+Use `scripts/summarize_answer_log.py` for deterministic window counts and
+`SOP_EXPERIMENTS.md` for hypotheses, baselines, sample maturity, confounders,
+and decisions. Safety defects may be corrected immediately. Content changes
+must meet the experiment's minimum sample and change one variable at a time.
+
 For every posted comment, attempt one outcome readback after 48-72 hours. Record
 visible score, direct replies, OP reply or follow-up, and moderation state in the
 existing Result / Follow-Up cell. Treat unavailable data as `Unknown`; do not
@@ -265,6 +270,9 @@ Secondary KPI:
 The weekly reviewer may automatically clarify contradictions, update compatible
 tool/model names, improve logs and templates, and consolidate repeated
 owned-surface patterns.
+
+It may also start or mature conservative experiments that do not expand public
+permissions. An experiment result is not permission to weaken a hard gate.
 
 Explicit user approval is required before lowering publish thresholds,
 increasing public volume, reopening a stopped community, weakening banned-word

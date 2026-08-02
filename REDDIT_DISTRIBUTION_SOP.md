@@ -347,6 +347,9 @@ link discipline, reject it or move it to an archived experiment.
 - `ANSWER_LOG.md`: candidate/reply tracking.
 - `AUTO_HELP_POLICY.md`: rules for unattended automation.
 - `SOP_QUALITY_AUDIT.md`: scorecard and gates.
+- `SOP_EXPERIMENTS.md`: data-backed hypotheses, sample requirements, and
+  prospective SOP decisions.
+- `scripts/summarize_answer_log.py`: deterministic review-window counts.
 - `scripts/reddit_prepublish_gate.py`: deterministic final publish gate and
   reviewed-draft hash binding.
 - Skill: `/Users/sunji/.codex/skills/reddit-answer-first-operator/SKILL.md`.
