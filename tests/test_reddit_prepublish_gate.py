@@ -22,6 +22,7 @@ def valid_payload():
         "legal_or_commercial_dispute": False,
         "useful_without_link_verified": True,
         "opening_answer_verified": True,
+        "live_reply_ids": ["existing1"],
         "concrete_gap": "Adds the local-space conversion missing from current replies.",
         "today_public_comment_count": 0,
         "scores": {
@@ -42,6 +43,7 @@ def valid_payload():
             "link_dependency": "None",
             "link_decision": "no_link_present",
             "draft_sha256": hashlib.sha256(draft.encode("utf-8")).hexdigest(),
+            "reviewed_reply_ids": ["existing1"],
         },
     }
 
@@ -59,6 +61,16 @@ class PublishGateTests(unittest.TestCase):
         self.assertFalse(result["passed"])
         self.assertIn(
             "draft body does not match the DeepSeek-reviewed hash",
+            result["failures"],
+        )
+
+    def test_new_live_reply_requires_re_review(self):
+        payload = valid_payload()
+        payload["live_reply_ids"].append("new_reply")
+        result = GATE.evaluate(payload)
+        self.assertFalse(result["passed"])
+        self.assertIn(
+            "live reply ids changed after DeepSeek review; re-read and re-review",
             result["failures"],
         )
 

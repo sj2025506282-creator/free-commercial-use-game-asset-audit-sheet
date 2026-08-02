@@ -5,6 +5,7 @@ Reads a JSON payload from stdin or --input:
 {
   "thread": "summary of original thread",
   "existing_replies": "summary of existing replies, or None",
+  "existing_reply_ids": ["visible Reddit comment ids at review time"],
   "draft": "reply draft"
 }
 
@@ -104,6 +105,12 @@ def load_payload(path: str | None) -> dict:
         raise SystemExit("Input JSON must be an object.")
     if not payload.get("thread") or not payload.get("draft"):
         raise SystemExit('Input JSON must include non-empty "thread" and "draft".')
+    reply_ids = payload.get("existing_reply_ids")
+    if not isinstance(reply_ids, list) or any(
+        not isinstance(reply_id, str) or not reply_id.strip()
+        for reply_id in reply_ids
+    ):
+        raise SystemExit('Input JSON must include "existing_reply_ids" as strings.')
     return payload
 
 
@@ -185,6 +192,9 @@ def main() -> int:
     review["draft_sha256"] = hashlib.sha256(
         payload["draft"].strip().encode("utf-8")
     ).hexdigest()
+    review["reviewed_reply_ids"] = sorted(
+        {reply_id.strip() for reply_id in payload["existing_reply_ids"]}
+    )
     print(json.dumps(review, ensure_ascii=False, indent=2))
     return 0
 

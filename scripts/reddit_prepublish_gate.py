@@ -59,6 +59,18 @@ def require_int(payload: dict, field: str) -> int:
     return value
 
 
+def require_string_list(payload: dict, field: str) -> list[str]:
+    value = payload.get(field)
+    if not isinstance(value, list) or any(
+        not isinstance(item, str) or not item.strip() for item in value
+    ):
+        raise InvalidPayload(f"{field!r} must be a list of non-empty strings.")
+    normalized = [item.strip() for item in value]
+    if len(normalized) != len(set(normalized)):
+        raise InvalidPayload(f"{field!r} must not contain duplicate ids.")
+    return sorted(normalized)
+
+
 def normalized_community(value: object) -> str:
     if not isinstance(value, str) or not value.strip():
         raise InvalidPayload("'community' must be a non-empty string.")
@@ -119,6 +131,20 @@ def evaluate(payload: dict) -> dict:
     scores, total = validate_scores(payload)
     review = validate_deepseek(payload)
     failures = []
+
+    live_reply_ids = require_string_list(payload, "live_reply_ids")
+    reviewed_reply_ids = review.get("reviewed_reply_ids")
+    if not isinstance(reviewed_reply_ids, list) or any(
+        not isinstance(item, str) or not item.strip() for item in reviewed_reply_ids
+    ):
+        raise InvalidPayload(
+            "'deepseek.reviewed_reply_ids' must be a list of non-empty strings."
+        )
+    reviewed_reply_ids = sorted({item.strip() for item in reviewed_reply_ids})
+    if live_reply_ids != reviewed_reply_ids:
+        failures.append(
+            "live reply ids changed after DeepSeek review; re-read and re-review"
+        )
 
     boolean_gates = {
         "community_status_verified": "community status was not verified",
@@ -194,6 +220,7 @@ def evaluate(payload: dict) -> dict:
         "candidate_total": total,
         "risk_score": scores["risk"],
         "link_count": len(urls),
+        "live_reply_ids": live_reply_ids,
         "draft_sha256": draft_sha256,
         "failures": failures,
     }

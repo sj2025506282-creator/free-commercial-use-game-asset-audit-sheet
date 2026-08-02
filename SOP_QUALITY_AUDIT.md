@@ -1,6 +1,6 @@
 # SOP Quality Audit
 
-Date: 2026-07-31
+Date: 2026-08-02
 
 Scope:
 
@@ -104,6 +104,42 @@ Overall: **9.77 / 10**
 - Current score remains **9.77 / 10** with no dimension below 9.5. The new gates
   are stricter and do not expand public permissions.
 
+## 2026-08-02 Seven-Patrol Evidence Review
+
+- Reviewed the seven most recent completed patrol days: 2026-07-26 through
+  2026-07-30, plus 2026-08-01 and 2026-08-02. No patrol record exists for
+  2026-07-31 because that run was used for SOP review and hardening.
+- Logged 46 candidates: 7 `Answer only`, 24 `Skip`, 15 `Draft only`, and zero
+  linked replies. Risk mix was 38 Low, 8 Medium, and 0 High; every Medium item
+  remained `Draft only`.
+- All seven published comments were no-link. The five mature comments from
+  2026-07-26 through 2026-07-30 remain present, unlocked, and unremoved, with
+  visible score 1 and no direct reply. The 2026-08-01 and 2026-08-02 comments
+  are under 48 hours old, so outcome evidence remains `Unknown`.
+- Process safety is strong: no submissions, DMs, votes, paid language, Gumroad
+  links, `r/gamedev` interaction, moderation warnings, or removals occurred.
+- Skip quality is strong. Most skips had a complete existing answer; most
+  draft-only records lacked code, version details, reproducible setup, or
+  trustworthy current platform definitions.
+- DeepSeek scores remain weak outcome predictors: mature comments scored highly
+  in review but received no visible adoption signal. Do not lower thresholds or
+  increase volume; finish the five-comment brevity/overlap experiment first.
+- Candidate mix drifted toward adjacent engine support. All seven published
+  comments had `Thread fit = 1`; only five candidates in the window had direct
+  strategic fit, and none justified a public reply after duplication/risk
+  checks. Discovery should deliberately search direct-fit lanes, without making
+  them a posting quota.
+- The 2026-08-01 MarginContainer candidate exposed a real review-to-publish
+  race: a new answer appeared after DeepSeek review. Human re-read prevented a
+  duplicate, but the deterministic gate could still pass a stale semantic
+  assertion. DeepSeek now binds `existing_reply_ids`, and the prepublish gate
+  requires exact equality with final `live_reply_ids`.
+- `REPLY_DRAFTS.md` now contains 43 patterns and 2,036 lines. Do not add another
+  pattern until repeated use is evidenced; the next reviewer should add reuse
+  and last-used tracking before further template growth.
+- Current score remains **9.77 / 10** with no dimension below 9.5. The live
+  reply-ID binding strengthens unattended safety without expanding permissions.
+
 ## 2026-06-29 Weekly Recheck
 
 - 2026-06-23 through 2026-06-29 `ANSWER_LOG.md` entries stayed no-link by default: 32 candidates, 6 answer-only posts, 0 answer-plus-link posts, 17 skips, and 9 draft-only records.
@@ -184,6 +220,13 @@ Allowed unattended work:
 - Compare the next five mature comments against the 2026-07-24 through
   2026-07-28 baseline for opening clarity, answer length, direct replies, and
   overlap with existing answers.
+- Require exact reviewed-versus-live reply-ID equality and re-review whenever
+  the visible thread changes.
+- Track template reuse and last-used date before adding more reply patterns;
+  archive or consolidate patterns that remain unused across four review windows.
+- Include direct-fit asset provenance, font, jam shipping, UI SFX, and
+  open-source-tooling searches in discovery, but never treat them as a posting
+  quota.
 - Add package-level FAQ only when a repeated question maps cleanly to one owned resource.
 - During weekly maintenance, synthesize repeated no-link answers into
   `REPLY_DRAFTS.md` or README FAQ before seeking more public reply volume.

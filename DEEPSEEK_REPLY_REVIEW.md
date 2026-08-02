@@ -63,6 +63,8 @@ generic or not useful, do not recommend a reply.
 The review script adds `draft_sha256` locally after the model response. The
 model does not generate this value. Any draft edit invalidates the hash and
 requires another review before `scripts/reddit_prepublish_gate.py` can pass.
+It also binds normalized `existing_reply_ids` as `reviewed_reply_ids`. The
+prepublish gate blocks when the final live comment IDs differ.
 
 ## Prompt
 
@@ -116,6 +118,9 @@ Original thread:
 
 Existing replies:
 [summary of existing replies, or None]
+
+Existing reply IDs:
+[visible Reddit comment IDs, or an empty list]
 
 Draft reply:
 [draft]

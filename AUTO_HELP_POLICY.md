@@ -97,6 +97,9 @@ candidate scores, daily public-comment count, stopped communities, banned
 language, link count/domain, DeepSeek thresholds, and final-draft identity.
 Semantic claims such as standalone usefulness and the concrete missing gap must
 still be verified from the live thread and included truthfully in its input.
+The gate also requires final `live_reply_ids` to exactly match the
+`reviewed_reply_ids` bound during DeepSeek review. Any changed visible reply
+requires a new summary, DeepSeek review, and gate run.
 
 ## Notification Threshold
 
@@ -162,7 +165,8 @@ Before notifying with a reply draft, run `scripts/deepseek_reply_review.py` when
 `DEEPSEEK_API_KEY` is available.
 
 Include a compact summary of the current thread's existing replies in the
-`existing_replies` input. For unattended publishing, do not omit this field.
+`existing_replies` input and their visible comment IDs in `existing_reply_ids`.
+For unattended publishing, do not omit either field.
 
 DeepSeek reviews as a strict, nitpicky ordinary Reddit user with a
 moderator-adjacent view.
