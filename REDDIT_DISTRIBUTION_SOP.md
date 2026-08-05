@@ -320,6 +320,14 @@ unattended skills. Those stages share safety state: current rules, candidate
 context, whether a stronger comment was already published today, final draft
 hash/body, and permalink recovery.
 
+When sending the approved body, pass it as a single argument containing actual
+newline bytes. Do not feed a JSON-escaped body (for example, literal `\\n`) to
+the Reddit CLI. Recompute the SHA-256 over the exact argument value immediately
+before sending, then compare the readback byte-for-byte. A mismatch is a failed
+publish transaction: do not mark it posted or notify, remove the malformed
+comment when possible, and require a fresh review plus machine gate before any
+replacement.
+
 For every posted comment, attempt a 48-72 hour result readback and update the
 existing Result / Follow-Up field with visible score, direct replies, OP
 response, follow-up question, and moderation state. Record unavailable metrics
