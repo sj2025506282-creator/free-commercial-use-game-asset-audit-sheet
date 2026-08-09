@@ -89,6 +89,9 @@ Original thread:
 Existing replies:
 {existing_replies}
 
+Existing reply IDs:
+{existing_reply_ids}
+
 Draft reply:
 {draft}
 """
@@ -151,6 +154,25 @@ def validate_review(review: dict) -> dict:
     return review
 
 
+def build_user_prompt(payload: dict) -> str:
+    return USER_PROMPT_TEMPLATE.format(
+        thread=payload["thread"].strip(),
+        existing_replies=(
+            payload.get("existing_replies", "None supplied") or "None supplied"
+        ).strip(),
+        existing_reply_ids=json.dumps(
+            sorted(
+                {
+                    reply_id.strip()
+                    for reply_id in payload["existing_reply_ids"]
+                }
+            ),
+            ensure_ascii=False,
+        ),
+        draft=payload["draft"].strip(),
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", help="Path to JSON payload. Defaults to stdin.")
@@ -161,13 +183,7 @@ def main() -> int:
         raise SystemExit("DEEPSEEK_API_KEY is not set.")
 
     payload = load_payload(args.input)
-    user_prompt = USER_PROMPT_TEMPLATE.format(
-        thread=payload["thread"].strip(),
-        existing_replies=(
-            payload.get("existing_replies", "None supplied") or "None supplied"
-        ).strip(),
-        draft=payload["draft"].strip(),
-    )
+    user_prompt = build_user_prompt(payload)
 
     response = requests.post(
         API_URL,
