@@ -171,6 +171,29 @@ Overall: **9.77 / 10**
 - No publish threshold, community stop, link rule, or public-action permission
   changed. Current score remains **9.77 / 10** with no dimension below 9.5.
 
+## 2026-08-09 Ordinary-User Value Reorientation
+
+- The user rejected a narrow expert-troubleshooting identity and set a broader
+  goal: create more value for ordinary solo developers, beginners, jam
+  participants, and small teams.
+- The prospective value promise is now operational: each suitable reply should
+  give a plain-language first action, say what success looks like or what
+  evidence to collect next, and avoid hidden prerequisites.
+- `Thread fit = 2` now includes high-frequency ordinary-user jobs such as asset
+  import/use, UI and input basics, save/export problems, performance triage,
+  jam shipping, and source safety. Niche advanced questions remain eligible but
+  no longer receive top fit merely for being technically answerable.
+- The narrow direct-fit discovery experiment was closed as a strategy change,
+  not an evidence failure. Asset/font/jam/resource lanes remain useful subsets
+  inside the new ordinary-user utility experiment.
+- DeepSeek review now explicitly checks first-action accessibility, success
+  criteria, next diagnostic evidence, and unexplained jargon. The regression
+  test confirms these criteria and visible reply IDs are present in the actual
+  review prompt.
+- No safety threshold, stopped community, link limit, daily cap, or public
+  permission changed. Current score remains **9.77 / 10** with no dimension
+  below 9.5.
+
 ## 2026-06-29 Weekly Recheck
 
 - 2026-06-23 through 2026-06-29 `ANSWER_LOG.md` entries stayed no-link by default: 32 candidates, 6 answer-only posts, 0 answer-plus-link posts, 17 skips, and 9 draft-only records.

@@ -47,7 +47,7 @@ Statuses: `Queued`, `Active`, `Collecting`, `Decided`, `Rejected`.
 
 ## EXP-2026-08-02: Direct-Fit Discovery Mix
 
-- Status: Active
+- Status: Decided
 - Hypothesis: Explicit searches in asset provenance, font provenance, jam
   shipping, UI SFX, and open-source tooling will increase direct-fit candidates
   without forcing links or unsafe replies.
@@ -60,6 +60,34 @@ Statuses: `Queued`, `Active`, `Collecting`, `Decided`, `Rejected`.
 - Guardrails: no posting quota, no forced link, no reduction in correct skips.
 - Decision rule: review after two completed weekly windows and at least 20 new
   candidates.
+- Decision: On 2026-08-09, the user broadened the account goal from narrow
+  resource-fit discovery to ordinary-user usefulness. Keep these lanes as a
+  subset, but do not optimize `Thread fit` around them alone. This is a strategy
+  change, not evidence that the original hypothesis failed.
+
+## EXP-2026-08-09: Ordinary-User Utility
+
+- Status: Active
+- Hypothesis: Prioritizing common beginner and solo-developer jobs, then giving
+  one executable first action plus a success check, will create more visible
+  adoption than technically correct niche answers alone.
+- Baseline: The 2026-08-03 through 2026-08-09 window had 35 candidates, 3
+  published answers, only 2 direct-fit candidates, and no visible direct reply
+  on the mature published comments.
+- Intervention: Include searches for importing/using assets, UI/input basics,
+  save/export problems, performance triage, jam shipping, and source selection.
+  Prefer questions that can be advanced in two to five plain-language steps.
+  Draft with a direct answer, a first action, and a success check or next piece
+  of evidence to collect.
+- Primary measure: OP reply, follow-up question, or explicit evidence that the
+  suggested step changed the result.
+- Secondary measure: visible score distribution after 48-72 hours.
+- Guardrails: preserve all current risk, duplication, DeepSeek, link, community,
+  exact-body, and one-comment gates. Do not simplify away technical accuracy.
+- Decision rule: review after at least 20 candidates and five mature published
+  comments. Do not infer ordinary-user value from readability scores alone.
+- Confounders: subreddit, posting time, question age, existing reply quality,
+  topic complexity, and whether the OP returns to the thread.
 
 ## Maintenance Backlog
 

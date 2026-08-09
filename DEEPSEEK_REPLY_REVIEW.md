@@ -19,16 +19,19 @@ does not pass.
 DeepSeek should check:
 
 1. Does the reply directly answer the original question?
-2. Does it give concrete steps the poster can use immediately?
+2. Does it give an ordinary user a concrete first action they can use
+   immediately, without hidden prerequisites?
 3. Is it adapted to the thread, not a reusable template pasted in?
 4. Does it add a specific useful point not already covered by existing replies?
 5. Is the direct answer and first action visible immediately, without an
    unnecessarily long tutorial?
 6. If the link is removed, does the reply still have clear standalone value?
-7. Is the link a minor supplement rather than the core of the reply?
-8. Does the tone fit the subreddit: human, concise, non-corporate, and not like
+7. When applicable, does it say what success looks like or what evidence to
+   collect next, and explain unfamiliar jargon briefly?
+8. Is the link a minor supplement rather than the core of the reply?
+9. Does the tone fit the subreddit: human, concise, non-corporate, and not like
    support-script text?
-9. Does it contain or imply promotion, funneling, self-serving language,
+10. Does it contain or imply promotion, funneling, self-serving language,
    AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or
    likely self-promotion risk?
 
@@ -85,16 +88,18 @@ Review in two passes.
 
 Pass 1, ordinary Reddit user:
 1. Does it directly answer the original question?
-2. Does it give concrete, actionable steps?
+2. Does it give an ordinary user a concrete first action without hidden
+   prerequisites?
 3. Is it adapted to this exact thread instead of sounding like a generic template?
 4. Does it add a specific useful point that the existing replies have not already covered?
 5. Is the direct answer and first action visible immediately, without an unnecessarily long tutorial?
-6. Does the tone fit the subreddit: human, concise, non-corporate, and not like support-script text?
+6. When applicable, does it state what success looks like or what evidence to collect next, and explain unfamiliar jargon briefly?
+7. Does the tone fit the subreddit: human, concise, non-corporate, and not like support-script text?
 
 Pass 2, moderator-adjacent risk:
-7. Does the reply remain useful if every link is removed?
-8. Are any links minor supplements rather than the core value?
-9. Does it contain or imply promotion, funneling, self-serving language, AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or likely self-promotion risk?
+8. Does the reply remain useful if every link is removed?
+9. Are any links minor supplements rather than the core value?
+10. Does it contain or imply promotion, funneling, self-serving language, AI-template tone, paid/Gumroad/coupon/discount/Pro/upgrade/sales language, or likely self-promotion risk?
 
 Return strict JSON only:
 {

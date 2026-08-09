@@ -28,6 +28,9 @@ Daily patrol has no posting quota. The default safe outcome is a no-link answer,
 - Put the direct answer and first action in the opening paragraph. Default to a
   compact diagnosis plus two to five steps; add a longer tutorial only when the
   thread's actual complexity requires it.
+- For ordinary-user questions, make the first action executable without hidden
+  prerequisites, explain unfamiliar jargon briefly, and state what result would
+  confirm the diagnosis or what evidence to collect next.
 - Do not publish when the answer would be generic, the thread is already solved,
   the community rules are unclear, or the only reason to reply is placing a
   resource.
@@ -120,14 +123,17 @@ Otherwise, append to `ANSWER_LOG.md` and stay quiet.
 Score each candidate from 0-2:
 
 - Thread fit: the question is inside the approved help scope and enough concrete
-  context exists to answer it precisely. Score 2 for a direct strategic match
-  such as asset licensing, font provenance, jam shipping, UI SFX, or
-  open-source tooling; score 1 for a concrete adjacent game-development
-  question; score 0 for an off-scope, context-empty, showcase, commercial, or
-  legal-conclusion thread.
-- Helpfulness: score 2 when a standalone answer gives concrete steps or a
-  diagnostic path; 1 when it can only give partial direction or needs missing
-  project details; 0 when it would be generic, speculative, or link-dependent.
+  context exists to answer it precisely. Score 2 for a high-frequency ordinary
+  developer job with a clear next action, such as importing/using assets, UI or
+  input basics, save/export troubleshooting, performance triage, jam shipping,
+  asset/font/source safety, UI SFX, or open-source tooling. Score 1 for a
+  concrete but niche or advanced adjacent game-development question; score 0
+  for an off-scope, context-empty, showcase, commercial, or legal-conclusion
+  thread.
+- Helpfulness: score 2 when a standalone answer gives a clear first action,
+  concrete steps, and a success check or next diagnostic path; 1 when it can
+  only give partial direction or needs missing project details; 0 when it would
+  be generic, speculative, jargon-dependent, or link-dependent.
 - Risk: score 2 when community status/rules are clear and the thread is an
   ordinary help request; 1 when rules, version/plugin facts, commercial context,
   or legal adjacency remain uncertain; 0 for a stopped/banned community,

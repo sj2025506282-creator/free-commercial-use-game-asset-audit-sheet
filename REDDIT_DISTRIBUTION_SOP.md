@@ -5,6 +5,11 @@
 Use Reddit and adjacent forums as a low-risk place to answer real developer
 questions, learn what problems repeat, and maintain useful free resources.
 
+The primary audience is ordinary solo developers, beginners, jam participants,
+and small teams who need to get unstuck and keep shipping. The account's value
+promise is: after reading a reply, the person should know what to try first,
+how to tell whether it worked, and what evidence to collect if it did not.
+
 This is not a Reddit -> GitHub -> Gumroad sales funnel. Do not optimize public
 replies for monetization. Optimize for useful answers, clean moderation history,
 and evidence about which problems are worth solving.
@@ -21,11 +26,14 @@ When participating in Reddit or similar communities:
 2. Give concrete steps that work without downloading anything.
 3. Compare against existing replies and add only a concrete missing point.
 4. Keep the direct answer and first action visible in the opening paragraph.
-5. Link at most one matching free resource only when it directly helps.
-6. Use `FREE_RESOURCE_INDEX.md` to choose the resource and safe link line.
-7. Do not mention paid products, Gumroad, discounts, or coupons in public replies.
-8. Do not copy-paste the same reply across threads.
-9. Stop immediately if a moderator warning, removal, or ban signal appears.
+5. State what success should look like, or the next diagnostic evidence to
+   collect, when the question permits it.
+6. Translate engine jargon into plain language for beginner-facing questions.
+7. Link at most one matching free resource only when it directly helps.
+8. Use `FREE_RESOURCE_INDEX.md` to choose the resource and safe link line.
+9. Do not mention paid products, Gumroad, discounts, or coupons in public replies.
+10. Do not copy-paste the same reply across threads.
+11. Stop immediately if a moderator warning, removal, or ban signal appears.
 
 The working posture is: helpful answer first, optional free tool second.
 
@@ -36,6 +44,9 @@ Default daily posture:
   the user explicitly asks to continue.
 - Prefer no-link answers. A reply that solves the question without a resource is
   the safest normal outcome.
+- Prefer high-frequency ordinary-user jobs: importing and using assets, UI and
+  input basics, save/export problems, performance triage, jam shipping, source
+  selection, and beginner-visible engine behavior.
 - If the candidate is marginal, repetitive, already solved by existing comments,
   or would require a generic answer, log it as `Skip` / `Draft only` and use the
   pattern for owned-surface learning instead.

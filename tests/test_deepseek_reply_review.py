@@ -21,6 +21,8 @@ class DeepSeekReplyReviewTests(unittest.TestCase):
         )
 
         self.assertIn('Existing reply IDs:\n["first", "second"]', prompt)
+        self.assertIn("ordinary user a concrete first action", prompt)
+        self.assertIn("what success looks like", prompt)
 
 
 if __name__ == "__main__":
