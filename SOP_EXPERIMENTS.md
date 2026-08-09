@@ -29,14 +29,19 @@ Statuses: `Queued`, `Active`, `Collecting`, `Decided`, `Rejected`.
 - Intervention: keep the direct answer and first action in the opening; target
   roughly 90-160 words when the problem permits; keep DeepSeek usefulness >= 8,
   brevity >= 7, and redundancy risk <= 3.
-- Current sample: 2 of 5 comments, averaging 153.5 words. Both outcomes are
-  `Unknown` until their 48-72 hour readback.
+- Current sample: 5 of 5 comments, averaging 129.4 words. The 2026-08-01,
+  2026-08-02, 2026-08-03, and 2026-08-06 comments are mature; all four remain
+  present with visible score 1 and no direct reply. The 2026-08-09 outcome is
+  `Unknown` until its 48-72 hour readback.
 - Primary measure: OP reply, OP follow-up question, or evidence of adoption.
 - Guardrails: no moderation event, no loss of concrete correctness, no increase
   in links or daily volume.
 - Decision rule: decide only after five mature intervention comments. Compare
   adoption signals and visible-score distribution with the five-comment
   baseline; preserve `Unknown` values.
+- Next decision point: read back the 2026-08-09 comment after 48-72 hours. Do
+  not decide the experiment from the four mature samples or the submission
+  event alone.
 - Confounders: topic, subreddit, posting time, and whether another complete
   answer was already present.
 

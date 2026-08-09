@@ -144,6 +144,33 @@ Overall: **9.77 / 10**
   optimizations retain a baseline, minimum sample, confounders, and explicit
   decision rule instead of reacting to isolated comments.
 
+## 2026-08-09 Requested Evidence Review
+
+- Reviewed the five completed patrol days from 2026-08-03 through 2026-08-09;
+  no patrol records exist for 2026-08-07 or 2026-08-08. The window contains 35
+  candidates: 3 `Answer only`, 19 `Skip`, and 13 `Draft only`; risk mix is 30
+  Low and 5 Medium, with zero linked replies.
+- Correct restraint remains the strongest process result. Existing replies
+  fully solved 19 candidates, while missing context, version-sensitive facts,
+  or external-review failure kept 13 candidates from public posting.
+- The shorter-answer experiment now has five comments averaging 129.4 words.
+  Four are mature and all remain present with visible score 1 and no direct
+  reply; the 2026-08-09 outcome is still `Unknown`. High DeepSeek scores and a
+  successful submission therefore remain process evidence, not adoption proof.
+- Three transaction-integrity events produced useful hardening: DeepSeek HTTP
+  503 correctly stopped the 2026-08-04 publish path; literal newline text on
+  2026-08-05 was detected by exact-body readback and the malformed comment was
+  removed; on 2026-08-09 the review script was corrected so visible reply IDs
+  are included in the actual DeepSeek prompt as well as bound locally.
+- Direct-fit discovery remains weak at 2 of 35 candidates. This is one new
+  review window, so the active discovery-mix experiment remains open; do not
+  force links, expand volume, or change scoring from this sample.
+- No new reply template or FAQ was added. The repeated pattern in this window
+  is insufficient context or a question already solved by current replies,
+  which should continue to produce `Draft only` or `Skip`, not more templates.
+- No publish threshold, community stop, link rule, or public-action permission
+  changed. Current score remains **9.77 / 10** with no dimension below 9.5.
+
 ## 2026-06-29 Weekly Recheck
 
 - 2026-06-23 through 2026-06-29 `ANSWER_LOG.md` entries stayed no-link by default: 32 candidates, 6 answer-only posts, 0 answer-plus-link posts, 17 skips, and 9 draft-only records.
